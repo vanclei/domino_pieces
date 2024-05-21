@@ -5,8 +5,22 @@
             "requirements_file": "requirements_0.txt"
         },
         "pieces": [
+            "AbInitioVolumeReconstructionPiece",
+            "ManualPickerPiece",
+            "ResolutionEstimationPiece",
             "ImportMoviesPiece",
-            "ExampleSleepPiece"
+            "AdditionalRefinementPiece",
+            "ExportMetadataToTextFileAndSubmitToEmdbPiece",
+            "SelectionOfBestTwoDClassAveragePiece",
+            "PatchCtfPiece",
+            "PatchMotionPiece",
+            "RefineVolumePiece",
+            "AutomatedParcicleBoxingUsingTemplatePiece",
+            "ManualSelectionOfClassesAndGenrateTemplatePiece",
+            "JobStartPiece",
+            "TwoDClassAveragingPiece",
+            "TwoDClassAveragingOfBoxedOutParticlePiece",
+            "FinalVolumePiece"
         ],
         "secrets": []
     }

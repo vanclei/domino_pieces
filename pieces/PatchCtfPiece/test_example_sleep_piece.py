@@ -5,7 +5,7 @@ def test_example_simple_piece():
         sleep_time=5
     )
     output_data = piece_dry_run(
-        "ExampleSleepPiece",
+        "PatchCtfPiece",
         input_data,
     )
 
