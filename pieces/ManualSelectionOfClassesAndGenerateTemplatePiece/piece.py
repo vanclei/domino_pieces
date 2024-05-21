@@ -3,7 +3,7 @@ from .models import InputModel, OutputModel
 from time import sleep
 
 
-class ManualSelectionOfClassesAndGenrateTemplatePiece(BasePiece):
+class ManualSelectionOfClassesAndGenerateTemplatePiece(BasePiece):
 
     def piece_function(self, input_data: InputModel):
 

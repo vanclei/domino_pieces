@@ -1,6 +1,6 @@
 {
     "name": "ManualPickerPiece",
-    "description": "This is an example of a simple Domino Piece that sleep for N seconds",
+    "description": "Manual Picker Description",
     "dependency": {
         "requirements_file": "requirements_0.txt"
     },
@@ -15,10 +15,10 @@
         }
     },
     "tags": [
-        "Example"
+        "TAMU"
     ],
     "style": {
-        "node_label": "Import Movies",
+        "node_label": "Manual Picker",
         "icon_class_name": "fa-solid:database"
     }
 }

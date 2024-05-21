@@ -1,6 +1,6 @@
 {
     "name": "SelectionOfBestTwoDClassAveragePiece",
-    "description": "This is an example of a simple Domino Piece that sleep for N seconds",
+    "description": "Selection of Best 2D Class Average",
     "dependency": {
         "requirements_file": "requirements_0.txt"
     },
@@ -15,10 +15,10 @@
         }
     },
     "tags": [
-        "Example"
+        "TAMU"
     ],
     "style": {
-        "node_label": "Import Movies",
+        "node_label": "Selection of Best 2D Class Average",
         "icon_class_name": "fa-solid:database"
     }
 }

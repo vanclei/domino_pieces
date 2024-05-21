@@ -1,6 +1,6 @@
 {
     "name": "PatchMotionPiece",
-    "description": "This is an example of a simple Domino Piece that sleep for N seconds",
+    "description": "Patch Motion Description",
     "dependency": {
         "requirements_file": "requirements_0.txt"
     },
@@ -15,10 +15,10 @@
         }
     },
     "tags": [
-        "Example"
+        "TAMU"
     ],
     "style": {
-        "node_label": "Import Movies",
+        "node_label": "Patch Motion",
         "icon_class_name": "fa-solid:database"
     }
 }
