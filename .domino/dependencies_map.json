@@ -22,6 +22,7 @@
             "TwoDClassAveragingOfBoxedOutParticlePiece",
             "FinalVolumePiece"
         ],
-        "secrets": []
+        "secrets": [],
+        "source_image": "ghcr.io/vanclei/tamu_pieces:0.1.0-group0"
     }
 }

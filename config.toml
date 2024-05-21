@@ -4,8 +4,8 @@
 REGISTRY_NAME = "vanclei"
 
 # The name of this Pieces repository
-REPOSITORY_NAME = "domino_pieces"
-REPOSITORY_LABEL = "Domino Pieces"
+REPOSITORY_NAME = "tamu_pieces"
+REPOSITORY_LABEL = "TAMU"
 
 # The version of this Pieces release
 # Attention: changing this will create a new release
