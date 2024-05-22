@@ -1,5 +1,5 @@
 from pydantic import BaseModel, Field
-
+from typing import Optional
 
 class InputModel(BaseModel):
     """
@@ -18,11 +18,11 @@ class InputModel(BaseModel):
     )    
 
 class OutputModel(BaseModel):
-    image_base64_string: str = Field(
+    image_base64_string: Optional[str] = Field(
         default='',
         description='Base64 encoded string of the output image.',
     )
-    image_file_path: str = Field(
+    image_file_path: Optional[str] = Field(
         default='',
         description='Path to the output image file.',
     )

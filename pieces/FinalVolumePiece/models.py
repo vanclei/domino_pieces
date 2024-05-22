@@ -1,4 +1,5 @@
 from pydantic import BaseModel, Field
+from typing import Optional
 from enum import Enum
 
 class NoiseModelType(str, Enum):
@@ -22,15 +23,15 @@ class InputModel(BaseModel):
             "from_upstream": "always"
         }
     )
-    particles: str = Field(
+    particles: Optional[int] = Field(
         default=False,
         description='Particles',
     )
-    volume: str = Field(
+    volume: Optional[str] = Field(
         default=False,
         description='Volume',
     )
-    mask: str = Field(
+    mask: Optional[str] = Field(
         default=False,
         description='Mask',
     )    
@@ -38,15 +39,15 @@ class InputModel(BaseModel):
         default=False,
         description='Window dataset (real-space)',
     )    
-    window_inner_radius: float = Field(
+    window_inner_radius: Optional[float] = Field(
         default=False,
         description='Window inner radius',
     ) 
-    window_outer_radius: float = Field(
+    window_outer_radius: Optional[float] = Field(
         default=False,
         description='Window outer radius',
     )        
-    symmetry: str = Field(
+    symmetry: Optional[str] = Field(
         default=False,
         description='Symmetry',
     )     
@@ -58,19 +59,19 @@ class InputModel(BaseModel):
         default=False,
         description='Re-estimate greyscale level of input reference',
     )     
-    number_of_extra_final_passes: float = Field(
+    number_of_extra_final_passes: Optional[float] = Field(
         default=False,
         description='Number of extra final passes',
     )         
-    maximum_align_resolution: float = Field(
+    maximum_align_resolution: Optional[float] = Field(
         default=False,
         description='Maximum align resolution (Å)',
     )    
-    initial_lowpass_resolution: float = Field(
+    initial_lowpass_resolution: Optional[float] = Field(
         default=False,
         description='Initial lowpass resolution (Å)',
     )        
-    GSFSC_split_resolution: float = Field(
+    GSFSC_split_resolution: Optional[float] = Field(
         default=False,
         description='GSFSC split resolution (Å)',
     )  
@@ -110,23 +111,23 @@ class InputModel(BaseModel):
         default=False,
         description='Use random ordering of particles',
     )
-    initial_batchsize: float = Field(
+    initial_batchsize: Optional[float] = Field(
         default=False,
         description='Initial batchsize',
     )      
-    batchsize_epsilon: float = Field(
+    batchsize_epsilon: Optional[float] = Field(
         default=False,
         description='Batchsize epsilon',
     )   
-    batchsize_snrfactor: float = Field(
+    batchsize_snrfactor: Optional[float] = Field(
         default=False,
         description='Batchsize snrfactor',
     )      
-    scale_min_use_start_iter: float = Field(
+    scale_min_use_start_iter: Optional[float] = Field(
         default=False,
         description='Scale min/use start iter',
     )         
-    scale_min_use_start_iter: float = Field(
+    scale_min_use_start_iter: Optional[float] = Field(
         default=False,
         description='Scale min/use start iter',
     )         
@@ -134,15 +135,15 @@ class InputModel(BaseModel):
         default=NoiseModelType.symmetric,
         description='Noise model',
     )    
-    noise_priorw: float = Field(
+    noise_priorw: Optional[float] = Field(
         default=False,
         description='Noise priorw',
     ) 
-    noise_initw: float = Field(
+    noise_initw: Optional[float] = Field(
         default=False,
         description='Noise initw',
     )      
-    noise_initial_sigma_scale: float = Field(
+    noise_initial_sigma_scale: Optional[float] = Field(
         default=False,
         description='Noise initial sigma-scale',
     )        
@@ -150,19 +151,19 @@ class InputModel(BaseModel):
         default=False,
         description='Initialize noise model from images',
     )    
-    dynamic_mask_threshold: float = Field(
+    dynamic_mask_threshold: Optional[float] = Field(
         default=False,
         description='Dynamic mask threshold (0-1)',
     )       
-    dynamic_mask_near: float = Field(
+    dynamic_mask_near: Optional[float] = Field(
         default=False,
         description='Dynamic mask near (Å)',
     )  
-    dynamic_mask_far: float = Field(
+    dynamic_mask_far: Optional[float] = Field(
         default=False,
         description='Dynamic mask far (Å)',
     )      
-    dynamic_mask_start_resolution: float = Field(
+    dynamic_mask_start_resolution: Optional[float] = Field(
         default=False,
         description='Dynamic mask start resolution (A)',
     )             
@@ -174,7 +175,7 @@ class InputModel(BaseModel):
         default=False,
         description='Show plots from intermediate steps',
     )  
-    GPU_batch_size_of_images: float = Field(
+    GPU_batch_size_of_images: Optional[float] = Field(
         default=False,
         description='GPU batch size of images',
     )        
@@ -182,19 +183,19 @@ class InputModel(BaseModel):
         default=False,
         description='Optimize per-particle defocus',
     )                  
-    num_particles_to_plot: float = Field(
+    num_particles_to_plot: Optional[float] = Field(
         default=False,
         description='Num. particles to plot',
     )  
-    minimum_fit_res: float = Field(
+    minimum_fit_res: Optional[float] = Field(
         default=False,
         description='Minimum Fit Res (Å)',
     )  
-    defocus_search_range: float = Field(
+    defocus_search_range: Optional[float] = Field(
         default=False,
         description='Defocus Search Range (Å +/-)',
     )      
-    defocus_GPU_batch_size_of_images: float = Field(
+    defocus_GPU_batch_size_of_images: Optional[float] = Field(
         default=False,
         description='GPU batch size of images',
     )      
@@ -202,15 +203,15 @@ class InputModel(BaseModel):
         default=False,
         description='Optimize per-group CTF params',
     )              
-    num_groups_to_plot: float = Field(
+    num_groups_to_plot: Optional[float] = Field(
         default=False,
         description='Num. groups to plot',
     )       
-    binning_to_apply_to_plots: float = Field(
+    binning_to_apply_to_plots: Optional[float] = Field(
         default=False,
         description='Binning to apply to plots',
     )         
-    global_minimum_fit_res: float = Field(
+    global_minimum_fit_res: Optional[float] = Field(
         default=False,
         description='Global Minimum Fit Res (Å)',
     )
@@ -234,7 +235,7 @@ class InputModel(BaseModel):
         default=False,
         description='Fit Anisotropic Mag',
     ) 
-    global_GPU_batch_size_of_images: float = Field(
+    global_GPU_batch_size_of_images: Optional[float] = Field(
         default=False,
         description='Global GPU batch size of images',
     )                   
@@ -242,21 +243,21 @@ class InputModel(BaseModel):
         default=False,
         description='Do EWS correction',
     )  
-    EWS_curvature_sign: str = Field(
+    EWS_curvature_sign: Optional[str] = Field(
         default=False,
         description='EWS curvature sign',
     )
-    random_seed: float = Field(
+    random_seed: Optional[float] = Field(
         default=False,
         description='Random seed',
     )       
 
 class OutputModel(BaseModel):
-    image_base64_string: str = Field(
+    image_base64_string: Optional[str] = Field(
         default='',
         description='Base64 encoded string of the output image.',
     )
-    image_file_path: str = Field(
+    image_file_path: Optional[str] = Field(
         default='',
         description='Path to the output image file.',
     )

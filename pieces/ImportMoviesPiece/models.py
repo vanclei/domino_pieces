@@ -1,17 +1,18 @@
 from pydantic import BaseModel, Field
+from typing import Optional
 
 class InputModel(BaseModel):
     """
     Import Movies Piece Input Model
     """
 
-    movies_data_path: str = Field(
+    movies_data_path: Optional[str] = Field(
         description="Path to Movie Data Path"
     )
-    gain_reference_path: str = Field(
+    gain_reference_path: Optional[str] = Field(
         description="Gain Reference path"
     )    
-    defect_file_path: str = Field(
+    defect_file_path: Optional[str] = Field(
         description="Defect file path"
     )   
     flip_gain_ref_and_defect_file_in_X: bool = Field(
@@ -22,23 +23,23 @@ class InputModel(BaseModel):
         default=False,
         description='Flip gain ref & defect file in Y?',
     )      
-    rotate_gain_ref: float = Field(
+    rotate_gain_ref: Optional[float] = Field(
         default=False,
         description='Rotate gain ref?',
     )          
-    raw_pixel_size_A: float = Field(
+    raw_pixel_size_A: Optional[float] = Field(
         default=False,
         description='Raw pixel size (A)',
     )    
-    accelerating_voltage_kV: float = Field(
+    accelerating_voltage_kV: Optional[float] = Field(
         default=False,
         description='Accelerating Voltage (kV)',
     )        
-    spherical_aberration_mm: float = Field(
+    spherical_aberration_mm: Optional[float] = Field(
         default=False,
         description='Spherical Abberation (mm)',
     )
-    total_exposure_dose: float = Field(
+    total_exposure_dose: Optional[float] = Field(
         default=False,
         description='Total exposure dose (e/A^2)',
     )       
@@ -50,7 +51,7 @@ class InputModel(BaseModel):
         default=False,
         description='Phase Plate Data',
     )
-    override_exposure_group_id: float = Field(
+    override_exposure_group_id: Optional[float] = Field(
         default=False,
         description='Override Exposure Group ID',
     )
@@ -58,11 +59,11 @@ class InputModel(BaseModel):
         default=False,
         description='Skip Header Check',
     ) 
-    eer_number_of_fractions: float = Field(
+    eer_number_of_fractions: Optional[float] = Field(
         default=False,
         description='EER Number of Fractions',
     )
-    eer_upsampling_factor: float = Field(
+    eer_upsampling_factor: Optional[float] = Field(
         default=False,
         description='EER Upsampling Factor',
     )        
@@ -71,6 +72,6 @@ class OutputModel(BaseModel):
     """
     Sleep Piece Output Model
     """
-    base64_bytes_data: str = Field(
+    base64_bytes_data: Optional[str] = Field(
         description='Output data as base64 encoded string.'
     )

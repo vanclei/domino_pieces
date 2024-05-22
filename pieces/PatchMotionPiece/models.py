@@ -1,5 +1,5 @@
 from pydantic import BaseModel, Field
-
+from typing import Optional
 
 class InputModel(BaseModel):
     """
@@ -16,11 +16,11 @@ class InputModel(BaseModel):
         default=False,
         description='Make motion diagnostic plots',
     )    
-    number_of_movies_to_plot: float = Field(
+    number_of_movies_to_plot: Optional[float] = Field(
         default=False,
         description='Number of movies do plot',
     )       
-    only_process_this_many_movies: float = Field(
+    only_process_this_many_movies: Optional[float] = Field(
         default=False,
         description='Only process this many movies',
     )
@@ -32,19 +32,19 @@ class InputModel(BaseModel):
         default=False,
         description='Low-memory mode',
     )      
-    maximum_alignment_resolution: float = Field(
+    maximum_alignment_resolution: Optional[float] = Field(
         default=False,
         description='Maximum alignment resolution (A)',
     )      
-    b_factor_during_alignment: float = Field(
+    b_factor_during_alignment: Optional[float] = Field(
         default=False,
         description='B-factor during alignment',
     )       
-    start_frame: float = Field(
+    start_frame: Optional[float] = Field(
         default=False,
         description='Start frame (included, 0-based)',
     )      
-    end_frame: float = Field(
+    end_frame: Optional[float] = Field(
         default=False,
         description='End frame (excluded, 0-based)',
     )
@@ -52,18 +52,18 @@ class InputModel(BaseModel):
         default=False,
         description='Output F-crop factor',
     )    
-    override_e_a: float = Field(
+    override_e_a: Optional[float] = Field(
         default=False,
         description='Override e/A^2',
     )    
 
 
 class OutputModel(BaseModel):
-    image_base64_string: str = Field(
+    image_base64_string: Optional[str] = Field(
         default='',
         description='Base64 encoded string of the output image.',
     )
-    image_file_path: str = Field(
+    image_file_path: Optional[str] = Field(
         default='',
         description='Path to the output image file.',
     )

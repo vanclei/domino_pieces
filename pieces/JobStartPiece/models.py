@@ -1,6 +1,6 @@
 from pydantic import BaseModel, Field
 from enum import Enum
-
+from typing import Optional
 
 class PriorityType(str, Enum):
     """
@@ -33,10 +33,10 @@ class InputModel(BaseModel):
         default=PriorityType.standard,
         description='Priority',
     )
-    job_number: str = Field(
+    job_number: Optional[str] = Field(
         description="Job Number"
     )
-    job_name: str = Field(
+    job_name: Optional[str] = Field(
         description="Job Name"
     )
     sample_type: SampleTypeType = Field(
@@ -56,6 +56,6 @@ class OutputModel(BaseModel):
     """
     Sleep Piece Output Model
     """
-    message: str = Field(
+    message: Optional[str] = Field(
         description="Job Start Created"
     )

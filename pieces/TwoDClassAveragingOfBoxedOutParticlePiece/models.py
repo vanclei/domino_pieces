@@ -1,5 +1,5 @@
 from pydantic import BaseModel, Field
-
+from typing import Optional
 
 class InputModel(BaseModel):
     """
@@ -12,7 +12,7 @@ class InputModel(BaseModel):
             "from_upstream": "always"
         }
     )
-    inputs: str = Field(
+    inputs: Optional[str] = Field(
         default=False,
         description='Inputs',
     )
@@ -20,27 +20,27 @@ class InputModel(BaseModel):
         default=False,
         description='Window dataset (real-space)',
     )
-    window_inner_radius: float = Field(
+    window_inner_radius: Optional[float] = Field(
         default=False,
         description='Window inner radius',
     ) 
-    window_outer_radius: float = Field(
+    window_outer_radius: Optional[float] = Field(
         default=False,
         description='Window outer radius',
     )         
-    number_of_2d_classes: float = Field(
+    number_of_2d_classes: Optional[float] = Field(
         default=False,
         description='Number of 2D classes',
     )     
-    maximum_resolution: float = Field(
+    maximum_resolution: Optional[float] = Field(
         default=False,
         description='Maximum resolution (Å)',
     )        
-    maximum_alignment_res: float = Field(
+    maximum_alignment_res: Optional[float] = Field(
         default=False,
         description='Maximum alignment res (Å)',
     )        
-    initial_classification_uncertainty_factor: float = Field(
+    initial_classification_uncertainty_factor: Optional[float] = Field(
         default=False,
         description='Initial classification uncertainty factor',
     ) 
@@ -48,11 +48,11 @@ class InputModel(BaseModel):
         default=False,
         description='Use circular mask on 2D classes',
     )    
-    circular_mask_diameter: float = Field(
+    circular_mask_diameter: Optional[float] = Field(
         default=False,
         description='Circular mask diameter (Å)',
     )     
-    circular_mask_diameter_outer: float = Field(
+    circular_mask_diameter_outer: Optional[float] = Field(
         default=False,
         description='Circular mask diameter outer (Å)',
     )              
@@ -60,7 +60,7 @@ class InputModel(BaseModel):
         default=False,
         description='Re-center 2D classes',
     )
-    re_center_mask_threshold: float = Field(
+    re_center_mask_threshold: Optional[float] = Field(
         default=False,
         description='Re-center mask threshold',
     )
@@ -84,27 +84,27 @@ class InputModel(BaseModel):
         default=False,
         description='CTF flip phases only',
     )
-    randomly_perturb_poses_radians: float = Field(
+    randomly_perturb_poses_radians: Optional[float] = Field(
         default=False,
         description='Randomly perturb poses radians',
     )    
-    number_of_final_full_iterations: float = Field(
+    number_of_final_full_iterations: Optional[float] = Field(
         default=False,
         description='Number of final full iterations',
     )
-    number_of_online_EM_iterations: float = Field(
+    number_of_online_EM_iterations: Optional[float] = Field(
         default=False,
         description='Number of online-EM iterations',
     )
-    batchsize_per_class: float = Field(
+    batchsize_per_class: Optional[float] = Field(
         default=False,
         description='Batchsize per class',
     )      
-    two_D_initial_scale: float = Field(
+    two_D_initial_scale: Optional[float] = Field(
         default=False,
         description='2D initial scales',
     )          
-    two_D_zeropad_factor: float = Field(
+    two_D_zeropad_factor: Optional[float] = Field(
         default=False,
         description='2D zeropad factor',
     )  
@@ -132,11 +132,11 @@ class InputModel(BaseModel):
         default=False,
         description='Use full FRC',
     )
-    iteration_to_start_annealing_sigma: float = Field(
+    iteration_to_start_annealing_sigma: Optional[float] = Field(
         default=False,
         description='Iteration to start annealing sigma',
     )      
-    number_of_iteration_to_anneal_sigma: float = Field(
+    number_of_iteration_to_anneal_sigma: Optional[float] = Field(
         default=False,
         description='Number of iteration to anneal sigma',
     )
@@ -148,17 +148,17 @@ class InputModel(BaseModel):
         default=False,
         description='Show plots from intermediate steps',
     )        
-    random_seed: float = Field(
+    random_seed: Optional[float] = Field(
         default=False,
         description='Random seed',
     )        
 
 class OutputModel(BaseModel):
-    image_base64_string: str = Field(
+    image_base64_string: Optional[str] = Field(
         default='',
         description='Base64 encoded string of the output image.',
     )
-    image_file_path: str = Field(
+    image_file_path: Optional[str] = Field(
         default='',
         description='Path to the output image file.',
     )
