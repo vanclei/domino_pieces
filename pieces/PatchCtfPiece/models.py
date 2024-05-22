@@ -6,16 +6,24 @@ class InputModel(BaseModel):
     Sleep Piece Input Model
     """
 
-    sleep_time: float = Field(
-        default=1,
-        description="Number of seconds to sleep",
+    input_image: str = Field(
+        description='Input image from previous task',
+        json_schema_extra={
+            "from_upstream": "always"
+        }
     )
-
+    run_extraction_without_ctf_values: bool = Field(
+        default=False,
+        description='Run extraction without CTF Values?',
+    )    
 
 class OutputModel(BaseModel):
-    """
-    Sleep Piece Output Model
-    """
-    message: str = Field(
-        description="Sleep piece executed"
+    image_base64_string: str = Field(
+        default='',
+        description='Base64 encoded string of the output image.',
     )
+    image_file_path: str = Field(
+        default='',
+        description='Path to the output image file.',
+    )
+

@@ -6,16 +6,65 @@ class InputModel(BaseModel):
     Sleep Piece Input Model
     """
 
-    sleep_time: float = Field(
-        default=1,
-        description="Number of seconds to sleep",
+    input_image: str = Field(
+        description='Input image from previous task',
+        json_schema_extra={
+            "from_upstream": "always"
+        }
     )
+    make_motion_diagnostics_plots: bool = Field(
+        default=False,
+        description='Make motion diagnostic plots',
+    )    
+    number_of_movies_to_plot: float = Field(
+        default=False,
+        description='Number of movies do plot',
+    )       
+    only_process_this_many_movies: float = Field(
+        default=False,
+        description='Only process this many movies',
+    )
+    reduce_gpu_memory_usage: bool = Field(
+        default=False,
+        description='Reduce GPU memory usage',
+    )     
+    low_memory_mode: bool = Field(
+        default=False,
+        description='Low-memory mode',
+    )      
+    maximum_alignment_resolution: float = Field(
+        default=False,
+        description='Maximum alignment resolution (A)',
+    )      
+    b_factor_during_alignment: float = Field(
+        default=False,
+        description='B-factor during alignment',
+    )       
+    start_frame: float = Field(
+        default=False,
+        description='Start frame (included, 0-based)',
+    )      
+    end_frame: float = Field(
+        default=False,
+        description='End frame (excluded, 0-based)',
+    )
+    output_f_crop_factor: int = Field(
+        default=False,
+        description='Output F-crop factor',
+    )    
+    override_e_a: float = Field(
+        default=False,
+        description='Override e/A^2',
+    )    
 
 
 class OutputModel(BaseModel):
-    """
-    Sleep Piece Output Model
-    """
-    message: str = Field(
-        description="Sleep piece executed"
+    image_base64_string: str = Field(
+        default='',
+        description='Base64 encoded string of the output image.',
     )
+    image_file_path: str = Field(
+        default='',
+        description='Path to the output image file.',
+    )
+

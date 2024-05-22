@@ -16,10 +16,10 @@
             "PatchCtfPiece",
             "PatchMotionPiece",
             "RefineVolumePiece",
-            "AutomatedParcicleBoxingUsingTemplatePiece",
             "JobStartPiece",
             "TwoDClassAveragingPiece",
             "TwoDClassAveragingOfBoxedOutParticlePiece",
+            "AutomatedParticleBoxingUsingTemplatePiece",
             "FinalVolumePiece"
         ],
         "secrets": [],

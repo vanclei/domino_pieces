@@ -34,28 +34,34 @@
         "input_schema": {
             "description": "Sleep Piece Input Model",
             "properties": {
-                "sleep_time": {
-                    "default": 1,
-                    "description": "Number of seconds to sleep",
-                    "title": "Sleep Time",
-                    "type": "number"
-                }
-            },
-            "title": "InputModel",
-            "type": "object"
-        },
-        "output_schema": {
-            "description": "Sleep Piece Output Model",
-            "properties": {
-                "message": {
-                    "description": "Sleep piece executed",
-                    "title": "Message",
+                "input_image": {
+                    "description": "Input image. It should be either a path to a file, or a base64 encoded string.",
+                    "from_upstream": "always",
+                    "title": "Input Image",
                     "type": "string"
                 }
             },
             "required": [
-                "message"
+                "input_image"
             ],
+            "title": "InputModel",
+            "type": "object"
+        },
+        "output_schema": {
+            "properties": {
+                "image_base64_string": {
+                    "default": "",
+                    "description": "Base64 encoded string of the output image.",
+                    "title": "Image Base64 String",
+                    "type": "string"
+                },
+                "image_file_path": {
+                    "default": "",
+                    "description": "Path to the output image file.",
+                    "title": "Image File Path",
+                    "type": "string"
+                }
+            },
             "title": "OutputModel",
             "type": "object"
         },
@@ -97,28 +103,34 @@
         "input_schema": {
             "description": "Sleep Piece Input Model",
             "properties": {
-                "sleep_time": {
-                    "default": 1,
-                    "description": "Number of seconds to sleep",
-                    "title": "Sleep Time",
-                    "type": "number"
-                }
-            },
-            "title": "InputModel",
-            "type": "object"
-        },
-        "output_schema": {
-            "description": "Sleep Piece Output Model",
-            "properties": {
-                "message": {
-                    "description": "Sleep piece executed",
-                    "title": "Message",
+                "input_image": {
+                    "description": "Input image. It should be either a path to a file, or a base64 encoded string.",
+                    "from_upstream": "always",
+                    "title": "Input Image",
                     "type": "string"
                 }
             },
             "required": [
-                "message"
+                "input_image"
             ],
+            "title": "InputModel",
+            "type": "object"
+        },
+        "output_schema": {
+            "properties": {
+                "image_base64_string": {
+                    "default": "",
+                    "description": "Base64 encoded string of the output image.",
+                    "title": "Image Base64 String",
+                    "type": "string"
+                },
+                "image_file_path": {
+                    "default": "",
+                    "description": "Path to the output image file.",
+                    "title": "Image File Path",
+                    "type": "string"
+                }
+            },
             "title": "OutputModel",
             "type": "object"
         },
@@ -160,28 +172,34 @@
         "input_schema": {
             "description": "Sleep Piece Input Model",
             "properties": {
-                "sleep_time": {
-                    "default": 1,
-                    "description": "Number of seconds to sleep",
-                    "title": "Sleep Time",
-                    "type": "number"
-                }
-            },
-            "title": "InputModel",
-            "type": "object"
-        },
-        "output_schema": {
-            "description": "Sleep Piece Output Model",
-            "properties": {
-                "message": {
-                    "description": "Sleep piece executed",
-                    "title": "Message",
+                "input_image": {
+                    "description": "Input image. It should be either a path to a file, or a base64 encoded string.",
+                    "from_upstream": "always",
+                    "title": "Input Image",
                     "type": "string"
                 }
             },
             "required": [
-                "message"
+                "input_image"
             ],
+            "title": "InputModel",
+            "type": "object"
+        },
+        "output_schema": {
+            "properties": {
+                "image_base64_string": {
+                    "default": "",
+                    "description": "Base64 encoded string of the output image.",
+                    "title": "Image Base64 String",
+                    "type": "string"
+                },
+                "image_file_path": {
+                    "default": "",
+                    "description": "Path to the output image file.",
+                    "title": "Image File Path",
+                    "type": "string"
+                }
+            },
             "title": "OutputModel",
             "type": "object"
         },
@@ -221,29 +239,121 @@
             }
         },
         "input_schema": {
-            "description": "Sleep Piece Input Model",
+            "description": "Import Movies Piece Input Model",
             "properties": {
-                "sleep_time": {
-                    "default": 1,
-                    "description": "Number of seconds to sleep",
-                    "title": "Sleep Time",
+                "movies_data_path": {
+                    "description": "Path to Movie Data Path",
+                    "title": "Movies Data Path",
+                    "type": "string"
+                },
+                "gain_reference_path": {
+                    "description": "Gain Reference path",
+                    "title": "Gain Reference Path",
+                    "type": "string"
+                },
+                "defect_file_path": {
+                    "description": "Defect file path",
+                    "title": "Defect File Path",
+                    "type": "string"
+                },
+                "flip_gain_ref_and_defect_file_in_X": {
+                    "default": false,
+                    "description": "Flip gain ref & defect file in X?",
+                    "title": "Flip Gain Ref And Defect File In X",
+                    "type": "boolean"
+                },
+                "flip_gain_ref_and_defect_file_in_Y": {
+                    "default": false,
+                    "description": "Flip gain ref & defect file in Y?",
+                    "title": "Flip Gain Ref And Defect File In Y",
+                    "type": "boolean"
+                },
+                "rotate_gain_ref": {
+                    "default": false,
+                    "description": "Rotate gain ref?",
+                    "title": "Rotate Gain Ref",
+                    "type": "number"
+                },
+                "raw_pixel_size_A": {
+                    "default": false,
+                    "description": "Raw pixel size (A)",
+                    "title": "Raw Pixel Size A",
+                    "type": "number"
+                },
+                "accelerating_voltage_kV": {
+                    "default": false,
+                    "description": "Accelerating Voltage (kV)",
+                    "title": "Accelerating Voltage Kv",
+                    "type": "number"
+                },
+                "spherical_aberration_mm": {
+                    "default": false,
+                    "description": "Spherical Abberation (mm)",
+                    "title": "Spherical Aberration Mm",
+                    "type": "number"
+                },
+                "total_exposure_dose": {
+                    "default": false,
+                    "description": "Total exposure dose (e/A^2)",
+                    "title": "Total Exposure Dose",
+                    "type": "number"
+                },
+                "negative_stain_data": {
+                    "default": false,
+                    "description": "Negative Stain Data",
+                    "title": "Negative Stain Data",
+                    "type": "boolean"
+                },
+                "phase_plate_data": {
+                    "default": false,
+                    "description": "Phase Plate Data",
+                    "title": "Phase Plate Data",
+                    "type": "boolean"
+                },
+                "override_exposure_group_id": {
+                    "default": false,
+                    "description": "Override Exposure Group ID",
+                    "title": "Override Exposure Group Id",
+                    "type": "number"
+                },
+                "skip_header_check": {
+                    "default": false,
+                    "description": "Skip Header Check",
+                    "title": "Skip Header Check",
+                    "type": "boolean"
+                },
+                "eer_number_of_fractions": {
+                    "default": false,
+                    "description": "EER Number of Fractions",
+                    "title": "Eer Number Of Fractions",
+                    "type": "number"
+                },
+                "eer_upsampling_factor": {
+                    "default": false,
+                    "description": "EER Upsampling Factor",
+                    "title": "Eer Upsampling Factor",
                     "type": "number"
                 }
             },
+            "required": [
+                "movies_data_path",
+                "gain_reference_path",
+                "defect_file_path"
+            ],
             "title": "InputModel",
             "type": "object"
         },
         "output_schema": {
             "description": "Sleep Piece Output Model",
             "properties": {
-                "message": {
-                    "description": "Sleep piece executed",
-                    "title": "Message",
+                "base64_bytes_data": {
+                    "description": "Output data as base64 encoded string.",
+                    "title": "Base64 Bytes Data",
                     "type": "string"
                 }
             },
             "required": [
-                "message"
+                "base64_bytes_data"
             ],
             "title": "OutputModel",
             "type": "object"
@@ -286,28 +396,34 @@
         "input_schema": {
             "description": "Sleep Piece Input Model",
             "properties": {
-                "sleep_time": {
-                    "default": 1,
-                    "description": "Number of seconds to sleep",
-                    "title": "Sleep Time",
-                    "type": "number"
-                }
-            },
-            "title": "InputModel",
-            "type": "object"
-        },
-        "output_schema": {
-            "description": "Sleep Piece Output Model",
-            "properties": {
-                "message": {
-                    "description": "Sleep piece executed",
-                    "title": "Message",
+                "input_image": {
+                    "description": "Input image. It should be either a path to a file, or a base64 encoded string.",
+                    "from_upstream": "always",
+                    "title": "Input Image",
                     "type": "string"
                 }
             },
             "required": [
-                "message"
+                "input_image"
             ],
+            "title": "InputModel",
+            "type": "object"
+        },
+        "output_schema": {
+            "properties": {
+                "image_base64_string": {
+                    "default": "",
+                    "description": "Base64 encoded string of the output image.",
+                    "title": "Image Base64 String",
+                    "type": "string"
+                },
+                "image_file_path": {
+                    "default": "",
+                    "description": "Path to the output image file.",
+                    "title": "Image File Path",
+                    "type": "string"
+                }
+            },
             "title": "OutputModel",
             "type": "object"
         },
@@ -349,28 +465,34 @@
         "input_schema": {
             "description": "Sleep Piece Input Model",
             "properties": {
-                "sleep_time": {
-                    "default": 1,
-                    "description": "Number of seconds to sleep",
-                    "title": "Sleep Time",
-                    "type": "number"
-                }
-            },
-            "title": "InputModel",
-            "type": "object"
-        },
-        "output_schema": {
-            "description": "Sleep Piece Output Model",
-            "properties": {
-                "message": {
-                    "description": "Sleep piece executed",
-                    "title": "Message",
+                "input_image": {
+                    "description": "Input image. It should be either a path to a file, or a base64 encoded string.",
+                    "from_upstream": "always",
+                    "title": "Input Image",
                     "type": "string"
                 }
             },
             "required": [
-                "message"
+                "input_image"
             ],
+            "title": "InputModel",
+            "type": "object"
+        },
+        "output_schema": {
+            "properties": {
+                "image_base64_string": {
+                    "default": "",
+                    "description": "Base64 encoded string of the output image.",
+                    "title": "Image Base64 String",
+                    "type": "string"
+                },
+                "image_file_path": {
+                    "default": "",
+                    "description": "Path to the output image file.",
+                    "title": "Image File Path",
+                    "type": "string"
+                }
+            },
             "title": "OutputModel",
             "type": "object"
         },
@@ -412,28 +534,34 @@
         "input_schema": {
             "description": "Sleep Piece Input Model",
             "properties": {
-                "sleep_time": {
-                    "default": 1,
-                    "description": "Number of seconds to sleep",
-                    "title": "Sleep Time",
-                    "type": "number"
-                }
-            },
-            "title": "InputModel",
-            "type": "object"
-        },
-        "output_schema": {
-            "description": "Sleep Piece Output Model",
-            "properties": {
-                "message": {
-                    "description": "Sleep piece executed",
-                    "title": "Message",
+                "input_image": {
+                    "description": "Input image. It should be either a path to a file, or a base64 encoded string.",
+                    "from_upstream": "always",
+                    "title": "Input Image",
                     "type": "string"
                 }
             },
             "required": [
-                "message"
+                "input_image"
             ],
+            "title": "InputModel",
+            "type": "object"
+        },
+        "output_schema": {
+            "properties": {
+                "image_base64_string": {
+                    "default": "",
+                    "description": "Base64 encoded string of the output image.",
+                    "title": "Image Base64 String",
+                    "type": "string"
+                },
+                "image_file_path": {
+                    "default": "",
+                    "description": "Path to the output image file.",
+                    "title": "Image File Path",
+                    "type": "string"
+                }
+            },
             "title": "OutputModel",
             "type": "object"
         },
@@ -475,28 +603,34 @@
         "input_schema": {
             "description": "Sleep Piece Input Model",
             "properties": {
-                "sleep_time": {
-                    "default": 1,
-                    "description": "Number of seconds to sleep",
-                    "title": "Sleep Time",
-                    "type": "number"
-                }
-            },
-            "title": "InputModel",
-            "type": "object"
-        },
-        "output_schema": {
-            "description": "Sleep Piece Output Model",
-            "properties": {
-                "message": {
-                    "description": "Sleep piece executed",
-                    "title": "Message",
+                "input_image": {
+                    "description": "Input image. It should be either a path to a file, or a base64 encoded string.",
+                    "from_upstream": "always",
+                    "title": "Input Image",
                     "type": "string"
                 }
             },
             "required": [
-                "message"
+                "input_image"
             ],
+            "title": "InputModel",
+            "type": "object"
+        },
+        "output_schema": {
+            "properties": {
+                "image_base64_string": {
+                    "default": "",
+                    "description": "Base64 encoded string of the output image.",
+                    "title": "Image Base64 String",
+                    "type": "string"
+                },
+                "image_file_path": {
+                    "default": "",
+                    "description": "Path to the output image file.",
+                    "title": "Image File Path",
+                    "type": "string"
+                }
+            },
             "title": "OutputModel",
             "type": "object"
         },
@@ -538,28 +672,40 @@
         "input_schema": {
             "description": "Sleep Piece Input Model",
             "properties": {
-                "sleep_time": {
-                    "default": 1,
-                    "description": "Number of seconds to sleep",
-                    "title": "Sleep Time",
-                    "type": "number"
+                "input_image": {
+                    "description": "Input image from previous task",
+                    "from_upstream": "always",
+                    "title": "Input Image",
+                    "type": "string"
+                },
+                "run_extraction_without_ctf_values": {
+                    "default": false,
+                    "description": "Run extraction without CTF Values?",
+                    "title": "Run Extraction Without Ctf Values",
+                    "type": "boolean"
                 }
             },
+            "required": [
+                "input_image"
+            ],
             "title": "InputModel",
             "type": "object"
         },
         "output_schema": {
-            "description": "Sleep Piece Output Model",
             "properties": {
-                "message": {
-                    "description": "Sleep piece executed",
-                    "title": "Message",
+                "image_base64_string": {
+                    "default": "",
+                    "description": "Base64 encoded string of the output image.",
+                    "title": "Image Base64 String",
+                    "type": "string"
+                },
+                "image_file_path": {
+                    "default": "",
+                    "description": "Path to the output image file.",
+                    "title": "Image File Path",
                     "type": "string"
                 }
             },
-            "required": [
-                "message"
-            ],
             "title": "OutputModel",
             "type": "object"
         },
@@ -601,28 +747,100 @@
         "input_schema": {
             "description": "Sleep Piece Input Model",
             "properties": {
-                "sleep_time": {
-                    "default": 1,
-                    "description": "Number of seconds to sleep",
-                    "title": "Sleep Time",
+                "input_image": {
+                    "description": "Input image from previous task",
+                    "from_upstream": "always",
+                    "title": "Input Image",
+                    "type": "string"
+                },
+                "make_motion_diagnostics_plots": {
+                    "default": false,
+                    "description": "Make motion diagnostic plots",
+                    "title": "Make Motion Diagnostics Plots",
+                    "type": "boolean"
+                },
+                "number_of_movies_to_plot": {
+                    "default": false,
+                    "description": "Number of movies do plot",
+                    "title": "Number Of Movies To Plot",
+                    "type": "number"
+                },
+                "only_process_this_many_movies": {
+                    "default": false,
+                    "description": "Only process this many movies",
+                    "title": "Only Process This Many Movies",
+                    "type": "number"
+                },
+                "reduce_gpu_memory_usage": {
+                    "default": false,
+                    "description": "Reduce GPU memory usage",
+                    "title": "Reduce Gpu Memory Usage",
+                    "type": "boolean"
+                },
+                "low_memory_mode": {
+                    "default": false,
+                    "description": "Low-memory mode",
+                    "title": "Low Memory Mode",
+                    "type": "boolean"
+                },
+                "maximum_alignment_resolution": {
+                    "default": false,
+                    "description": "Maximum alignment resolution (A)",
+                    "title": "Maximum Alignment Resolution",
+                    "type": "number"
+                },
+                "b_factor_during_alignment": {
+                    "default": false,
+                    "description": "B-factor during alignment",
+                    "title": "B Factor During Alignment",
+                    "type": "number"
+                },
+                "start_frame": {
+                    "default": false,
+                    "description": "Start frame (included, 0-based)",
+                    "title": "Start Frame",
+                    "type": "number"
+                },
+                "end_frame": {
+                    "default": false,
+                    "description": "End frame (excluded, 0-based)",
+                    "title": "End Frame",
+                    "type": "number"
+                },
+                "output_f_crop_factor": {
+                    "default": false,
+                    "description": "Output F-crop factor",
+                    "title": "Output F Crop Factor",
+                    "type": "integer"
+                },
+                "override_e_a": {
+                    "default": false,
+                    "description": "Override e/A^2",
+                    "title": "Override E A",
                     "type": "number"
                 }
             },
+            "required": [
+                "input_image"
+            ],
             "title": "InputModel",
             "type": "object"
         },
         "output_schema": {
-            "description": "Sleep Piece Output Model",
             "properties": {
-                "message": {
-                    "description": "Sleep piece executed",
-                    "title": "Message",
+                "image_base64_string": {
+                    "default": "",
+                    "description": "Base64 encoded string of the output image.",
+                    "title": "Image Base64 String",
+                    "type": "string"
+                },
+                "image_file_path": {
+                    "default": "",
+                    "description": "Path to the output image file.",
+                    "title": "Image File Path",
                     "type": "string"
                 }
             },
-            "required": [
-                "message"
-            ],
             "title": "OutputModel",
             "type": "object"
         },
@@ -664,96 +882,39 @@
         "input_schema": {
             "description": "Sleep Piece Input Model",
             "properties": {
-                "sleep_time": {
-                    "default": 1,
-                    "description": "Number of seconds to sleep",
-                    "title": "Sleep Time",
-                    "type": "number"
-                }
-            },
-            "title": "InputModel",
-            "type": "object"
-        },
-        "output_schema": {
-            "description": "Sleep Piece Output Model",
-            "properties": {
-                "message": {
-                    "description": "Sleep piece executed",
-                    "title": "Message",
+                "input_image": {
+                    "description": "Input image. It should be either a path to a file, or a base64 encoded string.",
+                    "from_upstream": "always",
+                    "title": "Input Image",
                     "type": "string"
                 }
             },
             "required": [
-                "message"
+                "input_image"
             ],
+            "title": "InputModel",
+            "type": "object"
+        },
+        "output_schema": {
+            "properties": {
+                "image_base64_string": {
+                    "default": "",
+                    "description": "Base64 encoded string of the output image.",
+                    "title": "Image Base64 String",
+                    "type": "string"
+                },
+                "image_file_path": {
+                    "default": "",
+                    "description": "Path to the output image file.",
+                    "title": "Image File Path",
+                    "type": "string"
+                }
+            },
             "title": "OutputModel",
             "type": "object"
         },
         "secrets_schema": null,
         "source_url": "https://github.com/vanclei/domino_pieces/tree/main/pieces/RefineVolumePiece"
-    },
-    "AutomatedParcicleBoxingUsingTemplatePiece": {
-        "name": "AutomatedParcicleBoxingUsingTemplatePiece",
-        "dependency": {
-            "dockerfile": null,
-            "requirements_file": "requirements_0.txt"
-        },
-        "tags": [
-            "TAMU"
-        ],
-        "style": {
-            "node_label": "Automated Parcicle Boxing Using Template",
-            "node_type": "default",
-            "node_style": {
-                "backgroundColor": "#ebebeb"
-            },
-            "useIcon": true,
-            "icon_class_name": "fa-solid:database",
-            "iconStyle": {
-                "cursor": "pointer"
-            }
-        },
-        "description": "Automated Parcicle Boxing Using Template",
-        "container_resources": {
-            "requests": {
-                "cpu": 100,
-                "memory": 128
-            },
-            "limits": {
-                "cpu": 500,
-                "memory": 512
-            }
-        },
-        "input_schema": {
-            "description": "Sleep Piece Input Model",
-            "properties": {
-                "sleep_time": {
-                    "default": 1,
-                    "description": "Number of seconds to sleep",
-                    "title": "Sleep Time",
-                    "type": "number"
-                }
-            },
-            "title": "InputModel",
-            "type": "object"
-        },
-        "output_schema": {
-            "description": "Sleep Piece Output Model",
-            "properties": {
-                "message": {
-                    "description": "Sleep piece executed",
-                    "title": "Message",
-                    "type": "string"
-                }
-            },
-            "required": [
-                "message"
-            ],
-            "title": "OutputModel",
-            "type": "object"
-        },
-        "secrets_schema": null,
-        "source_url": "https://github.com/vanclei/domino_pieces/tree/main/pieces/AutomatedParcicleBoxingUsingTemplatePiece"
     },
     "JobStartPiece": {
         "name": "JobStartPiece",
@@ -788,15 +949,92 @@
             }
         },
         "input_schema": {
-            "description": "Sleep Piece Input Model",
-            "properties": {
-                "sleep_time": {
-                    "default": 1,
-                    "description": "Number of seconds to sleep",
-                    "title": "Sleep Time",
-                    "type": "number"
+            "$defs": {
+                "PriorityType": {
+                    "description": "Output type for the result text",
+                    "enum": [
+                        "1 - Urgent",
+                        "2 - High",
+                        "3 - Moderated",
+                        "4 - Minor",
+                        "5 - Standard"
+                    ],
+                    "title": "PriorityType",
+                    "type": "string"
+                },
+                "SampleTypeType": {
+                    "description": "Output type for the result text",
+                    "enum": [
+                        "Type 1",
+                        "Type 2",
+                        "Type 3"
+                    ],
+                    "title": "SampleTypeType",
+                    "type": "string"
+                },
+                "UserType": {
+                    "description": "Output type for the result text",
+                    "enum": [
+                        "Sen A",
+                        "Vanclei P",
+                        "Tran Le"
+                    ],
+                    "title": "UserType",
+                    "type": "string"
                 }
             },
+            "properties": {
+                "priority": {
+                    "allOf": [
+                        {
+                            "$ref": "#/$defs/PriorityType"
+                        }
+                    ],
+                    "default": "5 - Standard",
+                    "description": "Priority"
+                },
+                "job_number": {
+                    "description": "Job Number",
+                    "title": "Job Number",
+                    "type": "string"
+                },
+                "job_name": {
+                    "description": "Job Name",
+                    "title": "Job Name",
+                    "type": "string"
+                },
+                "sample_type": {
+                    "allOf": [
+                        {
+                            "$ref": "#/$defs/SampleTypeType"
+                        }
+                    ],
+                    "default": "Type 3",
+                    "description": "Sample Type"
+                },
+                "project_investigator": {
+                    "allOf": [
+                        {
+                            "$ref": "#/$defs/UserType"
+                        }
+                    ],
+                    "default": "Sen A",
+                    "description": "Projct Investigator"
+                },
+                "project_assignment": {
+                    "allOf": [
+                        {
+                            "$ref": "#/$defs/UserType"
+                        }
+                    ],
+                    "default": "Sen A",
+                    "description": "Projct Assignment"
+                }
+            },
+            "required": [
+                "job_number",
+                "job_name"
+            ],
             "title": "InputModel",
             "type": "object"
         },
@@ -804,7 +1042,7 @@
             "description": "Sleep Piece Output Model",
             "properties": {
                 "message": {
-                    "description": "Sleep piece executed",
+                    "description": "Job Start Created",
                     "title": "Message",
                     "type": "string"
                 }
@@ -853,28 +1091,34 @@
         "input_schema": {
             "description": "Sleep Piece Input Model",
             "properties": {
-                "sleep_time": {
-                    "default": 1,
-                    "description": "Number of seconds to sleep",
-                    "title": "Sleep Time",
-                    "type": "number"
-                }
-            },
-            "title": "InputModel",
-            "type": "object"
-        },
-        "output_schema": {
-            "description": "Sleep Piece Output Model",
-            "properties": {
-                "message": {
-                    "description": "Sleep piece executed",
-                    "title": "Message",
+                "input_image": {
+                    "description": "Input image. It should be either a path to a file, or a base64 encoded string.",
+                    "from_upstream": "always",
+                    "title": "Input Image",
                     "type": "string"
                 }
             },
             "required": [
-                "message"
+                "input_image"
             ],
+            "title": "InputModel",
+            "type": "object"
+        },
+        "output_schema": {
+            "properties": {
+                "image_base64_string": {
+                    "default": "",
+                    "description": "Base64 encoded string of the output image.",
+                    "title": "Image Base64 String",
+                    "type": "string"
+                },
+                "image_file_path": {
+                    "default": "",
+                    "description": "Path to the output image file.",
+                    "title": "Image File Path",
+                    "type": "string"
+                }
+            },
             "title": "OutputModel",
             "type": "object"
         },
@@ -916,33 +1160,318 @@
         "input_schema": {
             "description": "Sleep Piece Input Model",
             "properties": {
-                "sleep_time": {
-                    "default": 1,
-                    "description": "Number of seconds to sleep",
-                    "title": "Sleep Time",
+                "input_image": {
+                    "description": "Input image. It should be either a path to a file, or a base64 encoded string.",
+                    "from_upstream": "always",
+                    "title": "Input Image",
+                    "type": "string"
+                },
+                "inputs": {
+                    "default": false,
+                    "description": "Inputs",
+                    "title": "Inputs",
+                    "type": "string"
+                },
+                "window_dataset_real_space": {
+                    "default": false,
+                    "description": "Window dataset (real-space)",
+                    "title": "Window Dataset Real Space",
+                    "type": "boolean"
+                },
+                "window_inner_radius": {
+                    "default": false,
+                    "description": "Window inner radius",
+                    "title": "Window Inner Radius",
+                    "type": "number"
+                },
+                "window_outer_radius": {
+                    "default": false,
+                    "description": "Window outer radius",
+                    "title": "Window Outer Radius",
+                    "type": "number"
+                },
+                "number_of_2d_classes": {
+                    "default": false,
+                    "description": "Number of 2D classes",
+                    "title": "Number Of 2D Classes",
+                    "type": "number"
+                },
+                "maximum_resolution": {
+                    "default": false,
+                    "description": "Maximum resolution (\u00c5)",
+                    "title": "Maximum Resolution",
+                    "type": "number"
+                },
+                "maximum_alignment_res": {
+                    "default": false,
+                    "description": "Maximum alignment res (\u00c5)",
+                    "title": "Maximum Alignment Res",
+                    "type": "number"
+                },
+                "initial_classification_uncertainty_factor": {
+                    "default": false,
+                    "description": "Initial classification uncertainty factor",
+                    "title": "Initial Classification Uncertainty Factor",
+                    "type": "number"
+                },
+                "use_circular_mask_on_2D_classes": {
+                    "default": false,
+                    "description": "Use circular mask on 2D classes",
+                    "title": "Use Circular Mask On 2D Classes",
+                    "type": "boolean"
+                },
+                "circular_mask_diameter": {
+                    "default": false,
+                    "description": "Circular mask diameter (\u00c5)",
+                    "title": "Circular Mask Diameter",
+                    "type": "number"
+                },
+                "circular_mask_diameter_outer": {
+                    "default": false,
+                    "description": "Circular mask diameter outer (\u00c5)",
+                    "title": "Circular Mask Diameter Outer",
+                    "type": "number"
+                },
+                "re_center_2D_classes": {
+                    "default": false,
+                    "description": "Re-center 2D classes",
+                    "title": "Re Center 2D Classes",
+                    "type": "boolean"
+                },
+                "re_center_mask_threshold": {
+                    "default": false,
+                    "description": "Re-center mask threshold",
+                    "title": "Re Center Mask Threshold",
+                    "type": "number"
+                },
+                "re_center_mask_binary": {
+                    "default": false,
+                    "description": "Re-center mask binary",
+                    "title": "Re Center Mask Binary",
+                    "type": "boolean"
+                },
+                "align_filament_classes_vertically": {
+                    "default": false,
+                    "description": "Align filament classes vertically (BETA)",
+                    "title": "Align Filament Classes Vertically",
+                    "type": "boolean"
+                },
+                "output_filament_in_plane_rotations": {
+                    "default": false,
+                    "description": "Output filament in-plane rotations",
+                    "title": "Output Filament In Plane Rotations",
+                    "type": "boolean"
+                },
+                "force_max_over_poses_shifts": {
+                    "default": false,
+                    "description": "Force Max over poses/shifts",
+                    "title": "Force Max Over Poses Shifts",
+                    "type": "boolean"
+                },
+                "cft_flip_phases_only": {
+                    "default": false,
+                    "description": "CTF flip phases only",
+                    "title": "Cft Flip Phases Only",
+                    "type": "boolean"
+                },
+                "randomly_perturb_poses_radians": {
+                    "default": false,
+                    "description": "Randomly perturb poses radians",
+                    "title": "Randomly Perturb Poses Radians",
+                    "type": "number"
+                },
+                "number_of_final_full_iterations": {
+                    "default": false,
+                    "description": "Number of final full iterations",
+                    "title": "Number Of Final Full Iterations",
+                    "type": "number"
+                },
+                "number_of_online_EM_iterations": {
+                    "default": false,
+                    "description": "Number of online-EM iterations",
+                    "title": "Number Of Online Em Iterations",
+                    "type": "number"
+                },
+                "batchsize_per_class": {
+                    "default": false,
+                    "description": "Batchsize per class",
+                    "title": "Batchsize Per Class",
+                    "type": "number"
+                },
+                "two_D_initial_scale": {
+                    "default": false,
+                    "description": "2D initial scales",
+                    "title": "Two D Initial Scale",
+                    "type": "number"
+                },
+                "two_D_zeropad_factor": {
+                    "default": false,
+                    "description": "2D zeropad factor",
+                    "title": "Two D Zeropad Factor",
+                    "type": "number"
+                },
+                "ignore_DC_from_image_data": {
+                    "default": false,
+                    "description": "Ignore DC from image data",
+                    "title": "Ignore Dc From Image Data",
+                    "type": "boolean"
+                },
+                "min_over_scale_after_first_iteration": {
+                    "default": false,
+                    "description": "Min over scale after first iteration",
+                    "title": "Min Over Scale After First Iteration",
+                    "type": "boolean"
+                },
+                "enforce_non_negativity": {
+                    "default": false,
+                    "description": "Enforce non-negativity",
+                    "title": "Enforce Non Negativity",
+                    "type": "boolean"
+                },
+                "use_clamp_solvent_to_solve_2D_classes": {
+                    "default": false,
+                    "description": "Use clamp-solvent to solve 2D classes",
+                    "title": "Use Clamp Solvent To Solve 2D Classes",
+                    "type": "boolean"
+                },
+                "use_FRC_based_regularizer": {
+                    "default": false,
+                    "description": "Use FRC based regularizer",
+                    "title": "Use Frc Based Regularizer",
+                    "type": "boolean"
+                },
+                "use_full_FRC": {
+                    "default": false,
+                    "description": "Use full FRC",
+                    "title": "Use Full Frc",
+                    "type": "boolean"
+                },
+                "iteration_to_start_annealing_sigma": {
+                    "default": false,
+                    "description": "Iteration to start annealing sigma",
+                    "title": "Iteration To Start Annealing Sigma",
+                    "type": "number"
+                },
+                "number_of_iteration_to_anneal_sigma": {
+                    "default": false,
+                    "description": "Number of iteration to anneal sigma",
+                    "title": "Number Of Iteration To Anneal Sigma",
+                    "type": "number"
+                },
+                "use_white_noise_model": {
+                    "default": false,
+                    "description": "Use white noise model",
+                    "title": "Use White Noise Model",
+                    "type": "boolean"
+                },
+                "show_plots_from_intermediate_steps": {
+                    "default": false,
+                    "description": "Show plots from intermediate steps",
+                    "title": "Show Plots From Intermediate Steps",
+                    "type": "boolean"
+                },
+                "random_seed": {
+                    "default": false,
+                    "description": "Random seed",
+                    "title": "Random Seed",
                     "type": "number"
                 }
             },
+            "required": [
+                "input_image"
+            ],
             "title": "InputModel",
             "type": "object"
         },
         "output_schema": {
-            "description": "Sleep Piece Output Model",
             "properties": {
-                "message": {
-                    "description": "Sleep piece executed",
-                    "title": "Message",
+                "image_base64_string": {
+                    "default": "",
+                    "description": "Base64 encoded string of the output image.",
+                    "title": "Image Base64 String",
+                    "type": "string"
+                },
+                "image_file_path": {
+                    "default": "",
+                    "description": "Path to the output image file.",
+                    "title": "Image File Path",
                     "type": "string"
                 }
             },
-            "required": [
-                "message"
-            ],
             "title": "OutputModel",
             "type": "object"
         },
         "secrets_schema": null,
         "source_url": "https://github.com/vanclei/domino_pieces/tree/main/pieces/TwoDClassAveragingOfBoxedOutParticlePiece"
+    },
+    "AutomatedParticleBoxingUsingTemplatePiece": {
+        "name": "AutomatedParticleBoxingUsingTemplatePiece",
+        "dependency": {
+            "dockerfile": null,
+            "requirements_file": "requirements_0.txt"
+        },
+        "tags": [
+            "TAMU"
+        ],
+        "style": {
+            "node_label": "Automated Particle Boxing Using Template",
+            "node_type": "default",
+            "node_style": {
+                "backgroundColor": "#ebebeb"
+            },
+            "useIcon": true,
+            "icon_class_name": "fa-solid:database",
+            "iconStyle": {
+                "cursor": "pointer"
+            }
+        },
+        "description": "Automated Particle Boxing Using Template",
+        "container_resources": {
+            "requests": {
+                "cpu": 100,
+                "memory": 128
+            },
+            "limits": {
+                "cpu": 500,
+                "memory": 512
+            }
+        },
+        "input_schema": {
+            "description": "Sleep Piece Input Model",
+            "properties": {
+                "input_image": {
+                    "description": "Input image. It should be either a path to a file, or a base64 encoded string.",
+                    "from_upstream": "always",
+                    "title": "Input Image",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "input_image"
+            ],
+            "title": "InputModel",
+            "type": "object"
+        },
+        "output_schema": {
+            "properties": {
+                "image_base64_string": {
+                    "default": "",
+                    "description": "Base64 encoded string of the output image.",
+                    "title": "Image Base64 String",
+                    "type": "string"
+                },
+                "image_file_path": {
+                    "default": "",
+                    "description": "Path to the output image file.",
+                    "title": "Image File Path",
+                    "type": "string"
+                }
+            },
+            "title": "OutputModel",
+            "type": "object"
+        },
+        "secrets_schema": null,
+        "source_url": "https://github.com/vanclei/domino_pieces/tree/main/pieces/AutomatedParticleBoxingUsingTemplatePiece"
     },
     "FinalVolumePiece": {
         "name": "FinalVolumePiece",
@@ -977,30 +1506,387 @@
             }
         },
         "input_schema": {
+            "$defs": {
+                "NoiseModelType": {
+                    "description": "Output type for the result text",
+                    "enum": [
+                        "white",
+                        "symmetric",
+                        "coloured"
+                    ],
+                    "title": "NoiseModelType",
+                    "type": "string"
+                }
+            },
             "description": "Sleep Piece Input Model",
             "properties": {
-                "sleep_time": {
-                    "default": 1,
-                    "description": "Number of seconds to sleep",
-                    "title": "Sleep Time",
+                "input_image": {
+                    "description": "Input image. It should be either a path to a file, or a base64 encoded string.",
+                    "from_upstream": "always",
+                    "title": "Input Image",
+                    "type": "string"
+                },
+                "particles": {
+                    "default": false,
+                    "description": "Particles",
+                    "title": "Particles",
+                    "type": "string"
+                },
+                "volume": {
+                    "default": false,
+                    "description": "Volume",
+                    "title": "Volume",
+                    "type": "string"
+                },
+                "mask": {
+                    "default": false,
+                    "description": "Mask",
+                    "title": "Mask",
+                    "type": "string"
+                },
+                "window_dataset_real_space": {
+                    "default": false,
+                    "description": "Window dataset (real-space)",
+                    "title": "Window Dataset Real Space",
+                    "type": "boolean"
+                },
+                "window_inner_radius": {
+                    "default": false,
+                    "description": "Window inner radius",
+                    "title": "Window Inner Radius",
+                    "type": "number"
+                },
+                "window_outer_radius": {
+                    "default": false,
+                    "description": "Window outer radius",
+                    "title": "Window Outer Radius",
+                    "type": "number"
+                },
+                "symmetry": {
+                    "default": false,
+                    "description": "Symmetry",
+                    "title": "Symmetry",
+                    "type": "string"
+                },
+                "do_symmetry_alignment": {
+                    "default": false,
+                    "description": "Do symmetry alignment",
+                    "title": "Do Symmetry Alignment",
+                    "type": "boolean"
+                },
+                "re_estimate_greyscale_level_of_input_reference": {
+                    "default": false,
+                    "description": "Re-estimate greyscale level of input reference",
+                    "title": "Re Estimate Greyscale Level Of Input Reference",
+                    "type": "boolean"
+                },
+                "number_of_extra_final_passes": {
+                    "default": false,
+                    "description": "Number of extra final passes",
+                    "title": "Number Of Extra Final Passes",
+                    "type": "number"
+                },
+                "maximum_align_resolution": {
+                    "default": false,
+                    "description": "Maximum align resolution (\u00c5)",
+                    "title": "Maximum Align Resolution",
+                    "type": "number"
+                },
+                "initial_lowpass_resolution": {
+                    "default": false,
+                    "description": "Initial lowpass resolution (\u00c5)",
+                    "title": "Initial Lowpass Resolution",
+                    "type": "number"
+                },
+                "GSFSC_split_resolution": {
+                    "default": false,
+                    "description": "GSFSC split resolution (\u00c5)",
+                    "title": "Gsfsc Split Resolution",
+                    "type": "number"
+                },
+                "force_re_do_GS_split": {
+                    "default": false,
+                    "description": "Force re-do GS split",
+                    "title": "Force Re Do Gs Split",
+                    "type": "boolean"
+                },
+                "enforce_non_negativity": {
+                    "default": false,
+                    "description": "Enforce non-negativity",
+                    "title": "Enforce Non Negativity",
+                    "type": "boolean"
+                },
+                "window_structure_in_real_space": {
+                    "default": false,
+                    "description": "Window structure in real space",
+                    "title": "Window Structure In Real Space",
+                    "type": "boolean"
+                },
+                "skip_interpolant_premult": {
+                    "default": false,
+                    "description": "Skip interpolant premult",
+                    "title": "Skip Interpolant Premult",
+                    "type": "boolean"
+                },
+                "ignore_DC_component": {
+                    "default": false,
+                    "description": "Ignore DC component",
+                    "title": "Ignore Dc Component",
+                    "type": "boolean"
+                },
+                "ignore_tilt": {
+                    "default": false,
+                    "description": "Ignore tilt",
+                    "title": "Ignore Tilt",
+                    "type": "boolean"
+                },
+                "ignore_trefoil": {
+                    "default": false,
+                    "description": "Ignore trefoil",
+                    "title": "Ignore Trefoil",
+                    "type": "boolean"
+                },
+                "ignore_tetra": {
+                    "default": false,
+                    "description": "Ignore tetra",
+                    "title": "Ignore Tetra",
+                    "type": "boolean"
+                },
+                "use_random_ordering_of_particles": {
+                    "default": false,
+                    "description": "Use random ordering of particles",
+                    "title": "Use Random Ordering Of Particles",
+                    "type": "boolean"
+                },
+                "initial_batchsize": {
+                    "default": false,
+                    "description": "Initial batchsize",
+                    "title": "Initial Batchsize",
+                    "type": "number"
+                },
+                "batchsize_epsilon": {
+                    "default": false,
+                    "description": "Batchsize epsilon",
+                    "title": "Batchsize Epsilon",
+                    "type": "number"
+                },
+                "batchsize_snrfactor": {
+                    "default": false,
+                    "description": "Batchsize snrfactor",
+                    "title": "Batchsize Snrfactor",
+                    "type": "number"
+                },
+                "scale_min_use_start_iter": {
+                    "default": false,
+                    "description": "Scale min/use start iter",
+                    "title": "Scale Min Use Start Iter",
+                    "type": "number"
+                },
+                "noise_model": {
+                    "allOf": [
+                        {
+                            "$ref": "#/$defs/NoiseModelType"
+                        }
+                    ],
+                    "default": "symmetric",
+                    "description": "Noise model"
+                },
+                "noise_priorw": {
+                    "default": false,
+                    "description": "Noise priorw",
+                    "title": "Noise Priorw",
+                    "type": "number"
+                },
+                "noise_initw": {
+                    "default": false,
+                    "description": "Noise initw",
+                    "title": "Noise Initw",
+                    "type": "number"
+                },
+                "noise_initial_sigma_scale": {
+                    "default": false,
+                    "description": "Noise initial sigma-scale",
+                    "title": "Noise Initial Sigma Scale",
+                    "type": "number"
+                },
+                "initialize_noise_model_from_images": {
+                    "default": false,
+                    "description": "Initialize noise model from images",
+                    "title": "Initialize Noise Model From Images",
+                    "type": "boolean"
+                },
+                "dynamic_mask_threshold": {
+                    "default": false,
+                    "description": "Dynamic mask threshold (0-1)",
+                    "title": "Dynamic Mask Threshold",
+                    "type": "number"
+                },
+                "dynamic_mask_near": {
+                    "default": false,
+                    "description": "Dynamic mask near (\u00c5)",
+                    "title": "Dynamic Mask Near",
+                    "type": "number"
+                },
+                "dynamic_mask_far": {
+                    "default": false,
+                    "description": "Dynamic mask far (\u00c5)",
+                    "title": "Dynamic Mask Far",
+                    "type": "number"
+                },
+                "dynamic_mask_start_resolution": {
+                    "default": false,
+                    "description": "Dynamic mask start resolution (A)",
+                    "title": "Dynamic Mask Start Resolution",
+                    "type": "number"
+                },
+                "dynamic_mask_use_absolute_value": {
+                    "default": false,
+                    "description": "Dynamic mask use absolute value",
+                    "title": "Dynamic Mask Use Absolute Value",
+                    "type": "boolean"
+                },
+                "show_plots_from_intermediate_steps": {
+                    "default": false,
+                    "description": "Show plots from intermediate steps",
+                    "title": "Show Plots From Intermediate Steps",
+                    "type": "boolean"
+                },
+                "GPU_batch_size_of_images": {
+                    "default": false,
+                    "description": "GPU batch size of images",
+                    "title": "Gpu Batch Size Of Images",
+                    "type": "number"
+                },
+                "optimize_per_particle_defocus": {
+                    "default": false,
+                    "description": "Optimize per-particle defocus",
+                    "title": "Optimize Per Particle Defocus",
+                    "type": "boolean"
+                },
+                "num_particles_to_plot": {
+                    "default": false,
+                    "description": "Num. particles to plot",
+                    "title": "Num Particles To Plot",
+                    "type": "number"
+                },
+                "minimum_fit_res": {
+                    "default": false,
+                    "description": "Minimum Fit Res (\u00c5)",
+                    "title": "Minimum Fit Res",
+                    "type": "number"
+                },
+                "defocus_search_range": {
+                    "default": false,
+                    "description": "Defocus Search Range (\u00c5 +/-)",
+                    "title": "Defocus Search Range",
+                    "type": "number"
+                },
+                "defocus_GPU_batch_size_of_images": {
+                    "default": false,
+                    "description": "GPU batch size of images",
+                    "title": "Defocus Gpu Batch Size Of Images",
+                    "type": "number"
+                },
+                "optimize_per_group_CTF_params": {
+                    "default": false,
+                    "description": "Optimize per-group CTF params",
+                    "title": "Optimize Per Group Ctf Params",
+                    "type": "boolean"
+                },
+                "num_groups_to_plot": {
+                    "default": false,
+                    "description": "Num. groups to plot",
+                    "title": "Num Groups To Plot",
+                    "type": "number"
+                },
+                "binning_to_apply_to_plots": {
+                    "default": false,
+                    "description": "Binning to apply to plots",
+                    "title": "Binning To Apply To Plots",
+                    "type": "number"
+                },
+                "global_minimum_fit_res": {
+                    "default": false,
+                    "description": "Global Minimum Fit Res (\u00c5)",
+                    "title": "Global Minimum Fit Res",
+                    "type": "number"
+                },
+                "fit_tilt": {
+                    "default": false,
+                    "description": "Fit Tilt",
+                    "title": "Fit Tilt",
+                    "type": "boolean"
+                },
+                "fit_trefoil": {
+                    "default": false,
+                    "description": "Fit Trefoil",
+                    "title": "Fit Trefoil",
+                    "type": "boolean"
+                },
+                "fit_spherical_aberration": {
+                    "default": false,
+                    "description": "Fit Spherical Aberration",
+                    "title": "Fit Spherical Aberration",
+                    "type": "boolean"
+                },
+                "fit_tetrafoil": {
+                    "default": false,
+                    "description": "Fit Tetrafoil",
+                    "title": "Fit Tetrafoil",
+                    "type": "boolean"
+                },
+                "fit_anisotropic_mag": {
+                    "default": false,
+                    "description": "Fit Anisotropic Mag",
+                    "title": "Fit Anisotropic Mag",
+                    "type": "boolean"
+                },
+                "global_GPU_batch_size_of_images": {
+                    "default": false,
+                    "description": "Global GPU batch size of images",
+                    "title": "Global Gpu Batch Size Of Images",
+                    "type": "number"
+                },
+                "do_EWS_correction": {
+                    "default": false,
+                    "description": "Do EWS correction",
+                    "title": "Do Ews Correction",
+                    "type": "boolean"
+                },
+                "EWS_curvature_sign": {
+                    "default": false,
+                    "description": "EWS curvature sign",
+                    "title": "Ews Curvature Sign",
+                    "type": "string"
+                },
+                "random_seed": {
+                    "default": false,
+                    "description": "Random seed",
+                    "title": "Random Seed",
                     "type": "number"
                 }
             },
+            "required": [
+                "input_image"
+            ],
             "title": "InputModel",
             "type": "object"
         },
         "output_schema": {
-            "description": "Sleep Piece Output Model",
             "properties": {
-                "message": {
-                    "description": "Sleep piece executed",
-                    "title": "Message",
+                "image_base64_string": {
+                    "default": "",
+                    "description": "Base64 encoded string of the output image.",
+                    "title": "Image Base64 String",
+                    "type": "string"
+                },
+                "image_file_path": {
+                    "default": "",
+                    "description": "Path to the output image file.",
+                    "title": "Image File Path",
                     "type": "string"
                 }
             },
-            "required": [
-                "message"
-            ],
             "title": "OutputModel",
             "type": "object"
         },

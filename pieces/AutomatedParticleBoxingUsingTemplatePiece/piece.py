@@ -22,20 +22,20 @@ filter_masks = {
 }
 
 
-class TwoDClassAveragingPiece(BasePiece):
+class AutomatedParticleBoxingUsingTemplatePiece(BasePiece):
 
     def piece_function(self, input_data: InputModel):
 
-        apply_sepia = True
-        apply_black_and_white = True
-        apply_brightness = True
-        apply_darkness = True
-        apply_contrast = True
-        apply_red = False
+        apply_sepia = False
+        apply_black_and_white = False
+        apply_brightness = False
+        apply_darkness = False
+        apply_contrast = False
+        apply_red = True
         apply_green = False
         apply_blue = False
         apply_cool = False
-        apply_warm = True
+        apply_warm = False
 
         all_filters = list()
         if apply_sepia:

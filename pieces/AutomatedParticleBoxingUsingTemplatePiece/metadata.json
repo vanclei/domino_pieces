@@ -1,6 +1,6 @@
 {
-    "name": "AutomatedParcicleBoxingUsingTemplatePiece",
-    "description": "Automated Parcicle Boxing Using Template",
+    "name": "AutomatedParticleBoxingUsingTemplatePiece",
+    "description": "Automated Particle Boxing Using Template",
     "dependency": {
         "requirements_file": "requirements_0.txt"
     },
@@ -18,7 +18,7 @@
         "TAMU"
     ],
     "style": {
-        "node_label": "Automated Parcicle Boxing Using Template",
+        "node_label": "Automated Particle Boxing Using Template",
         "icon_class_name": "fa-solid:database"
     }
 }
