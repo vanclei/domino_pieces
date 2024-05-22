@@ -50,16 +50,30 @@
         "output_schema": {
             "properties": {
                 "image_base64_string": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": "",
                     "description": "Base64 encoded string of the output image.",
-                    "title": "Image Base64 String",
-                    "type": "string"
+                    "title": "Image Base64 String"
                 },
                 "image_file_path": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": "",
                     "description": "Path to the output image file.",
-                    "title": "Image File Path",
-                    "type": "string"
+                    "title": "Image File Path"
                 }
             },
             "title": "OutputModel",
@@ -119,16 +133,30 @@
         "output_schema": {
             "properties": {
                 "image_base64_string": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": "",
                     "description": "Base64 encoded string of the output image.",
-                    "title": "Image Base64 String",
-                    "type": "string"
+                    "title": "Image Base64 String"
                 },
                 "image_file_path": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": "",
                     "description": "Path to the output image file.",
-                    "title": "Image File Path",
-                    "type": "string"
+                    "title": "Image File Path"
                 }
             },
             "title": "OutputModel",
@@ -188,16 +216,30 @@
         "output_schema": {
             "properties": {
                 "image_base64_string": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": "",
                     "description": "Base64 encoded string of the output image.",
-                    "title": "Image Base64 String",
-                    "type": "string"
+                    "title": "Image Base64 String"
                 },
                 "image_file_path": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": "",
                     "description": "Path to the output image file.",
-                    "title": "Image File Path",
-                    "type": "string"
+                    "title": "Image File Path"
                 }
             },
             "title": "OutputModel",
@@ -242,19 +284,40 @@
             "description": "Import Movies Piece Input Model",
             "properties": {
                 "movies_data_path": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "description": "Path to Movie Data Path",
-                    "title": "Movies Data Path",
-                    "type": "string"
+                    "title": "Movies Data Path"
                 },
                 "gain_reference_path": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "description": "Gain Reference path",
-                    "title": "Gain Reference Path",
-                    "type": "string"
+                    "title": "Gain Reference Path"
                 },
                 "defect_file_path": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "description": "Defect file path",
-                    "title": "Defect File Path",
-                    "type": "string"
+                    "title": "Defect File Path"
                 },
                 "flip_gain_ref_and_defect_file_in_X": {
                     "default": false,
@@ -269,34 +332,69 @@
                     "type": "boolean"
                 },
                 "rotate_gain_ref": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "Rotate gain ref?",
-                    "title": "Rotate Gain Ref",
-                    "type": "number"
+                    "title": "Rotate Gain Ref"
                 },
                 "raw_pixel_size_A": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "Raw pixel size (A)",
-                    "title": "Raw Pixel Size A",
-                    "type": "number"
+                    "title": "Raw Pixel Size A"
                 },
                 "accelerating_voltage_kV": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "Accelerating Voltage (kV)",
-                    "title": "Accelerating Voltage Kv",
-                    "type": "number"
+                    "title": "Accelerating Voltage Kv"
                 },
                 "spherical_aberration_mm": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "Spherical Abberation (mm)",
-                    "title": "Spherical Aberration Mm",
-                    "type": "number"
+                    "title": "Spherical Aberration Mm"
                 },
                 "total_exposure_dose": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "Total exposure dose (e/A^2)",
-                    "title": "Total Exposure Dose",
-                    "type": "number"
+                    "title": "Total Exposure Dose"
                 },
                 "negative_stain_data": {
                     "default": false,
@@ -311,10 +409,17 @@
                     "type": "boolean"
                 },
                 "override_exposure_group_id": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "Override Exposure Group ID",
-                    "title": "Override Exposure Group Id",
-                    "type": "number"
+                    "title": "Override Exposure Group Id"
                 },
                 "skip_header_check": {
                     "default": false,
@@ -323,16 +428,30 @@
                     "type": "boolean"
                 },
                 "eer_number_of_fractions": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "EER Number of Fractions",
-                    "title": "Eer Number Of Fractions",
-                    "type": "number"
+                    "title": "Eer Number Of Fractions"
                 },
                 "eer_upsampling_factor": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "EER Upsampling Factor",
-                    "title": "Eer Upsampling Factor",
-                    "type": "number"
+                    "title": "Eer Upsampling Factor"
                 }
             },
             "required": [
@@ -347,9 +466,16 @@
             "description": "Sleep Piece Output Model",
             "properties": {
                 "base64_bytes_data": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "description": "Output data as base64 encoded string.",
-                    "title": "Base64 Bytes Data",
-                    "type": "string"
+                    "title": "Base64 Bytes Data"
                 }
             },
             "required": [
@@ -412,16 +538,30 @@
         "output_schema": {
             "properties": {
                 "image_base64_string": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": "",
                     "description": "Base64 encoded string of the output image.",
-                    "title": "Image Base64 String",
-                    "type": "string"
+                    "title": "Image Base64 String"
                 },
                 "image_file_path": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": "",
                     "description": "Path to the output image file.",
-                    "title": "Image File Path",
-                    "type": "string"
+                    "title": "Image File Path"
                 }
             },
             "title": "OutputModel",
@@ -481,16 +621,30 @@
         "output_schema": {
             "properties": {
                 "image_base64_string": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": "",
                     "description": "Base64 encoded string of the output image.",
-                    "title": "Image Base64 String",
-                    "type": "string"
+                    "title": "Image Base64 String"
                 },
                 "image_file_path": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": "",
                     "description": "Path to the output image file.",
-                    "title": "Image File Path",
-                    "type": "string"
+                    "title": "Image File Path"
                 }
             },
             "title": "OutputModel",
@@ -550,16 +704,30 @@
         "output_schema": {
             "properties": {
                 "image_base64_string": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": "",
                     "description": "Base64 encoded string of the output image.",
-                    "title": "Image Base64 String",
-                    "type": "string"
+                    "title": "Image Base64 String"
                 },
                 "image_file_path": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": "",
                     "description": "Path to the output image file.",
-                    "title": "Image File Path",
-                    "type": "string"
+                    "title": "Image File Path"
                 }
             },
             "title": "OutputModel",
@@ -619,16 +787,30 @@
         "output_schema": {
             "properties": {
                 "image_base64_string": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": "",
                     "description": "Base64 encoded string of the output image.",
-                    "title": "Image Base64 String",
-                    "type": "string"
+                    "title": "Image Base64 String"
                 },
                 "image_file_path": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": "",
                     "description": "Path to the output image file.",
-                    "title": "Image File Path",
-                    "type": "string"
+                    "title": "Image File Path"
                 }
             },
             "title": "OutputModel",
@@ -694,16 +876,30 @@
         "output_schema": {
             "properties": {
                 "image_base64_string": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": "",
                     "description": "Base64 encoded string of the output image.",
-                    "title": "Image Base64 String",
-                    "type": "string"
+                    "title": "Image Base64 String"
                 },
                 "image_file_path": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": "",
                     "description": "Path to the output image file.",
-                    "title": "Image File Path",
-                    "type": "string"
+                    "title": "Image File Path"
                 }
             },
             "title": "OutputModel",
@@ -760,16 +956,30 @@
                     "type": "boolean"
                 },
                 "number_of_movies_to_plot": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "Number of movies do plot",
-                    "title": "Number Of Movies To Plot",
-                    "type": "number"
+                    "title": "Number Of Movies To Plot"
                 },
                 "only_process_this_many_movies": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "Only process this many movies",
-                    "title": "Only Process This Many Movies",
-                    "type": "number"
+                    "title": "Only Process This Many Movies"
                 },
                 "reduce_gpu_memory_usage": {
                     "default": false,
@@ -784,28 +994,56 @@
                     "type": "boolean"
                 },
                 "maximum_alignment_resolution": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "Maximum alignment resolution (A)",
-                    "title": "Maximum Alignment Resolution",
-                    "type": "number"
+                    "title": "Maximum Alignment Resolution"
                 },
                 "b_factor_during_alignment": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "B-factor during alignment",
-                    "title": "B Factor During Alignment",
-                    "type": "number"
+                    "title": "B Factor During Alignment"
                 },
                 "start_frame": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "Start frame (included, 0-based)",
-                    "title": "Start Frame",
-                    "type": "number"
+                    "title": "Start Frame"
                 },
                 "end_frame": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "End frame (excluded, 0-based)",
-                    "title": "End Frame",
-                    "type": "number"
+                    "title": "End Frame"
                 },
                 "output_f_crop_factor": {
                     "default": false,
@@ -814,10 +1052,17 @@
                     "type": "integer"
                 },
                 "override_e_a": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "Override e/A^2",
-                    "title": "Override E A",
-                    "type": "number"
+                    "title": "Override E A"
                 }
             },
             "required": [
@@ -829,16 +1074,30 @@
         "output_schema": {
             "properties": {
                 "image_base64_string": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": "",
                     "description": "Base64 encoded string of the output image.",
-                    "title": "Image Base64 String",
-                    "type": "string"
+                    "title": "Image Base64 String"
                 },
                 "image_file_path": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": "",
                     "description": "Path to the output image file.",
-                    "title": "Image File Path",
-                    "type": "string"
+                    "title": "Image File Path"
                 }
             },
             "title": "OutputModel",
@@ -898,16 +1157,30 @@
         "output_schema": {
             "properties": {
                 "image_base64_string": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": "",
                     "description": "Base64 encoded string of the output image.",
-                    "title": "Image Base64 String",
-                    "type": "string"
+                    "title": "Image Base64 String"
                 },
                 "image_file_path": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": "",
                     "description": "Path to the output image file.",
-                    "title": "Image File Path",
-                    "type": "string"
+                    "title": "Image File Path"
                 }
             },
             "title": "OutputModel",
@@ -994,14 +1267,28 @@
                     "description": "Priority"
                 },
                 "job_number": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "description": "Job Number",
-                    "title": "Job Number",
-                    "type": "string"
+                    "title": "Job Number"
                 },
                 "job_name": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "description": "Job Name",
-                    "title": "Job Name",
-                    "type": "string"
+                    "title": "Job Name"
                 },
                 "sample_type": {
                     "allOf": [
@@ -1042,9 +1329,16 @@
             "description": "Sleep Piece Output Model",
             "properties": {
                 "message": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "description": "Job Start Created",
-                    "title": "Message",
-                    "type": "string"
+                    "title": "Message"
                 }
             },
             "required": [
@@ -1107,16 +1401,30 @@
         "output_schema": {
             "properties": {
                 "image_base64_string": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": "",
                     "description": "Base64 encoded string of the output image.",
-                    "title": "Image Base64 String",
-                    "type": "string"
+                    "title": "Image Base64 String"
                 },
                 "image_file_path": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": "",
                     "description": "Path to the output image file.",
-                    "title": "Image File Path",
-                    "type": "string"
+                    "title": "Image File Path"
                 }
             },
             "title": "OutputModel",
@@ -1167,10 +1475,17 @@
                     "type": "string"
                 },
                 "inputs": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "Inputs",
-                    "title": "Inputs",
-                    "type": "string"
+                    "title": "Inputs"
                 },
                 "window_dataset_real_space": {
                     "default": false,
@@ -1179,40 +1494,82 @@
                     "type": "boolean"
                 },
                 "window_inner_radius": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "Window inner radius",
-                    "title": "Window Inner Radius",
-                    "type": "number"
+                    "title": "Window Inner Radius"
                 },
                 "window_outer_radius": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "Window outer radius",
-                    "title": "Window Outer Radius",
-                    "type": "number"
+                    "title": "Window Outer Radius"
                 },
                 "number_of_2d_classes": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "Number of 2D classes",
-                    "title": "Number Of 2D Classes",
-                    "type": "number"
+                    "title": "Number Of 2D Classes"
                 },
                 "maximum_resolution": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "Maximum resolution (\u00c5)",
-                    "title": "Maximum Resolution",
-                    "type": "number"
+                    "title": "Maximum Resolution"
                 },
                 "maximum_alignment_res": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "Maximum alignment res (\u00c5)",
-                    "title": "Maximum Alignment Res",
-                    "type": "number"
+                    "title": "Maximum Alignment Res"
                 },
                 "initial_classification_uncertainty_factor": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "Initial classification uncertainty factor",
-                    "title": "Initial Classification Uncertainty Factor",
-                    "type": "number"
+                    "title": "Initial Classification Uncertainty Factor"
                 },
                 "use_circular_mask_on_2D_classes": {
                     "default": false,
@@ -1221,16 +1578,30 @@
                     "type": "boolean"
                 },
                 "circular_mask_diameter": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "Circular mask diameter (\u00c5)",
-                    "title": "Circular Mask Diameter",
-                    "type": "number"
+                    "title": "Circular Mask Diameter"
                 },
                 "circular_mask_diameter_outer": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "Circular mask diameter outer (\u00c5)",
-                    "title": "Circular Mask Diameter Outer",
-                    "type": "number"
+                    "title": "Circular Mask Diameter Outer"
                 },
                 "re_center_2D_classes": {
                     "default": false,
@@ -1239,10 +1610,17 @@
                     "type": "boolean"
                 },
                 "re_center_mask_threshold": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "Re-center mask threshold",
-                    "title": "Re Center Mask Threshold",
-                    "type": "number"
+                    "title": "Re Center Mask Threshold"
                 },
                 "re_center_mask_binary": {
                     "default": false,
@@ -1275,40 +1653,82 @@
                     "type": "boolean"
                 },
                 "randomly_perturb_poses_radians": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "Randomly perturb poses radians",
-                    "title": "Randomly Perturb Poses Radians",
-                    "type": "number"
+                    "title": "Randomly Perturb Poses Radians"
                 },
                 "number_of_final_full_iterations": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "Number of final full iterations",
-                    "title": "Number Of Final Full Iterations",
-                    "type": "number"
+                    "title": "Number Of Final Full Iterations"
                 },
                 "number_of_online_EM_iterations": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "Number of online-EM iterations",
-                    "title": "Number Of Online Em Iterations",
-                    "type": "number"
+                    "title": "Number Of Online Em Iterations"
                 },
                 "batchsize_per_class": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "Batchsize per class",
-                    "title": "Batchsize Per Class",
-                    "type": "number"
+                    "title": "Batchsize Per Class"
                 },
                 "two_D_initial_scale": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "2D initial scales",
-                    "title": "Two D Initial Scale",
-                    "type": "number"
+                    "title": "Two D Initial Scale"
                 },
                 "two_D_zeropad_factor": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "2D zeropad factor",
-                    "title": "Two D Zeropad Factor",
-                    "type": "number"
+                    "title": "Two D Zeropad Factor"
                 },
                 "ignore_DC_from_image_data": {
                     "default": false,
@@ -1347,16 +1767,30 @@
                     "type": "boolean"
                 },
                 "iteration_to_start_annealing_sigma": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "Iteration to start annealing sigma",
-                    "title": "Iteration To Start Annealing Sigma",
-                    "type": "number"
+                    "title": "Iteration To Start Annealing Sigma"
                 },
                 "number_of_iteration_to_anneal_sigma": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "Number of iteration to anneal sigma",
-                    "title": "Number Of Iteration To Anneal Sigma",
-                    "type": "number"
+                    "title": "Number Of Iteration To Anneal Sigma"
                 },
                 "use_white_noise_model": {
                     "default": false,
@@ -1371,10 +1805,17 @@
                     "type": "boolean"
                 },
                 "random_seed": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "Random seed",
-                    "title": "Random Seed",
-                    "type": "number"
+                    "title": "Random Seed"
                 }
             },
             "required": [
@@ -1386,16 +1827,30 @@
         "output_schema": {
             "properties": {
                 "image_base64_string": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": "",
                     "description": "Base64 encoded string of the output image.",
-                    "title": "Image Base64 String",
-                    "type": "string"
+                    "title": "Image Base64 String"
                 },
                 "image_file_path": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": "",
                     "description": "Path to the output image file.",
-                    "title": "Image File Path",
-                    "type": "string"
+                    "title": "Image File Path"
                 }
             },
             "title": "OutputModel",
@@ -1455,16 +1910,30 @@
         "output_schema": {
             "properties": {
                 "image_base64_string": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": "",
                     "description": "Base64 encoded string of the output image.",
-                    "title": "Image Base64 String",
-                    "type": "string"
+                    "title": "Image Base64 String"
                 },
                 "image_file_path": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": "",
                     "description": "Path to the output image file.",
-                    "title": "Image File Path",
-                    "type": "string"
+                    "title": "Image File Path"
                 }
             },
             "title": "OutputModel",
@@ -1527,22 +1996,43 @@
                     "type": "string"
                 },
                 "particles": {
+                    "anyOf": [
+                        {
+                            "type": "integer"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "Particles",
-                    "title": "Particles",
-                    "type": "string"
+                    "title": "Particles"
                 },
                 "volume": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "Volume",
-                    "title": "Volume",
-                    "type": "string"
+                    "title": "Volume"
                 },
                 "mask": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "Mask",
-                    "title": "Mask",
-                    "type": "string"
+                    "title": "Mask"
                 },
                 "window_dataset_real_space": {
                     "default": false,
@@ -1551,22 +2041,43 @@
                     "type": "boolean"
                 },
                 "window_inner_radius": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "Window inner radius",
-                    "title": "Window Inner Radius",
-                    "type": "number"
+                    "title": "Window Inner Radius"
                 },
                 "window_outer_radius": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "Window outer radius",
-                    "title": "Window Outer Radius",
-                    "type": "number"
+                    "title": "Window Outer Radius"
                 },
                 "symmetry": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "Symmetry",
-                    "title": "Symmetry",
-                    "type": "string"
+                    "title": "Symmetry"
                 },
                 "do_symmetry_alignment": {
                     "default": false,
@@ -1581,28 +2092,56 @@
                     "type": "boolean"
                 },
                 "number_of_extra_final_passes": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "Number of extra final passes",
-                    "title": "Number Of Extra Final Passes",
-                    "type": "number"
+                    "title": "Number Of Extra Final Passes"
                 },
                 "maximum_align_resolution": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "Maximum align resolution (\u00c5)",
-                    "title": "Maximum Align Resolution",
-                    "type": "number"
+                    "title": "Maximum Align Resolution"
                 },
                 "initial_lowpass_resolution": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "Initial lowpass resolution (\u00c5)",
-                    "title": "Initial Lowpass Resolution",
-                    "type": "number"
+                    "title": "Initial Lowpass Resolution"
                 },
                 "GSFSC_split_resolution": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "GSFSC split resolution (\u00c5)",
-                    "title": "Gsfsc Split Resolution",
-                    "type": "number"
+                    "title": "Gsfsc Split Resolution"
                 },
                 "force_re_do_GS_split": {
                     "default": false,
@@ -1659,28 +2198,56 @@
                     "type": "boolean"
                 },
                 "initial_batchsize": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "Initial batchsize",
-                    "title": "Initial Batchsize",
-                    "type": "number"
+                    "title": "Initial Batchsize"
                 },
                 "batchsize_epsilon": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "Batchsize epsilon",
-                    "title": "Batchsize Epsilon",
-                    "type": "number"
+                    "title": "Batchsize Epsilon"
                 },
                 "batchsize_snrfactor": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "Batchsize snrfactor",
-                    "title": "Batchsize Snrfactor",
-                    "type": "number"
+                    "title": "Batchsize Snrfactor"
                 },
                 "scale_min_use_start_iter": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "Scale min/use start iter",
-                    "title": "Scale Min Use Start Iter",
-                    "type": "number"
+                    "title": "Scale Min Use Start Iter"
                 },
                 "noise_model": {
                     "allOf": [
@@ -1692,22 +2259,43 @@
                     "description": "Noise model"
                 },
                 "noise_priorw": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "Noise priorw",
-                    "title": "Noise Priorw",
-                    "type": "number"
+                    "title": "Noise Priorw"
                 },
                 "noise_initw": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "Noise initw",
-                    "title": "Noise Initw",
-                    "type": "number"
+                    "title": "Noise Initw"
                 },
                 "noise_initial_sigma_scale": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "Noise initial sigma-scale",
-                    "title": "Noise Initial Sigma Scale",
-                    "type": "number"
+                    "title": "Noise Initial Sigma Scale"
                 },
                 "initialize_noise_model_from_images": {
                     "default": false,
@@ -1716,28 +2304,56 @@
                     "type": "boolean"
                 },
                 "dynamic_mask_threshold": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "Dynamic mask threshold (0-1)",
-                    "title": "Dynamic Mask Threshold",
-                    "type": "number"
+                    "title": "Dynamic Mask Threshold"
                 },
                 "dynamic_mask_near": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "Dynamic mask near (\u00c5)",
-                    "title": "Dynamic Mask Near",
-                    "type": "number"
+                    "title": "Dynamic Mask Near"
                 },
                 "dynamic_mask_far": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "Dynamic mask far (\u00c5)",
-                    "title": "Dynamic Mask Far",
-                    "type": "number"
+                    "title": "Dynamic Mask Far"
                 },
                 "dynamic_mask_start_resolution": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "Dynamic mask start resolution (A)",
-                    "title": "Dynamic Mask Start Resolution",
-                    "type": "number"
+                    "title": "Dynamic Mask Start Resolution"
                 },
                 "dynamic_mask_use_absolute_value": {
                     "default": false,
@@ -1752,10 +2368,17 @@
                     "type": "boolean"
                 },
                 "GPU_batch_size_of_images": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "GPU batch size of images",
-                    "title": "Gpu Batch Size Of Images",
-                    "type": "number"
+                    "title": "Gpu Batch Size Of Images"
                 },
                 "optimize_per_particle_defocus": {
                     "default": false,
@@ -1764,28 +2387,56 @@
                     "type": "boolean"
                 },
                 "num_particles_to_plot": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "Num. particles to plot",
-                    "title": "Num Particles To Plot",
-                    "type": "number"
+                    "title": "Num Particles To Plot"
                 },
                 "minimum_fit_res": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "Minimum Fit Res (\u00c5)",
-                    "title": "Minimum Fit Res",
-                    "type": "number"
+                    "title": "Minimum Fit Res"
                 },
                 "defocus_search_range": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "Defocus Search Range (\u00c5 +/-)",
-                    "title": "Defocus Search Range",
-                    "type": "number"
+                    "title": "Defocus Search Range"
                 },
                 "defocus_GPU_batch_size_of_images": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "GPU batch size of images",
-                    "title": "Defocus Gpu Batch Size Of Images",
-                    "type": "number"
+                    "title": "Defocus Gpu Batch Size Of Images"
                 },
                 "optimize_per_group_CTF_params": {
                     "default": false,
@@ -1794,22 +2445,43 @@
                     "type": "boolean"
                 },
                 "num_groups_to_plot": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "Num. groups to plot",
-                    "title": "Num Groups To Plot",
-                    "type": "number"
+                    "title": "Num Groups To Plot"
                 },
                 "binning_to_apply_to_plots": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "Binning to apply to plots",
-                    "title": "Binning To Apply To Plots",
-                    "type": "number"
+                    "title": "Binning To Apply To Plots"
                 },
                 "global_minimum_fit_res": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "Global Minimum Fit Res (\u00c5)",
-                    "title": "Global Minimum Fit Res",
-                    "type": "number"
+                    "title": "Global Minimum Fit Res"
                 },
                 "fit_tilt": {
                     "default": false,
@@ -1842,10 +2514,17 @@
                     "type": "boolean"
                 },
                 "global_GPU_batch_size_of_images": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "Global GPU batch size of images",
-                    "title": "Global Gpu Batch Size Of Images",
-                    "type": "number"
+                    "title": "Global Gpu Batch Size Of Images"
                 },
                 "do_EWS_correction": {
                     "default": false,
@@ -1854,16 +2533,30 @@
                     "type": "boolean"
                 },
                 "EWS_curvature_sign": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "EWS curvature sign",
-                    "title": "Ews Curvature Sign",
-                    "type": "string"
+                    "title": "Ews Curvature Sign"
                 },
                 "random_seed": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "Random seed",
-                    "title": "Random Seed",
-                    "type": "number"
+                    "title": "Random Seed"
                 }
             },
             "required": [
@@ -1875,16 +2568,30 @@
         "output_schema": {
             "properties": {
                 "image_base64_string": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": "",
                     "description": "Base64 encoded string of the output image.",
-                    "title": "Image Base64 String",
-                    "type": "string"
+                    "title": "Image Base64 String"
                 },
                 "image_file_path": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": "",
                     "description": "Path to the output image file.",
-                    "title": "Image File Path",
-                    "type": "string"
+                    "title": "Image File Path"
                 }
             },
             "title": "OutputModel",
