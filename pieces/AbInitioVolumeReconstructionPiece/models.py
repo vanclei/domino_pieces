@@ -1,5 +1,14 @@
 from pydantic import BaseModel, Field
 from typing import Optional
+from enum import Enum
+
+class OutputTypeType(str, Enum):
+    """
+    Output type for the result text
+    """
+    file = "file"
+    base64_string = "base64_string"
+    both = "both"
 
 class InputModel(BaseModel):
     """
@@ -12,6 +21,10 @@ class InputModel(BaseModel):
             "from_upstream": "always"
         }
     )
+    output_type: OutputTypeType = Field(
+        default=OutputTypeType.both,
+        description='Format of the output image. Options are: `file`, `base64_string`, `both`.',
+    )    
 
 
 class OutputModel(BaseModel):

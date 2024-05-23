@@ -1,5 +1,14 @@
 from pydantic import BaseModel, Field
 from typing import Optional
+from enum import Enum
+
+class OutputTypeType(str, Enum):
+    """
+    Output type for the result text
+    """
+    file = "file"
+    base64_string = "base64_string"
+    both = "both"
 
 class InputModel(BaseModel):
     """
@@ -48,7 +57,7 @@ class InputModel(BaseModel):
         default=False,
         description='End frame (excluded, 0-based)',
     )
-    output_f_crop_factor: int = Field(
+    output_f_crop_factor: Optional[float] = Field(
         default=False,
         description='Output F-crop factor',
     )    
@@ -56,6 +65,10 @@ class InputModel(BaseModel):
         default=False,
         description='Override e/A^2',
     )    
+    output_type: OutputTypeType = Field(
+        default=OutputTypeType.both,
+        description='Format of the output image. Options are: `file`, `base64_string`, `both`.',
+    )              
 
 
 class OutputModel(BaseModel):

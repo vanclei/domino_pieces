@@ -32,6 +32,18 @@
             }
         },
         "input_schema": {
+            "$defs": {
+                "OutputTypeType": {
+                    "description": "Output type for the result text",
+                    "enum": [
+                        "file",
+                        "base64_string",
+                        "both"
+                    ],
+                    "title": "OutputTypeType",
+                    "type": "string"
+                }
+            },
             "description": "Sleep Piece Input Model",
             "properties": {
                 "input_image": {
@@ -39,6 +51,15 @@
                     "from_upstream": "always",
                     "title": "Input Image",
                     "type": "string"
+                },
+                "output_type": {
+                    "allOf": [
+                        {
+                            "$ref": "#/$defs/OutputTypeType"
+                        }
+                    ],
+                    "default": "both",
+                    "description": "Format of the output image. Options are: `file`, `base64_string`, `both`."
                 }
             },
             "required": [
@@ -115,6 +136,18 @@
             }
         },
         "input_schema": {
+            "$defs": {
+                "OutputTypeType": {
+                    "description": "Output type for the result text",
+                    "enum": [
+                        "file",
+                        "base64_string",
+                        "both"
+                    ],
+                    "title": "OutputTypeType",
+                    "type": "string"
+                }
+            },
             "description": "Sleep Piece Input Model",
             "properties": {
                 "input_image": {
@@ -122,6 +155,15 @@
                     "from_upstream": "always",
                     "title": "Input Image",
                     "type": "string"
+                },
+                "output_type": {
+                    "allOf": [
+                        {
+                            "$ref": "#/$defs/OutputTypeType"
+                        }
+                    ],
+                    "default": "both",
+                    "description": "Format of the output image. Options are: `file`, `base64_string`, `both`."
                 }
             },
             "required": [
@@ -198,6 +240,18 @@
             }
         },
         "input_schema": {
+            "$defs": {
+                "OutputTypeType": {
+                    "description": "Output type for the result text",
+                    "enum": [
+                        "file",
+                        "base64_string",
+                        "both"
+                    ],
+                    "title": "OutputTypeType",
+                    "type": "string"
+                }
+            },
             "description": "Sleep Piece Input Model",
             "properties": {
                 "input_image": {
@@ -205,6 +259,15 @@
                     "from_upstream": "always",
                     "title": "Input Image",
                     "type": "string"
+                },
+                "output_type": {
+                    "allOf": [
+                        {
+                            "$ref": "#/$defs/OutputTypeType"
+                        }
+                    ],
+                    "default": "both",
+                    "description": "Format of the output image. Options are: `file`, `base64_string`, `both`."
                 }
             },
             "required": [
@@ -520,6 +583,18 @@
             }
         },
         "input_schema": {
+            "$defs": {
+                "OutputTypeType": {
+                    "description": "Output type for the result text",
+                    "enum": [
+                        "file",
+                        "base64_string",
+                        "both"
+                    ],
+                    "title": "OutputTypeType",
+                    "type": "string"
+                }
+            },
             "description": "Sleep Piece Input Model",
             "properties": {
                 "input_image": {
@@ -527,6 +602,15 @@
                     "from_upstream": "always",
                     "title": "Input Image",
                     "type": "string"
+                },
+                "output_type": {
+                    "allOf": [
+                        {
+                            "$ref": "#/$defs/OutputTypeType"
+                        }
+                    ],
+                    "default": "both",
+                    "description": "Format of the output image. Options are: `file`, `base64_string`, `both`."
                 }
             },
             "required": [
@@ -603,6 +687,18 @@
             }
         },
         "input_schema": {
+            "$defs": {
+                "OutputTypeType": {
+                    "description": "Output type for the result text",
+                    "enum": [
+                        "file",
+                        "base64_string",
+                        "both"
+                    ],
+                    "title": "OutputTypeType",
+                    "type": "string"
+                }
+            },
             "description": "Sleep Piece Input Model",
             "properties": {
                 "input_image": {
@@ -610,6 +706,15 @@
                     "from_upstream": "always",
                     "title": "Input Image",
                     "type": "string"
+                },
+                "output_type": {
+                    "allOf": [
+                        {
+                            "$ref": "#/$defs/OutputTypeType"
+                        }
+                    ],
+                    "default": "both",
+                    "description": "Format of the output image. Options are: `file`, `base64_string`, `both`."
                 }
             },
             "required": [
@@ -686,6 +791,18 @@
             }
         },
         "input_schema": {
+            "$defs": {
+                "OutputTypeType": {
+                    "description": "Output type for the result text",
+                    "enum": [
+                        "file",
+                        "base64_string",
+                        "both"
+                    ],
+                    "title": "OutputTypeType",
+                    "type": "string"
+                }
+            },
             "description": "Sleep Piece Input Model",
             "properties": {
                 "input_image": {
@@ -693,6 +810,15 @@
                     "from_upstream": "always",
                     "title": "Input Image",
                     "type": "string"
+                },
+                "output_type": {
+                    "allOf": [
+                        {
+                            "$ref": "#/$defs/OutputTypeType"
+                        }
+                    ],
+                    "default": "both",
+                    "description": "Format of the output image. Options are: `file`, `base64_string`, `both`."
                 }
             },
             "required": [
@@ -769,6 +895,18 @@
             }
         },
         "input_schema": {
+            "$defs": {
+                "OutputTypeType": {
+                    "description": "Output type for the result text",
+                    "enum": [
+                        "file",
+                        "base64_string",
+                        "both"
+                    ],
+                    "title": "OutputTypeType",
+                    "type": "string"
+                }
+            },
             "description": "Sleep Piece Input Model",
             "properties": {
                 "input_image": {
@@ -776,6 +914,15 @@
                     "from_upstream": "always",
                     "title": "Input Image",
                     "type": "string"
+                },
+                "output_type": {
+                    "allOf": [
+                        {
+                            "$ref": "#/$defs/OutputTypeType"
+                        }
+                    ],
+                    "default": "both",
+                    "description": "Format of the output image. Options are: `file`, `base64_string`, `both`."
                 }
             },
             "required": [
@@ -852,6 +999,18 @@
             }
         },
         "input_schema": {
+            "$defs": {
+                "OutputTypeType": {
+                    "description": "Output type for the result text",
+                    "enum": [
+                        "file",
+                        "base64_string",
+                        "both"
+                    ],
+                    "title": "OutputTypeType",
+                    "type": "string"
+                }
+            },
             "description": "Sleep Piece Input Model",
             "properties": {
                 "input_image": {
@@ -865,6 +1024,15 @@
                     "description": "Run extraction without CTF Values?",
                     "title": "Run Extraction Without Ctf Values",
                     "type": "boolean"
+                },
+                "output_type": {
+                    "allOf": [
+                        {
+                            "$ref": "#/$defs/OutputTypeType"
+                        }
+                    ],
+                    "default": "both",
+                    "description": "Format of the output image. Options are: `file`, `base64_string`, `both`."
                 }
             },
             "required": [
@@ -941,6 +1109,18 @@
             }
         },
         "input_schema": {
+            "$defs": {
+                "OutputTypeType": {
+                    "description": "Output type for the result text",
+                    "enum": [
+                        "file",
+                        "base64_string",
+                        "both"
+                    ],
+                    "title": "OutputTypeType",
+                    "type": "string"
+                }
+            },
             "description": "Sleep Piece Input Model",
             "properties": {
                 "input_image": {
@@ -1046,10 +1226,17 @@
                     "title": "End Frame"
                 },
                 "output_f_crop_factor": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "default": false,
                     "description": "Output F-crop factor",
-                    "title": "Output F Crop Factor",
-                    "type": "integer"
+                    "title": "Output F Crop Factor"
                 },
                 "override_e_a": {
                     "anyOf": [
@@ -1063,6 +1250,15 @@
                     "default": false,
                     "description": "Override e/A^2",
                     "title": "Override E A"
+                },
+                "output_type": {
+                    "allOf": [
+                        {
+                            "$ref": "#/$defs/OutputTypeType"
+                        }
+                    ],
+                    "default": "both",
+                    "description": "Format of the output image. Options are: `file`, `base64_string`, `both`."
                 }
             },
             "required": [
@@ -1139,6 +1335,18 @@
             }
         },
         "input_schema": {
+            "$defs": {
+                "OutputTypeType": {
+                    "description": "Output type for the result text",
+                    "enum": [
+                        "file",
+                        "base64_string",
+                        "both"
+                    ],
+                    "title": "OutputTypeType",
+                    "type": "string"
+                }
+            },
             "description": "Sleep Piece Input Model",
             "properties": {
                 "input_image": {
@@ -1146,6 +1354,15 @@
                     "from_upstream": "always",
                     "title": "Input Image",
                     "type": "string"
+                },
+                "output_type": {
+                    "allOf": [
+                        {
+                            "$ref": "#/$defs/OutputTypeType"
+                        }
+                    ],
+                    "default": "both",
+                    "description": "Format of the output image. Options are: `file`, `base64_string`, `both`."
                 }
             },
             "required": [
@@ -1383,6 +1600,18 @@
             }
         },
         "input_schema": {
+            "$defs": {
+                "OutputTypeType": {
+                    "description": "Output type for the result text",
+                    "enum": [
+                        "file",
+                        "base64_string",
+                        "both"
+                    ],
+                    "title": "OutputTypeType",
+                    "type": "string"
+                }
+            },
             "description": "Sleep Piece Input Model",
             "properties": {
                 "input_image": {
@@ -1390,6 +1619,15 @@
                     "from_upstream": "always",
                     "title": "Input Image",
                     "type": "string"
+                },
+                "output_type": {
+                    "allOf": [
+                        {
+                            "$ref": "#/$defs/OutputTypeType"
+                        }
+                    ],
+                    "default": "both",
+                    "description": "Format of the output image. Options are: `file`, `base64_string`, `both`."
                 }
             },
             "required": [
@@ -1466,6 +1704,18 @@
             }
         },
         "input_schema": {
+            "$defs": {
+                "OutputTypeType": {
+                    "description": "Output type for the result text",
+                    "enum": [
+                        "file",
+                        "base64_string",
+                        "both"
+                    ],
+                    "title": "OutputTypeType",
+                    "type": "string"
+                }
+            },
             "description": "Sleep Piece Input Model",
             "properties": {
                 "input_image": {
@@ -1816,6 +2066,15 @@
                     "default": false,
                     "description": "Random seed",
                     "title": "Random Seed"
+                },
+                "output_type": {
+                    "allOf": [
+                        {
+                            "$ref": "#/$defs/OutputTypeType"
+                        }
+                    ],
+                    "default": "both",
+                    "description": "Format of the output image. Options are: `file`, `base64_string`, `both`."
                 }
             },
             "required": [
@@ -1892,6 +2151,18 @@
             }
         },
         "input_schema": {
+            "$defs": {
+                "OutputTypeType": {
+                    "description": "Output type for the result text",
+                    "enum": [
+                        "file",
+                        "base64_string",
+                        "both"
+                    ],
+                    "title": "OutputTypeType",
+                    "type": "string"
+                }
+            },
             "description": "Sleep Piece Input Model",
             "properties": {
                 "input_image": {
@@ -1899,6 +2170,15 @@
                     "from_upstream": "always",
                     "title": "Input Image",
                     "type": "string"
+                },
+                "output_type": {
+                    "allOf": [
+                        {
+                            "$ref": "#/$defs/OutputTypeType"
+                        }
+                    ],
+                    "default": "both",
+                    "description": "Format of the output image. Options are: `file`, `base64_string`, `both`."
                 }
             },
             "required": [
@@ -1984,6 +2264,16 @@
                         "coloured"
                     ],
                     "title": "NoiseModelType",
+                    "type": "string"
+                },
+                "OutputTypeType": {
+                    "description": "Output type for the result text",
+                    "enum": [
+                        "file",
+                        "base64_string",
+                        "both"
+                    ],
+                    "title": "OutputTypeType",
                     "type": "string"
                 }
             },
@@ -2557,6 +2847,15 @@
                     "default": false,
                     "description": "Random seed",
                     "title": "Random Seed"
+                },
+                "output_type": {
+                    "allOf": [
+                        {
+                            "$ref": "#/$defs/OutputTypeType"
+                        }
+                    ],
+                    "default": "both",
+                    "description": "Format of the output image. Options are: `file`, `base64_string`, `both`."
                 }
             },
             "required": [
