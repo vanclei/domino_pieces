@@ -69,9 +69,11 @@ class InputModel(BaseModel):
     )        
 
 class OutputModel(BaseModel):
-    """
-    Sleep Piece Output Model
-    """
-    base64_bytes_data: Optional[str] = Field(
-        description='Output data as base64 encoded string.'
+    image_base64_string: Optional[str] = Field(
+        default='',
+        description='Base64 encoded string of the output image.',
+    )
+    image_file_path: Optional[str] = Field(
+        default='',
+        description='Path to the output image file.',
     )
