@@ -33,7 +33,7 @@ class ImportMoviesPiece(BasePiece):
         
         self.display_result = {
             "file_type": "png",
-            "base64_content": base64_bytes_data,
+            "base64_content": base64_bytes_data.decode('utf-8'),
             "file_path": image_file_path
         }
 
