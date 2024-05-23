@@ -526,9 +526,8 @@
             "type": "object"
         },
         "output_schema": {
-            "description": "Sleep Piece Output Model",
             "properties": {
-                "base64_bytes_data": {
+                "image_base64_string": {
                     "anyOf": [
                         {
                             "type": "string"
@@ -537,13 +536,24 @@
                             "type": "null"
                         }
                     ],
-                    "description": "Output data as base64 encoded string.",
-                    "title": "Base64 Bytes Data"
+                    "default": "",
+                    "description": "Base64 encoded string of the output image.",
+                    "title": "Image Base64 String"
+                },
+                "image_file_path": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": "",
+                    "description": "Path to the output image file.",
+                    "title": "Image File Path"
                 }
             },
-            "required": [
-                "base64_bytes_data"
-            ],
             "title": "OutputModel",
             "type": "object"
         },
