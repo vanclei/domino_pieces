@@ -1,1317 +1,4 @@
 {
-    "AbInitioVolumeReconstructionPiece": {
-        "name": "AbInitioVolumeReconstructionPiece",
-        "dependency": {
-            "dockerfile": null,
-            "requirements_file": "requirements_0.txt"
-        },
-        "tags": [
-            "TAMU"
-        ],
-        "style": {
-            "node_label": "Ab-Initio (Reference) Volume Reconstruction",
-            "node_type": "default",
-            "node_style": {
-                "backgroundColor": "#ebebeb"
-            },
-            "useIcon": true,
-            "icon_class_name": "fa-solid:database",
-            "iconStyle": {
-                "cursor": "pointer"
-            }
-        },
-        "description": "Ab-Initio (Reference) Volume Reconstruction",
-        "container_resources": {
-            "requests": {
-                "cpu": 100,
-                "memory": 128
-            },
-            "limits": {
-                "cpu": 500,
-                "memory": 512
-            }
-        },
-        "input_schema": {
-            "$defs": {
-                "OutputTypeType": {
-                    "description": "Output type for the result text",
-                    "enum": [
-                        "file",
-                        "base64_string",
-                        "both"
-                    ],
-                    "title": "OutputTypeType",
-                    "type": "string"
-                }
-            },
-            "description": "Sleep Piece Input Model",
-            "properties": {
-                "input_image": {
-                    "description": "Input image. It should be either a path to a file, or a base64 encoded string.",
-                    "from_upstream": "always",
-                    "title": "Input Image",
-                    "type": "string"
-                },
-                "output_type": {
-                    "allOf": [
-                        {
-                            "$ref": "#/$defs/OutputTypeType"
-                        }
-                    ],
-                    "default": "both",
-                    "description": "Format of the output image. Options are: `file`, `base64_string`, `both`."
-                }
-            },
-            "required": [
-                "input_image"
-            ],
-            "title": "InputModel",
-            "type": "object"
-        },
-        "output_schema": {
-            "properties": {
-                "image_base64_string": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "default": "",
-                    "description": "Base64 encoded string of the output image.",
-                    "title": "Image Base64 String"
-                },
-                "image_file_path": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "default": "",
-                    "description": "Path to the output image file.",
-                    "title": "Image File Path"
-                }
-            },
-            "title": "OutputModel",
-            "type": "object"
-        },
-        "secrets_schema": null,
-        "source_url": "https://github.com/vanclei/domino_pieces/tree/main/pieces/AbInitioVolumeReconstructionPiece"
-    },
-    "ManualPickerPiece": {
-        "name": "ManualPickerPiece",
-        "dependency": {
-            "dockerfile": null,
-            "requirements_file": "requirements_0.txt"
-        },
-        "tags": [
-            "TAMU"
-        ],
-        "style": {
-            "node_label": "Manual Picker",
-            "node_type": "default",
-            "node_style": {
-                "backgroundColor": "#ebebeb"
-            },
-            "useIcon": true,
-            "icon_class_name": "fa-solid:database",
-            "iconStyle": {
-                "cursor": "pointer"
-            }
-        },
-        "description": "Manual Picker Description",
-        "container_resources": {
-            "requests": {
-                "cpu": 100,
-                "memory": 128
-            },
-            "limits": {
-                "cpu": 500,
-                "memory": 512
-            }
-        },
-        "input_schema": {
-            "$defs": {
-                "OutputTypeType": {
-                    "description": "Output type for the result text",
-                    "enum": [
-                        "file",
-                        "base64_string",
-                        "both"
-                    ],
-                    "title": "OutputTypeType",
-                    "type": "string"
-                }
-            },
-            "description": "Sleep Piece Input Model",
-            "properties": {
-                "input_image": {
-                    "description": "Input image. It should be either a path to a file, or a base64 encoded string.",
-                    "from_upstream": "always",
-                    "title": "Input Image",
-                    "type": "string"
-                },
-                "output_type": {
-                    "allOf": [
-                        {
-                            "$ref": "#/$defs/OutputTypeType"
-                        }
-                    ],
-                    "default": "both",
-                    "description": "Format of the output image. Options are: `file`, `base64_string`, `both`."
-                }
-            },
-            "required": [
-                "input_image"
-            ],
-            "title": "InputModel",
-            "type": "object"
-        },
-        "output_schema": {
-            "properties": {
-                "image_base64_string": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "default": "",
-                    "description": "Base64 encoded string of the output image.",
-                    "title": "Image Base64 String"
-                },
-                "image_file_path": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "default": "",
-                    "description": "Path to the output image file.",
-                    "title": "Image File Path"
-                }
-            },
-            "title": "OutputModel",
-            "type": "object"
-        },
-        "secrets_schema": null,
-        "source_url": "https://github.com/vanclei/domino_pieces/tree/main/pieces/ManualPickerPiece"
-    },
-    "ResolutionEstimationPiece": {
-        "name": "ResolutionEstimationPiece",
-        "dependency": {
-            "dockerfile": null,
-            "requirements_file": "requirements_0.txt"
-        },
-        "tags": [
-            "TAMU"
-        ],
-        "style": {
-            "node_label": "Resolution Estimation (Local and Global)",
-            "node_type": "default",
-            "node_style": {
-                "backgroundColor": "#ebebeb"
-            },
-            "useIcon": true,
-            "icon_class_name": "fa-solid:database",
-            "iconStyle": {
-                "cursor": "pointer"
-            }
-        },
-        "description": "Resolution Estimation (Local and Global)",
-        "container_resources": {
-            "requests": {
-                "cpu": 100,
-                "memory": 128
-            },
-            "limits": {
-                "cpu": 500,
-                "memory": 512
-            }
-        },
-        "input_schema": {
-            "$defs": {
-                "OutputTypeType": {
-                    "description": "Output type for the result text",
-                    "enum": [
-                        "file",
-                        "base64_string",
-                        "both"
-                    ],
-                    "title": "OutputTypeType",
-                    "type": "string"
-                }
-            },
-            "description": "Sleep Piece Input Model",
-            "properties": {
-                "input_image": {
-                    "description": "Input image. It should be either a path to a file, or a base64 encoded string.",
-                    "from_upstream": "always",
-                    "title": "Input Image",
-                    "type": "string"
-                },
-                "output_type": {
-                    "allOf": [
-                        {
-                            "$ref": "#/$defs/OutputTypeType"
-                        }
-                    ],
-                    "default": "both",
-                    "description": "Format of the output image. Options are: `file`, `base64_string`, `both`."
-                }
-            },
-            "required": [
-                "input_image"
-            ],
-            "title": "InputModel",
-            "type": "object"
-        },
-        "output_schema": {
-            "properties": {
-                "image_base64_string": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "default": "",
-                    "description": "Base64 encoded string of the output image.",
-                    "title": "Image Base64 String"
-                },
-                "image_file_path": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "default": "",
-                    "description": "Path to the output image file.",
-                    "title": "Image File Path"
-                }
-            },
-            "title": "OutputModel",
-            "type": "object"
-        },
-        "secrets_schema": null,
-        "source_url": "https://github.com/vanclei/domino_pieces/tree/main/pieces/ResolutionEstimationPiece"
-    },
-    "ImportMoviesPiece": {
-        "name": "ImportMoviesPiece",
-        "dependency": {
-            "dockerfile": null,
-            "requirements_file": "requirements_0.txt"
-        },
-        "tags": [
-            "TAMU"
-        ],
-        "style": {
-            "node_label": "Import Movies",
-            "node_type": "default",
-            "node_style": {
-                "backgroundColor": "#ebebeb"
-            },
-            "useIcon": true,
-            "icon_class_name": "fa-solid:database",
-            "iconStyle": {
-                "cursor": "pointer"
-            }
-        },
-        "description": "This is an example of a simple Domino Piece that sleep for N seconds",
-        "container_resources": {
-            "requests": {
-                "cpu": 100,
-                "memory": 128
-            },
-            "limits": {
-                "cpu": 500,
-                "memory": 512
-            }
-        },
-        "input_schema": {
-            "description": "Import Movies Piece Input Model",
-            "properties": {
-                "movies_data_path": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "description": "Path to Movie Data Path",
-                    "title": "Movies Data Path"
-                },
-                "gain_reference_path": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "description": "Gain Reference path",
-                    "title": "Gain Reference Path"
-                },
-                "defect_file_path": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "description": "Defect file path",
-                    "title": "Defect File Path"
-                },
-                "flip_gain_ref_and_defect_file_in_X": {
-                    "default": false,
-                    "description": "Flip gain ref & defect file in X?",
-                    "title": "Flip Gain Ref And Defect File In X",
-                    "type": "boolean"
-                },
-                "flip_gain_ref_and_defect_file_in_Y": {
-                    "default": false,
-                    "description": "Flip gain ref & defect file in Y?",
-                    "title": "Flip Gain Ref And Defect File In Y",
-                    "type": "boolean"
-                },
-                "rotate_gain_ref": {
-                    "anyOf": [
-                        {
-                            "type": "number"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "default": false,
-                    "description": "Rotate gain ref?",
-                    "title": "Rotate Gain Ref"
-                },
-                "raw_pixel_size_A": {
-                    "anyOf": [
-                        {
-                            "type": "number"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "default": false,
-                    "description": "Raw pixel size (A)",
-                    "title": "Raw Pixel Size A"
-                },
-                "accelerating_voltage_kV": {
-                    "anyOf": [
-                        {
-                            "type": "number"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "default": false,
-                    "description": "Accelerating Voltage (kV)",
-                    "title": "Accelerating Voltage Kv"
-                },
-                "spherical_aberration_mm": {
-                    "anyOf": [
-                        {
-                            "type": "number"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "default": false,
-                    "description": "Spherical Abberation (mm)",
-                    "title": "Spherical Aberration Mm"
-                },
-                "total_exposure_dose": {
-                    "anyOf": [
-                        {
-                            "type": "number"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "default": false,
-                    "description": "Total exposure dose (e/A^2)",
-                    "title": "Total Exposure Dose"
-                },
-                "negative_stain_data": {
-                    "default": false,
-                    "description": "Negative Stain Data",
-                    "title": "Negative Stain Data",
-                    "type": "boolean"
-                },
-                "phase_plate_data": {
-                    "default": false,
-                    "description": "Phase Plate Data",
-                    "title": "Phase Plate Data",
-                    "type": "boolean"
-                },
-                "override_exposure_group_id": {
-                    "anyOf": [
-                        {
-                            "type": "number"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "default": false,
-                    "description": "Override Exposure Group ID",
-                    "title": "Override Exposure Group Id"
-                },
-                "skip_header_check": {
-                    "default": false,
-                    "description": "Skip Header Check",
-                    "title": "Skip Header Check",
-                    "type": "boolean"
-                },
-                "eer_number_of_fractions": {
-                    "anyOf": [
-                        {
-                            "type": "number"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "default": false,
-                    "description": "EER Number of Fractions",
-                    "title": "Eer Number Of Fractions"
-                },
-                "eer_upsampling_factor": {
-                    "anyOf": [
-                        {
-                            "type": "number"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "default": false,
-                    "description": "EER Upsampling Factor",
-                    "title": "Eer Upsampling Factor"
-                }
-            },
-            "required": [
-                "movies_data_path",
-                "gain_reference_path",
-                "defect_file_path"
-            ],
-            "title": "InputModel",
-            "type": "object"
-        },
-        "output_schema": {
-            "properties": {
-                "image_base64_string": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "default": "",
-                    "description": "Base64 encoded string of the output image.",
-                    "title": "Image Base64 String"
-                },
-                "image_file_path": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "default": "",
-                    "description": "Path to the output image file.",
-                    "title": "Image File Path"
-                }
-            },
-            "title": "OutputModel",
-            "type": "object"
-        },
-        "secrets_schema": null,
-        "source_url": "https://github.com/vanclei/domino_pieces/tree/main/pieces/ImportMoviesPiece"
-    },
-    "AdditionalRefinementPiece": {
-        "name": "AdditionalRefinementPiece",
-        "dependency": {
-            "dockerfile": null,
-            "requirements_file": "requirements_0.txt"
-        },
-        "tags": [
-            "TAMU"
-        ],
-        "style": {
-            "node_label": "Aditional Refinement",
-            "node_type": "default",
-            "node_style": {
-                "backgroundColor": "#ebebeb"
-            },
-            "useIcon": true,
-            "icon_class_name": "fa-solid:database",
-            "iconStyle": {
-                "cursor": "pointer"
-            }
-        },
-        "description": "Aditional Refinement Description",
-        "container_resources": {
-            "requests": {
-                "cpu": 100,
-                "memory": 128
-            },
-            "limits": {
-                "cpu": 500,
-                "memory": 512
-            }
-        },
-        "input_schema": {
-            "$defs": {
-                "OutputTypeType": {
-                    "description": "Output type for the result text",
-                    "enum": [
-                        "file",
-                        "base64_string",
-                        "both"
-                    ],
-                    "title": "OutputTypeType",
-                    "type": "string"
-                }
-            },
-            "description": "Sleep Piece Input Model",
-            "properties": {
-                "input_image": {
-                    "description": "Input image. It should be either a path to a file, or a base64 encoded string.",
-                    "from_upstream": "always",
-                    "title": "Input Image",
-                    "type": "string"
-                },
-                "output_type": {
-                    "allOf": [
-                        {
-                            "$ref": "#/$defs/OutputTypeType"
-                        }
-                    ],
-                    "default": "both",
-                    "description": "Format of the output image. Options are: `file`, `base64_string`, `both`."
-                }
-            },
-            "required": [
-                "input_image"
-            ],
-            "title": "InputModel",
-            "type": "object"
-        },
-        "output_schema": {
-            "properties": {
-                "image_base64_string": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "default": "",
-                    "description": "Base64 encoded string of the output image.",
-                    "title": "Image Base64 String"
-                },
-                "image_file_path": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "default": "",
-                    "description": "Path to the output image file.",
-                    "title": "Image File Path"
-                }
-            },
-            "title": "OutputModel",
-            "type": "object"
-        },
-        "secrets_schema": null,
-        "source_url": "https://github.com/vanclei/domino_pieces/tree/main/pieces/AdditionalRefinementPiece"
-    },
-    "ExportMetadataToTextFileAndSubmitToEmdbPiece": {
-        "name": "ExportMetadataToTextFileAndSubmitToEmdbPiece",
-        "dependency": {
-            "dockerfile": null,
-            "requirements_file": "requirements_0.txt"
-        },
-        "tags": [
-            "TAMU"
-        ],
-        "style": {
-            "node_label": "Export Metadata to Text file and Submit to EMDB",
-            "node_type": "default",
-            "node_style": {
-                "backgroundColor": "#ebebeb"
-            },
-            "useIcon": true,
-            "icon_class_name": "fa-solid:database",
-            "iconStyle": {
-                "cursor": "pointer"
-            }
-        },
-        "description": "Export Metadata to Text file and Submit to EMDB Description",
-        "container_resources": {
-            "requests": {
-                "cpu": 100,
-                "memory": 128
-            },
-            "limits": {
-                "cpu": 500,
-                "memory": 512
-            }
-        },
-        "input_schema": {
-            "$defs": {
-                "OutputTypeType": {
-                    "description": "Output type for the result text",
-                    "enum": [
-                        "file",
-                        "base64_string",
-                        "both"
-                    ],
-                    "title": "OutputTypeType",
-                    "type": "string"
-                }
-            },
-            "description": "Sleep Piece Input Model",
-            "properties": {
-                "input_image": {
-                    "description": "Input image. It should be either a path to a file, or a base64 encoded string.",
-                    "from_upstream": "always",
-                    "title": "Input Image",
-                    "type": "string"
-                },
-                "output_type": {
-                    "allOf": [
-                        {
-                            "$ref": "#/$defs/OutputTypeType"
-                        }
-                    ],
-                    "default": "both",
-                    "description": "Format of the output image. Options are: `file`, `base64_string`, `both`."
-                }
-            },
-            "required": [
-                "input_image"
-            ],
-            "title": "InputModel",
-            "type": "object"
-        },
-        "output_schema": {
-            "properties": {
-                "image_base64_string": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "default": "",
-                    "description": "Base64 encoded string of the output image.",
-                    "title": "Image Base64 String"
-                },
-                "image_file_path": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "default": "",
-                    "description": "Path to the output image file.",
-                    "title": "Image File Path"
-                }
-            },
-            "title": "OutputModel",
-            "type": "object"
-        },
-        "secrets_schema": null,
-        "source_url": "https://github.com/vanclei/domino_pieces/tree/main/pieces/ExportMetadataToTextFileAndSubmitToEmdbPiece"
-    },
-    "ManualSelectionOfClassesAndGenerateTemplatePiece": {
-        "name": "ManualSelectionOfClassesAndGenerateTemplatePiece",
-        "dependency": {
-            "dockerfile": null,
-            "requirements_file": "requirements_0.txt"
-        },
-        "tags": [
-            "TAMU"
-        ],
-        "style": {
-            "node_label": "Manual Selection of Classes & Generate Template",
-            "node_type": "default",
-            "node_style": {
-                "backgroundColor": "#ebebeb"
-            },
-            "useIcon": true,
-            "icon_class_name": "fa-solid:database",
-            "iconStyle": {
-                "cursor": "pointer"
-            }
-        },
-        "description": "Manual Selection of Classes & Generate Template Description",
-        "container_resources": {
-            "requests": {
-                "cpu": 100,
-                "memory": 128
-            },
-            "limits": {
-                "cpu": 500,
-                "memory": 512
-            }
-        },
-        "input_schema": {
-            "$defs": {
-                "OutputTypeType": {
-                    "description": "Output type for the result text",
-                    "enum": [
-                        "file",
-                        "base64_string",
-                        "both"
-                    ],
-                    "title": "OutputTypeType",
-                    "type": "string"
-                }
-            },
-            "description": "Sleep Piece Input Model",
-            "properties": {
-                "input_image": {
-                    "description": "Input image. It should be either a path to a file, or a base64 encoded string.",
-                    "from_upstream": "always",
-                    "title": "Input Image",
-                    "type": "string"
-                },
-                "output_type": {
-                    "allOf": [
-                        {
-                            "$ref": "#/$defs/OutputTypeType"
-                        }
-                    ],
-                    "default": "both",
-                    "description": "Format of the output image. Options are: `file`, `base64_string`, `both`."
-                }
-            },
-            "required": [
-                "input_image"
-            ],
-            "title": "InputModel",
-            "type": "object"
-        },
-        "output_schema": {
-            "properties": {
-                "image_base64_string": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "default": "",
-                    "description": "Base64 encoded string of the output image.",
-                    "title": "Image Base64 String"
-                },
-                "image_file_path": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "default": "",
-                    "description": "Path to the output image file.",
-                    "title": "Image File Path"
-                }
-            },
-            "title": "OutputModel",
-            "type": "object"
-        },
-        "secrets_schema": null,
-        "source_url": "https://github.com/vanclei/domino_pieces/tree/main/pieces/ManualSelectionOfClassesAndGenerateTemplatePiece"
-    },
-    "SelectionOfBestTwoDClassAveragePiece": {
-        "name": "SelectionOfBestTwoDClassAveragePiece",
-        "dependency": {
-            "dockerfile": null,
-            "requirements_file": "requirements_0.txt"
-        },
-        "tags": [
-            "TAMU"
-        ],
-        "style": {
-            "node_label": "Selection of Best 2D Class Average",
-            "node_type": "default",
-            "node_style": {
-                "backgroundColor": "#ebebeb"
-            },
-            "useIcon": true,
-            "icon_class_name": "fa-solid:database",
-            "iconStyle": {
-                "cursor": "pointer"
-            }
-        },
-        "description": "Selection of Best 2D Class Average",
-        "container_resources": {
-            "requests": {
-                "cpu": 100,
-                "memory": 128
-            },
-            "limits": {
-                "cpu": 500,
-                "memory": 512
-            }
-        },
-        "input_schema": {
-            "$defs": {
-                "OutputTypeType": {
-                    "description": "Output type for the result text",
-                    "enum": [
-                        "file",
-                        "base64_string",
-                        "both"
-                    ],
-                    "title": "OutputTypeType",
-                    "type": "string"
-                }
-            },
-            "description": "Sleep Piece Input Model",
-            "properties": {
-                "input_image": {
-                    "description": "Input image. It should be either a path to a file, or a base64 encoded string.",
-                    "from_upstream": "always",
-                    "title": "Input Image",
-                    "type": "string"
-                },
-                "output_type": {
-                    "allOf": [
-                        {
-                            "$ref": "#/$defs/OutputTypeType"
-                        }
-                    ],
-                    "default": "both",
-                    "description": "Format of the output image. Options are: `file`, `base64_string`, `both`."
-                }
-            },
-            "required": [
-                "input_image"
-            ],
-            "title": "InputModel",
-            "type": "object"
-        },
-        "output_schema": {
-            "properties": {
-                "image_base64_string": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "default": "",
-                    "description": "Base64 encoded string of the output image.",
-                    "title": "Image Base64 String"
-                },
-                "image_file_path": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "default": "",
-                    "description": "Path to the output image file.",
-                    "title": "Image File Path"
-                }
-            },
-            "title": "OutputModel",
-            "type": "object"
-        },
-        "secrets_schema": null,
-        "source_url": "https://github.com/vanclei/domino_pieces/tree/main/pieces/SelectionOfBestTwoDClassAveragePiece"
-    },
-    "PatchCtfPiece": {
-        "name": "PatchCtfPiece",
-        "dependency": {
-            "dockerfile": null,
-            "requirements_file": "requirements_0.txt"
-        },
-        "tags": [
-            "TAMU"
-        ],
-        "style": {
-            "node_label": "Patch CFT (M)",
-            "node_type": "default",
-            "node_style": {
-                "backgroundColor": "#ebebeb"
-            },
-            "useIcon": true,
-            "icon_class_name": "fa-solid:database",
-            "iconStyle": {
-                "cursor": "pointer"
-            }
-        },
-        "description": "Patch CFT (M)",
-        "container_resources": {
-            "requests": {
-                "cpu": 100,
-                "memory": 128
-            },
-            "limits": {
-                "cpu": 500,
-                "memory": 512
-            }
-        },
-        "input_schema": {
-            "$defs": {
-                "OutputTypeType": {
-                    "description": "Output type for the result text",
-                    "enum": [
-                        "file",
-                        "base64_string",
-                        "both"
-                    ],
-                    "title": "OutputTypeType",
-                    "type": "string"
-                }
-            },
-            "description": "Sleep Piece Input Model",
-            "properties": {
-                "input_image": {
-                    "description": "Input image from previous task",
-                    "from_upstream": "always",
-                    "title": "Input Image",
-                    "type": "string"
-                },
-                "run_extraction_without_ctf_values": {
-                    "default": false,
-                    "description": "Run extraction without CTF Values?",
-                    "title": "Run Extraction Without Ctf Values",
-                    "type": "boolean"
-                },
-                "output_type": {
-                    "allOf": [
-                        {
-                            "$ref": "#/$defs/OutputTypeType"
-                        }
-                    ],
-                    "default": "both",
-                    "description": "Format of the output image. Options are: `file`, `base64_string`, `both`."
-                }
-            },
-            "required": [
-                "input_image"
-            ],
-            "title": "InputModel",
-            "type": "object"
-        },
-        "output_schema": {
-            "properties": {
-                "image_base64_string": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "default": "",
-                    "description": "Base64 encoded string of the output image.",
-                    "title": "Image Base64 String"
-                },
-                "image_file_path": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "default": "",
-                    "description": "Path to the output image file.",
-                    "title": "Image File Path"
-                }
-            },
-            "title": "OutputModel",
-            "type": "object"
-        },
-        "secrets_schema": null,
-        "source_url": "https://github.com/vanclei/domino_pieces/tree/main/pieces/PatchCtfPiece"
-    },
-    "PatchMotionPiece": {
-        "name": "PatchMotionPiece",
-        "dependency": {
-            "dockerfile": null,
-            "requirements_file": "requirements_0.txt"
-        },
-        "tags": [
-            "TAMU"
-        ],
-        "style": {
-            "node_label": "Patch Motion",
-            "node_type": "default",
-            "node_style": {
-                "backgroundColor": "#ebebeb"
-            },
-            "useIcon": true,
-            "icon_class_name": "fa-solid:database",
-            "iconStyle": {
-                "cursor": "pointer"
-            }
-        },
-        "description": "Patch Motion Description",
-        "container_resources": {
-            "requests": {
-                "cpu": 100,
-                "memory": 128
-            },
-            "limits": {
-                "cpu": 500,
-                "memory": 512
-            }
-        },
-        "input_schema": {
-            "$defs": {
-                "OutputTypeType": {
-                    "description": "Output type for the result text",
-                    "enum": [
-                        "file",
-                        "base64_string",
-                        "both"
-                    ],
-                    "title": "OutputTypeType",
-                    "type": "string"
-                }
-            },
-            "description": "Sleep Piece Input Model",
-            "properties": {
-                "input_image": {
-                    "description": "Input image from previous task",
-                    "from_upstream": "always",
-                    "title": "Input Image",
-                    "type": "string"
-                },
-                "make_motion_diagnostics_plots": {
-                    "default": false,
-                    "description": "Make motion diagnostic plots",
-                    "title": "Make Motion Diagnostics Plots",
-                    "type": "boolean"
-                },
-                "number_of_movies_to_plot": {
-                    "anyOf": [
-                        {
-                            "type": "number"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "default": false,
-                    "description": "Number of movies do plot",
-                    "title": "Number Of Movies To Plot"
-                },
-                "only_process_this_many_movies": {
-                    "anyOf": [
-                        {
-                            "type": "number"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "default": false,
-                    "description": "Only process this many movies",
-                    "title": "Only Process This Many Movies"
-                },
-                "reduce_gpu_memory_usage": {
-                    "default": false,
-                    "description": "Reduce GPU memory usage",
-                    "title": "Reduce Gpu Memory Usage",
-                    "type": "boolean"
-                },
-                "low_memory_mode": {
-                    "default": false,
-                    "description": "Low-memory mode",
-                    "title": "Low Memory Mode",
-                    "type": "boolean"
-                },
-                "maximum_alignment_resolution": {
-                    "anyOf": [
-                        {
-                            "type": "number"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "default": false,
-                    "description": "Maximum alignment resolution (A)",
-                    "title": "Maximum Alignment Resolution"
-                },
-                "b_factor_during_alignment": {
-                    "anyOf": [
-                        {
-                            "type": "number"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "default": false,
-                    "description": "B-factor during alignment",
-                    "title": "B Factor During Alignment"
-                },
-                "start_frame": {
-                    "anyOf": [
-                        {
-                            "type": "number"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "default": false,
-                    "description": "Start frame (included, 0-based)",
-                    "title": "Start Frame"
-                },
-                "end_frame": {
-                    "anyOf": [
-                        {
-                            "type": "number"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "default": false,
-                    "description": "End frame (excluded, 0-based)",
-                    "title": "End Frame"
-                },
-                "output_f_crop_factor": {
-                    "anyOf": [
-                        {
-                            "type": "number"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "default": false,
-                    "description": "Output F-crop factor",
-                    "title": "Output F Crop Factor"
-                },
-                "override_e_a": {
-                    "anyOf": [
-                        {
-                            "type": "number"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "default": false,
-                    "description": "Override e/A^2",
-                    "title": "Override E A"
-                },
-                "output_type": {
-                    "allOf": [
-                        {
-                            "$ref": "#/$defs/OutputTypeType"
-                        }
-                    ],
-                    "default": "both",
-                    "description": "Format of the output image. Options are: `file`, `base64_string`, `both`."
-                }
-            },
-            "required": [
-                "input_image"
-            ],
-            "title": "InputModel",
-            "type": "object"
-        },
-        "output_schema": {
-            "properties": {
-                "image_base64_string": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "default": "",
-                    "description": "Base64 encoded string of the output image.",
-                    "title": "Image Base64 String"
-                },
-                "image_file_path": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "default": "",
-                    "description": "Path to the output image file.",
-                    "title": "Image File Path"
-                }
-            },
-            "title": "OutputModel",
-            "type": "object"
-        },
-        "secrets_schema": null,
-        "source_url": "https://github.com/vanclei/domino_pieces/tree/main/pieces/PatchMotionPiece"
-    },
     "RefineVolumePiece": {
         "name": "RefineVolumePiece",
         "dependency": {
@@ -1416,821 +103,94 @@
         "secrets_schema": null,
         "source_url": "https://github.com/vanclei/domino_pieces/tree/main/pieces/RefineVolumePiece"
     },
-    "JobStartPiece": {
-        "name": "JobStartPiece",
+    "HttpRequestPiece": {
+        "name": "HttpRequestPiece",
         "dependency": {
             "dockerfile": null,
             "requirements_file": "requirements_0.txt"
         },
         "tags": [
-            "TAMU"
+            "default",
+            "http",
+            "request"
         ],
         "style": {
-            "node_label": "Job Start",
+            "node_label": "HTTP Request",
             "node_type": "default",
             "node_style": {
                 "backgroundColor": "#ebebeb"
             },
             "useIcon": true,
-            "icon_class_name": "fa-solid:database",
+            "icon_class_name": "material-symbols:send",
             "iconStyle": {
                 "cursor": "pointer"
             }
         },
-        "description": "Job Start Description",
-        "container_resources": {
-            "requests": {
-                "cpu": 100,
-                "memory": 128
-            },
-            "limits": {
-                "cpu": 500,
-                "memory": 512
-            }
-        },
+        "description": "Makes a HTTP request to a given URL.",
         "input_schema": {
             "$defs": {
-                "PriorityType": {
-                    "description": "Output type for the result text",
+                "MethodTypes": {
                     "enum": [
-                        "1 - Urgent",
-                        "2 - High",
-                        "3 - Moderated",
-                        "4 - Minor",
-                        "5 - Standard"
+                        "GET",
+                        "POST",
+                        "PUT",
+                        "DELETE"
                     ],
-                    "title": "PriorityType",
-                    "type": "string"
-                },
-                "SampleTypeType": {
-                    "description": "Output type for the result text",
-                    "enum": [
-                        "Type 1",
-                        "Type 2",
-                        "Type 3"
-                    ],
-                    "title": "SampleTypeType",
-                    "type": "string"
-                },
-                "UserType": {
-                    "description": "Output type for the result text",
-                    "enum": [
-                        "Sen A",
-                        "Vanclei P",
-                        "Tran Le"
-                    ],
-                    "title": "UserType",
+                    "title": "MethodTypes",
                     "type": "string"
                 }
             },
             "properties": {
-                "priority": {
-                    "allOf": [
-                        {
-                            "$ref": "#/$defs/PriorityType"
-                        }
-                    ],
-                    "default": "5 - Standard",
-                    "description": "Priority"
-                },
-                "job_number": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "description": "Job Number",
-                    "title": "Job Number"
-                },
-                "job_name": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "description": "Job Name",
-                    "title": "Job Name"
-                },
-                "sample_type": {
-                    "allOf": [
-                        {
-                            "$ref": "#/$defs/SampleTypeType"
-                        }
-                    ],
-                    "default": "Type 3",
-                    "description": "Sample Type"
-                },
-                "project_investigator": {
-                    "allOf": [
-                        {
-                            "$ref": "#/$defs/UserType"
-                        }
-                    ],
-                    "default": "Sen A",
-                    "description": "Projct Investigator"
-                },
-                "project_assignment": {
-                    "allOf": [
-                        {
-                            "$ref": "#/$defs/UserType"
-                        }
-                    ],
-                    "default": "Sen A",
-                    "description": "Projct Assignment"
-                }
-            },
-            "required": [
-                "job_number",
-                "job_name"
-            ],
-            "title": "InputModel",
-            "type": "object"
-        },
-        "output_schema": {
-            "description": "Sleep Piece Output Model",
-            "properties": {
-                "message": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "description": "Job Start Created",
-                    "title": "Message"
-                }
-            },
-            "required": [
-                "message"
-            ],
-            "title": "OutputModel",
-            "type": "object"
-        },
-        "secrets_schema": null,
-        "source_url": "https://github.com/vanclei/domino_pieces/tree/main/pieces/JobStartPiece"
-    },
-    "TwoDClassAveragingPiece": {
-        "name": "TwoDClassAveragingPiece",
-        "dependency": {
-            "dockerfile": null,
-            "requirements_file": "requirements_0.txt"
-        },
-        "tags": [
-            "TAMU"
-        ],
-        "style": {
-            "node_label": "2D Class Averaging",
-            "node_type": "default",
-            "node_style": {
-                "backgroundColor": "#ebebeb"
-            },
-            "useIcon": true,
-            "icon_class_name": "fa-solid:database",
-            "iconStyle": {
-                "cursor": "pointer"
-            }
-        },
-        "description": "2D Class Averaging Description",
-        "container_resources": {
-            "requests": {
-                "cpu": 100,
-                "memory": 128
-            },
-            "limits": {
-                "cpu": 500,
-                "memory": 512
-            }
-        },
-        "input_schema": {
-            "$defs": {
-                "OutputTypeType": {
-                    "description": "Output type for the result text",
-                    "enum": [
-                        "file",
-                        "base64_string",
-                        "both"
-                    ],
-                    "title": "OutputTypeType",
-                    "type": "string"
-                }
-            },
-            "description": "Sleep Piece Input Model",
-            "properties": {
-                "input_image": {
-                    "description": "Input image. It should be either a path to a file, or a base64 encoded string.",
-                    "from_upstream": "always",
-                    "title": "Input Image",
+                "url": {
+                    "description": "URL to make a request to.",
+                    "title": "Url",
                     "type": "string"
                 },
-                "output_type": {
+                "method": {
                     "allOf": [
                         {
-                            "$ref": "#/$defs/OutputTypeType"
+                            "$ref": "#/$defs/MethodTypes"
                         }
                     ],
-                    "default": "both",
-                    "description": "Format of the output image. Options are: `file`, `base64_string`, `both`."
+                    "default": "GET",
+                    "description": "HTTP method to use."
+                },
+                "bearer_token": {
+                    "default": null,
+                    "description": "Bearer token to use for authentication.",
+                    "title": "Bearer Token",
+                    "type": "string"
+                },
+                "body_json_data": {
+                    "default": "{\n    \"key_1\": \"value_1\",\n    \"key_2\": \"value_2\"\n}\n",
+                    "description": "JSON data to send in the request body.",
+                    "title": "Body Json Data",
+                    "type": "string",
+                    "widget": "codeeditor-json"
                 }
             },
             "required": [
-                "input_image"
+                "url"
             ],
             "title": "InputModel",
             "type": "object"
         },
         "output_schema": {
             "properties": {
-                "image_base64_string": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "default": "",
-                    "description": "Base64 encoded string of the output image.",
-                    "title": "Image Base64 String"
-                },
-                "image_file_path": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "default": "",
-                    "description": "Path to the output image file.",
-                    "title": "Image File Path"
-                }
-            },
-            "title": "OutputModel",
-            "type": "object"
-        },
-        "secrets_schema": null,
-        "source_url": "https://github.com/vanclei/domino_pieces/tree/main/pieces/TwoDClassAveragingPiece"
-    },
-    "TwoDClassAveragingOfBoxedOutParticlePiece": {
-        "name": "TwoDClassAveragingOfBoxedOutParticlePiece",
-        "dependency": {
-            "dockerfile": null,
-            "requirements_file": "requirements_0.txt"
-        },
-        "tags": [
-            "TAMU"
-        ],
-        "style": {
-            "node_label": "2D Class Averaging of Boxed Out Particle",
-            "node_type": "default",
-            "node_style": {
-                "backgroundColor": "#ebebeb"
-            },
-            "useIcon": true,
-            "icon_class_name": "fa-solid:database",
-            "iconStyle": {
-                "cursor": "pointer"
-            }
-        },
-        "description": "2D Class Averaging of Boxed Out Particle Description",
-        "container_resources": {
-            "requests": {
-                "cpu": 100,
-                "memory": 128
-            },
-            "limits": {
-                "cpu": 500,
-                "memory": 512
-            }
-        },
-        "input_schema": {
-            "$defs": {
-                "OutputTypeType": {
-                    "description": "Output type for the result text",
-                    "enum": [
-                        "file",
-                        "base64_string",
-                        "both"
-                    ],
-                    "title": "OutputTypeType",
+                "base64_bytes_data": {
+                    "description": "Output data as base64 encoded string.",
+                    "title": "Base64 Bytes Data",
                     "type": "string"
-                }
-            },
-            "description": "Sleep Piece Input Model",
-            "properties": {
-                "input_image": {
-                    "description": "Input image. It should be either a path to a file, or a base64 encoded string.",
-                    "from_upstream": "always",
-                    "title": "Input Image",
-                    "type": "string"
-                },
-                "inputs": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "default": false,
-                    "description": "Inputs",
-                    "title": "Inputs"
-                },
-                "window_dataset_real_space": {
-                    "default": false,
-                    "description": "Window dataset (real-space)",
-                    "title": "Window Dataset Real Space",
-                    "type": "boolean"
-                },
-                "window_inner_radius": {
-                    "anyOf": [
-                        {
-                            "type": "number"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "default": false,
-                    "description": "Window inner radius",
-                    "title": "Window Inner Radius"
-                },
-                "window_outer_radius": {
-                    "anyOf": [
-                        {
-                            "type": "number"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "default": false,
-                    "description": "Window outer radius",
-                    "title": "Window Outer Radius"
-                },
-                "number_of_2d_classes": {
-                    "anyOf": [
-                        {
-                            "type": "number"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "default": false,
-                    "description": "Number of 2D classes",
-                    "title": "Number Of 2D Classes"
-                },
-                "maximum_resolution": {
-                    "anyOf": [
-                        {
-                            "type": "number"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "default": false,
-                    "description": "Maximum resolution (\u00c5)",
-                    "title": "Maximum Resolution"
-                },
-                "maximum_alignment_res": {
-                    "anyOf": [
-                        {
-                            "type": "number"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "default": false,
-                    "description": "Maximum alignment res (\u00c5)",
-                    "title": "Maximum Alignment Res"
-                },
-                "initial_classification_uncertainty_factor": {
-                    "anyOf": [
-                        {
-                            "type": "number"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "default": false,
-                    "description": "Initial classification uncertainty factor",
-                    "title": "Initial Classification Uncertainty Factor"
-                },
-                "use_circular_mask_on_2D_classes": {
-                    "default": false,
-                    "description": "Use circular mask on 2D classes",
-                    "title": "Use Circular Mask On 2D Classes",
-                    "type": "boolean"
-                },
-                "circular_mask_diameter": {
-                    "anyOf": [
-                        {
-                            "type": "number"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "default": false,
-                    "description": "Circular mask diameter (\u00c5)",
-                    "title": "Circular Mask Diameter"
-                },
-                "circular_mask_diameter_outer": {
-                    "anyOf": [
-                        {
-                            "type": "number"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "default": false,
-                    "description": "Circular mask diameter outer (\u00c5)",
-                    "title": "Circular Mask Diameter Outer"
-                },
-                "re_center_2D_classes": {
-                    "default": false,
-                    "description": "Re-center 2D classes",
-                    "title": "Re Center 2D Classes",
-                    "type": "boolean"
-                },
-                "re_center_mask_threshold": {
-                    "anyOf": [
-                        {
-                            "type": "number"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "default": false,
-                    "description": "Re-center mask threshold",
-                    "title": "Re Center Mask Threshold"
-                },
-                "re_center_mask_binary": {
-                    "default": false,
-                    "description": "Re-center mask binary",
-                    "title": "Re Center Mask Binary",
-                    "type": "boolean"
-                },
-                "align_filament_classes_vertically": {
-                    "default": false,
-                    "description": "Align filament classes vertically (BETA)",
-                    "title": "Align Filament Classes Vertically",
-                    "type": "boolean"
-                },
-                "output_filament_in_plane_rotations": {
-                    "default": false,
-                    "description": "Output filament in-plane rotations",
-                    "title": "Output Filament In Plane Rotations",
-                    "type": "boolean"
-                },
-                "force_max_over_poses_shifts": {
-                    "default": false,
-                    "description": "Force Max over poses/shifts",
-                    "title": "Force Max Over Poses Shifts",
-                    "type": "boolean"
-                },
-                "cft_flip_phases_only": {
-                    "default": false,
-                    "description": "CTF flip phases only",
-                    "title": "Cft Flip Phases Only",
-                    "type": "boolean"
-                },
-                "randomly_perturb_poses_radians": {
-                    "anyOf": [
-                        {
-                            "type": "number"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "default": false,
-                    "description": "Randomly perturb poses radians",
-                    "title": "Randomly Perturb Poses Radians"
-                },
-                "number_of_final_full_iterations": {
-                    "anyOf": [
-                        {
-                            "type": "number"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "default": false,
-                    "description": "Number of final full iterations",
-                    "title": "Number Of Final Full Iterations"
-                },
-                "number_of_online_EM_iterations": {
-                    "anyOf": [
-                        {
-                            "type": "number"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "default": false,
-                    "description": "Number of online-EM iterations",
-                    "title": "Number Of Online Em Iterations"
-                },
-                "batchsize_per_class": {
-                    "anyOf": [
-                        {
-                            "type": "number"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "default": false,
-                    "description": "Batchsize per class",
-                    "title": "Batchsize Per Class"
-                },
-                "two_D_initial_scale": {
-                    "anyOf": [
-                        {
-                            "type": "number"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "default": false,
-                    "description": "2D initial scales",
-                    "title": "Two D Initial Scale"
-                },
-                "two_D_zeropad_factor": {
-                    "anyOf": [
-                        {
-                            "type": "number"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "default": false,
-                    "description": "2D zeropad factor",
-                    "title": "Two D Zeropad Factor"
-                },
-                "ignore_DC_from_image_data": {
-                    "default": false,
-                    "description": "Ignore DC from image data",
-                    "title": "Ignore Dc From Image Data",
-                    "type": "boolean"
-                },
-                "min_over_scale_after_first_iteration": {
-                    "default": false,
-                    "description": "Min over scale after first iteration",
-                    "title": "Min Over Scale After First Iteration",
-                    "type": "boolean"
-                },
-                "enforce_non_negativity": {
-                    "default": false,
-                    "description": "Enforce non-negativity",
-                    "title": "Enforce Non Negativity",
-                    "type": "boolean"
-                },
-                "use_clamp_solvent_to_solve_2D_classes": {
-                    "default": false,
-                    "description": "Use clamp-solvent to solve 2D classes",
-                    "title": "Use Clamp Solvent To Solve 2D Classes",
-                    "type": "boolean"
-                },
-                "use_FRC_based_regularizer": {
-                    "default": false,
-                    "description": "Use FRC based regularizer",
-                    "title": "Use Frc Based Regularizer",
-                    "type": "boolean"
-                },
-                "use_full_FRC": {
-                    "default": false,
-                    "description": "Use full FRC",
-                    "title": "Use Full Frc",
-                    "type": "boolean"
-                },
-                "iteration_to_start_annealing_sigma": {
-                    "anyOf": [
-                        {
-                            "type": "number"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "default": false,
-                    "description": "Iteration to start annealing sigma",
-                    "title": "Iteration To Start Annealing Sigma"
-                },
-                "number_of_iteration_to_anneal_sigma": {
-                    "anyOf": [
-                        {
-                            "type": "number"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "default": false,
-                    "description": "Number of iteration to anneal sigma",
-                    "title": "Number Of Iteration To Anneal Sigma"
-                },
-                "use_white_noise_model": {
-                    "default": false,
-                    "description": "Use white noise model",
-                    "title": "Use White Noise Model",
-                    "type": "boolean"
-                },
-                "show_plots_from_intermediate_steps": {
-                    "default": false,
-                    "description": "Show plots from intermediate steps",
-                    "title": "Show Plots From Intermediate Steps",
-                    "type": "boolean"
-                },
-                "random_seed": {
-                    "anyOf": [
-                        {
-                            "type": "number"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "default": false,
-                    "description": "Random seed",
-                    "title": "Random Seed"
-                },
-                "output_type": {
-                    "allOf": [
-                        {
-                            "$ref": "#/$defs/OutputTypeType"
-                        }
-                    ],
-                    "default": "both",
-                    "description": "Format of the output image. Options are: `file`, `base64_string`, `both`."
                 }
             },
             "required": [
-                "input_image"
+                "base64_bytes_data"
             ],
-            "title": "InputModel",
-            "type": "object"
-        },
-        "output_schema": {
-            "properties": {
-                "image_base64_string": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "default": "",
-                    "description": "Base64 encoded string of the output image.",
-                    "title": "Image Base64 String"
-                },
-                "image_file_path": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "default": "",
-                    "description": "Path to the output image file.",
-                    "title": "Image File Path"
-                }
-            },
             "title": "OutputModel",
             "type": "object"
         },
         "secrets_schema": null,
-        "source_url": "https://github.com/vanclei/domino_pieces/tree/main/pieces/TwoDClassAveragingOfBoxedOutParticlePiece"
-    },
-    "AutomatedParticleBoxingUsingTemplatePiece": {
-        "name": "AutomatedParticleBoxingUsingTemplatePiece",
-        "dependency": {
-            "dockerfile": null,
-            "requirements_file": "requirements_0.txt"
-        },
-        "tags": [
-            "TAMU"
-        ],
-        "style": {
-            "node_label": "Automated Particle Boxing Using Template",
-            "node_type": "default",
-            "node_style": {
-                "backgroundColor": "#ebebeb"
-            },
-            "useIcon": true,
-            "icon_class_name": "fa-solid:database",
-            "iconStyle": {
-                "cursor": "pointer"
-            }
-        },
-        "description": "Automated Particle Boxing Using Template",
-        "container_resources": {
-            "requests": {
-                "cpu": 100,
-                "memory": 128
-            },
-            "limits": {
-                "cpu": 500,
-                "memory": 512
-            }
-        },
-        "input_schema": {
-            "$defs": {
-                "OutputTypeType": {
-                    "description": "Output type for the result text",
-                    "enum": [
-                        "file",
-                        "base64_string",
-                        "both"
-                    ],
-                    "title": "OutputTypeType",
-                    "type": "string"
-                }
-            },
-            "description": "Sleep Piece Input Model",
-            "properties": {
-                "input_image": {
-                    "description": "Input image. It should be either a path to a file, or a base64 encoded string.",
-                    "from_upstream": "always",
-                    "title": "Input Image",
-                    "type": "string"
-                },
-                "output_type": {
-                    "allOf": [
-                        {
-                            "$ref": "#/$defs/OutputTypeType"
-                        }
-                    ],
-                    "default": "both",
-                    "description": "Format of the output image. Options are: `file`, `base64_string`, `both`."
-                }
-            },
-            "required": [
-                "input_image"
-            ],
-            "title": "InputModel",
-            "type": "object"
-        },
-        "output_schema": {
-            "properties": {
-                "image_base64_string": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "default": "",
-                    "description": "Base64 encoded string of the output image.",
-                    "title": "Image Base64 String"
-                },
-                "image_file_path": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "default": "",
-                    "description": "Path to the output image file.",
-                    "title": "Image File Path"
-                }
-            },
-            "title": "OutputModel",
-            "type": "object"
-        },
-        "secrets_schema": null,
-        "source_url": "https://github.com/vanclei/domino_pieces/tree/main/pieces/AutomatedParticleBoxingUsingTemplatePiece"
+        "source_url": "https://github.com/vanclei/domino_pieces/tree/main/pieces/HttpRequestPiece"
     },
     "FinalVolumePiece": {
         "name": "FinalVolumePiece",
@@ -2908,5 +868,2320 @@
         },
         "secrets_schema": null,
         "source_url": "https://github.com/vanclei/domino_pieces/tree/main/pieces/FinalVolumePiece"
+    },
+    "JobStartPiece": {
+        "name": "JobStartPiece",
+        "dependency": {
+            "dockerfile": null,
+            "requirements_file": "requirements_0.txt"
+        },
+        "tags": [
+            "TAMU"
+        ],
+        "style": {
+            "node_label": "Job Start",
+            "node_type": "default",
+            "node_style": {
+                "backgroundColor": "#ebebeb"
+            },
+            "useIcon": true,
+            "icon_class_name": "fa-solid:database",
+            "iconStyle": {
+                "cursor": "pointer"
+            }
+        },
+        "description": "Job Start Description",
+        "container_resources": {
+            "requests": {
+                "cpu": 100,
+                "memory": 128
+            },
+            "limits": {
+                "cpu": 500,
+                "memory": 512
+            }
+        },
+        "input_schema": {
+            "$defs": {
+                "PriorityType": {
+                    "description": "Output type for the result text",
+                    "enum": [
+                        "1 - Urgent",
+                        "2 - High",
+                        "3 - Moderated",
+                        "4 - Minor",
+                        "5 - Standard"
+                    ],
+                    "title": "PriorityType",
+                    "type": "string"
+                },
+                "SampleTypeType": {
+                    "description": "Output type for the result text",
+                    "enum": [
+                        "Type 1",
+                        "Type 2",
+                        "Type 3"
+                    ],
+                    "title": "SampleTypeType",
+                    "type": "string"
+                },
+                "UserType": {
+                    "description": "Output type for the result text",
+                    "enum": [
+                        "Sen A",
+                        "Vanclei P",
+                        "Tran Le"
+                    ],
+                    "title": "UserType",
+                    "type": "string"
+                }
+            },
+            "properties": {
+                "priority": {
+                    "allOf": [
+                        {
+                            "$ref": "#/$defs/PriorityType"
+                        }
+                    ],
+                    "default": "5 - Standard",
+                    "description": "Priority"
+                },
+                "job_number": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Job Number",
+                    "title": "Job Number"
+                },
+                "job_name": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Job Name",
+                    "title": "Job Name"
+                },
+                "sample_type": {
+                    "allOf": [
+                        {
+                            "$ref": "#/$defs/SampleTypeType"
+                        }
+                    ],
+                    "default": "Type 3",
+                    "description": "Sample Type"
+                },
+                "project_investigator": {
+                    "allOf": [
+                        {
+                            "$ref": "#/$defs/UserType"
+                        }
+                    ],
+                    "default": "Sen A",
+                    "description": "Projct Investigator"
+                },
+                "project_assignment": {
+                    "allOf": [
+                        {
+                            "$ref": "#/$defs/UserType"
+                        }
+                    ],
+                    "default": "Sen A",
+                    "description": "Projct Assignment"
+                }
+            },
+            "required": [
+                "job_number",
+                "job_name"
+            ],
+            "title": "InputModel",
+            "type": "object"
+        },
+        "output_schema": {
+            "description": "Sleep Piece Output Model",
+            "properties": {
+                "message": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Job Start Created",
+                    "title": "Message"
+                }
+            },
+            "required": [
+                "message"
+            ],
+            "title": "OutputModel",
+            "type": "object"
+        },
+        "secrets_schema": null,
+        "source_url": "https://github.com/vanclei/domino_pieces/tree/main/pieces/JobStartPiece"
+    },
+    "ManualSelectionOfClassesAndGenerateTemplatePiece": {
+        "name": "ManualSelectionOfClassesAndGenerateTemplatePiece",
+        "dependency": {
+            "dockerfile": null,
+            "requirements_file": "requirements_0.txt"
+        },
+        "tags": [
+            "TAMU"
+        ],
+        "style": {
+            "node_label": "Manual Selection of Classes & Generate Template",
+            "node_type": "default",
+            "node_style": {
+                "backgroundColor": "#ebebeb"
+            },
+            "useIcon": true,
+            "icon_class_name": "fa-solid:database",
+            "iconStyle": {
+                "cursor": "pointer"
+            }
+        },
+        "description": "Manual Selection of Classes & Generate Template Description",
+        "container_resources": {
+            "requests": {
+                "cpu": 100,
+                "memory": 128
+            },
+            "limits": {
+                "cpu": 500,
+                "memory": 512
+            }
+        },
+        "input_schema": {
+            "$defs": {
+                "OutputTypeType": {
+                    "description": "Output type for the result text",
+                    "enum": [
+                        "file",
+                        "base64_string",
+                        "both"
+                    ],
+                    "title": "OutputTypeType",
+                    "type": "string"
+                }
+            },
+            "description": "Sleep Piece Input Model",
+            "properties": {
+                "input_image": {
+                    "description": "Input image. It should be either a path to a file, or a base64 encoded string.",
+                    "from_upstream": "always",
+                    "title": "Input Image",
+                    "type": "string"
+                },
+                "output_type": {
+                    "allOf": [
+                        {
+                            "$ref": "#/$defs/OutputTypeType"
+                        }
+                    ],
+                    "default": "both",
+                    "description": "Format of the output image. Options are: `file`, `base64_string`, `both`."
+                }
+            },
+            "required": [
+                "input_image"
+            ],
+            "title": "InputModel",
+            "type": "object"
+        },
+        "output_schema": {
+            "properties": {
+                "image_base64_string": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": "",
+                    "description": "Base64 encoded string of the output image.",
+                    "title": "Image Base64 String"
+                },
+                "image_file_path": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": "",
+                    "description": "Path to the output image file.",
+                    "title": "Image File Path"
+                }
+            },
+            "title": "OutputModel",
+            "type": "object"
+        },
+        "secrets_schema": null,
+        "source_url": "https://github.com/vanclei/domino_pieces/tree/main/pieces/ManualSelectionOfClassesAndGenerateTemplatePiece"
+    },
+    "ManualPickerPiece": {
+        "name": "ManualPickerPiece",
+        "dependency": {
+            "dockerfile": null,
+            "requirements_file": "requirements_0.txt"
+        },
+        "tags": [
+            "TAMU"
+        ],
+        "style": {
+            "node_label": "Manual Picker",
+            "node_type": "default",
+            "node_style": {
+                "backgroundColor": "#ebebeb"
+            },
+            "useIcon": true,
+            "icon_class_name": "fa-solid:database",
+            "iconStyle": {
+                "cursor": "pointer"
+            }
+        },
+        "description": "Manual Picker Description",
+        "container_resources": {
+            "requests": {
+                "cpu": 100,
+                "memory": 128
+            },
+            "limits": {
+                "cpu": 500,
+                "memory": 512
+            }
+        },
+        "input_schema": {
+            "$defs": {
+                "OutputTypeType": {
+                    "description": "Output type for the result text",
+                    "enum": [
+                        "file",
+                        "base64_string",
+                        "both"
+                    ],
+                    "title": "OutputTypeType",
+                    "type": "string"
+                }
+            },
+            "description": "Sleep Piece Input Model",
+            "properties": {
+                "input_image": {
+                    "description": "Input image. It should be either a path to a file, or a base64 encoded string.",
+                    "from_upstream": "always",
+                    "title": "Input Image",
+                    "type": "string"
+                },
+                "output_type": {
+                    "allOf": [
+                        {
+                            "$ref": "#/$defs/OutputTypeType"
+                        }
+                    ],
+                    "default": "both",
+                    "description": "Format of the output image. Options are: `file`, `base64_string`, `both`."
+                }
+            },
+            "required": [
+                "input_image"
+            ],
+            "title": "InputModel",
+            "type": "object"
+        },
+        "output_schema": {
+            "properties": {
+                "image_base64_string": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": "",
+                    "description": "Base64 encoded string of the output image.",
+                    "title": "Image Base64 String"
+                },
+                "image_file_path": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": "",
+                    "description": "Path to the output image file.",
+                    "title": "Image File Path"
+                }
+            },
+            "title": "OutputModel",
+            "type": "object"
+        },
+        "secrets_schema": null,
+        "source_url": "https://github.com/vanclei/domino_pieces/tree/main/pieces/ManualPickerPiece"
+    },
+    "ExportMetadataToTextFileAndSubmitToEmdbPiece": {
+        "name": "ExportMetadataToTextFileAndSubmitToEmdbPiece",
+        "dependency": {
+            "dockerfile": null,
+            "requirements_file": "requirements_0.txt"
+        },
+        "tags": [
+            "TAMU"
+        ],
+        "style": {
+            "node_label": "Export Metadata to Text file and Submit to EMDB",
+            "node_type": "default",
+            "node_style": {
+                "backgroundColor": "#ebebeb"
+            },
+            "useIcon": true,
+            "icon_class_name": "fa-solid:database",
+            "iconStyle": {
+                "cursor": "pointer"
+            }
+        },
+        "description": "Export Metadata to Text file and Submit to EMDB Description",
+        "container_resources": {
+            "requests": {
+                "cpu": 100,
+                "memory": 128
+            },
+            "limits": {
+                "cpu": 500,
+                "memory": 512
+            }
+        },
+        "input_schema": {
+            "$defs": {
+                "OutputTypeType": {
+                    "description": "Output type for the result text",
+                    "enum": [
+                        "file",
+                        "base64_string",
+                        "both"
+                    ],
+                    "title": "OutputTypeType",
+                    "type": "string"
+                }
+            },
+            "description": "Sleep Piece Input Model",
+            "properties": {
+                "input_image": {
+                    "description": "Input image. It should be either a path to a file, or a base64 encoded string.",
+                    "from_upstream": "always",
+                    "title": "Input Image",
+                    "type": "string"
+                },
+                "output_type": {
+                    "allOf": [
+                        {
+                            "$ref": "#/$defs/OutputTypeType"
+                        }
+                    ],
+                    "default": "both",
+                    "description": "Format of the output image. Options are: `file`, `base64_string`, `both`."
+                }
+            },
+            "required": [
+                "input_image"
+            ],
+            "title": "InputModel",
+            "type": "object"
+        },
+        "output_schema": {
+            "properties": {
+                "image_base64_string": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": "",
+                    "description": "Base64 encoded string of the output image.",
+                    "title": "Image Base64 String"
+                },
+                "image_file_path": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": "",
+                    "description": "Path to the output image file.",
+                    "title": "Image File Path"
+                }
+            },
+            "title": "OutputModel",
+            "type": "object"
+        },
+        "secrets_schema": null,
+        "source_url": "https://github.com/vanclei/domino_pieces/tree/main/pieces/ExportMetadataToTextFileAndSubmitToEmdbPiece"
+    },
+    "AbInitioVolumeReconstructionPiece": {
+        "name": "AbInitioVolumeReconstructionPiece",
+        "dependency": {
+            "dockerfile": null,
+            "requirements_file": "requirements_0.txt"
+        },
+        "tags": [
+            "TAMU"
+        ],
+        "style": {
+            "node_label": "Ab-Initio (Reference) Volume Reconstruction",
+            "node_type": "default",
+            "node_style": {
+                "backgroundColor": "#ebebeb"
+            },
+            "useIcon": true,
+            "icon_class_name": "fa-solid:database",
+            "iconStyle": {
+                "cursor": "pointer"
+            }
+        },
+        "description": "Ab-Initio (Reference) Volume Reconstruction",
+        "container_resources": {
+            "requests": {
+                "cpu": 100,
+                "memory": 128
+            },
+            "limits": {
+                "cpu": 500,
+                "memory": 512
+            }
+        },
+        "input_schema": {
+            "$defs": {
+                "OutputTypeType": {
+                    "description": "Output type for the result text",
+                    "enum": [
+                        "file",
+                        "base64_string",
+                        "both"
+                    ],
+                    "title": "OutputTypeType",
+                    "type": "string"
+                }
+            },
+            "description": "Sleep Piece Input Model",
+            "properties": {
+                "input_image": {
+                    "description": "Input image. It should be either a path to a file, or a base64 encoded string.",
+                    "from_upstream": "always",
+                    "title": "Input Image",
+                    "type": "string"
+                },
+                "output_type": {
+                    "allOf": [
+                        {
+                            "$ref": "#/$defs/OutputTypeType"
+                        }
+                    ],
+                    "default": "both",
+                    "description": "Format of the output image. Options are: `file`, `base64_string`, `both`."
+                }
+            },
+            "required": [
+                "input_image"
+            ],
+            "title": "InputModel",
+            "type": "object"
+        },
+        "output_schema": {
+            "properties": {
+                "image_base64_string": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": "",
+                    "description": "Base64 encoded string of the output image.",
+                    "title": "Image Base64 String"
+                },
+                "image_file_path": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": "",
+                    "description": "Path to the output image file.",
+                    "title": "Image File Path"
+                }
+            },
+            "title": "OutputModel",
+            "type": "object"
+        },
+        "secrets_schema": null,
+        "source_url": "https://github.com/vanclei/domino_pieces/tree/main/pieces/AbInitioVolumeReconstructionPiece"
+    },
+    "CustomPythonPiece": {
+        "name": "CustomPythonPiece",
+        "dependency": {
+            "dockerfile": null,
+            "requirements_file": "requirements_0.txt"
+        },
+        "tags": [
+            "default",
+            "python"
+        ],
+        "style": {
+            "node_label": "Custom Python",
+            "node_type": "default",
+            "node_style": {
+                "backgroundColor": "#ebebeb"
+            },
+            "useIcon": true,
+            "icon_class_name": "fa-brands:python",
+            "iconStyle": {
+                "cursor": "pointer"
+            }
+        },
+        "description": "Executes user-defined Python code.",
+        "input_schema": {
+            "$defs": {
+                "InputKwargsModel": {
+                    "properties": {
+                        "kwarg_name": {
+                            "default": null,
+                            "description": "Argument name.",
+                            "from_upstream": "never",
+                            "title": "Kwarg Name",
+                            "type": "string"
+                        },
+                        "kwarg_value": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "items": {},
+                                    "type": "array"
+                                },
+                                {
+                                    "type": "integer"
+                                },
+                                {
+                                    "type": "number"
+                                },
+                                {
+                                    "type": "boolean"
+                                },
+                                {
+                                    "type": "object"
+                                },
+                                {
+                                    "format": "date",
+                                    "type": "string"
+                                },
+                                {
+                                    "format": "time",
+                                    "type": "string"
+                                },
+                                {
+                                    "format": "date-time",
+                                    "type": "string"
+                                }
+                            ],
+                            "default": null,
+                            "description": "Argument value.",
+                            "from_upstream": "always",
+                            "title": "Kwarg Value"
+                        }
+                    },
+                    "title": "InputKwargsModel",
+                    "type": "object"
+                },
+                "OutputModifierItemType": {
+                    "description": "OutputArgsType Enum",
+                    "enum": [
+                        "string",
+                        "integer",
+                        "float",
+                        "boolean",
+                        "array"
+                    ],
+                    "title": "OutputModifierItemType",
+                    "type": "string"
+                },
+                "OutputModifierModel": {
+                    "properties": {
+                        "name": {
+                            "description": "Name of the output argument.",
+                            "from_upstream": "never",
+                            "title": "Name",
+                            "type": "string"
+                        },
+                        "type": {
+                            "allOf": [
+                                {
+                                    "$ref": "#/$defs/OutputModifierItemType"
+                                }
+                            ],
+                            "default": "string",
+                            "description": "Type of the output argument.",
+                            "from_upstream": "never"
+                        },
+                        "description": {
+                            "default": "",
+                            "description": "Description of the output argument.",
+                            "from_upstream": "never",
+                            "title": "Description",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "name"
+                    ],
+                    "title": "OutputModifierModel",
+                    "type": "object"
+                }
+            },
+            "description": "CustomPythonPiece Input Model",
+            "properties": {
+                "input_args": {
+                    "default": [
+                        {
+                            "kwarg_name": "kwarg_2",
+                            "kwarg_value": ""
+                        },
+                        {
+                            "kwarg_name": "kwarg_1",
+                            "kwarg_value": ""
+                        }
+                    ],
+                    "description": "Input arguments.",
+                    "from_upstream": "never",
+                    "items": {
+                        "$ref": "#/$defs/InputKwargsModel"
+                    },
+                    "title": "Input Args",
+                    "type": "array"
+                },
+                "script": {
+                    "default": "# Do not modify the function definition line\ndef custom_function(kwarg_1, kwarg_2):\n    # Write your code here\n    print(f\"First argument: {kwarg_1}\")\n    print(f\"Second argument: {kwarg_2}\")\n\n    # Return the output of the function as an object,\n    # Matching the Output Args defined in the Form below\n    return {\n        \"output_1\": \"this is a string\",\n        \"output_2\": 420\n    }\n",
+                    "description": "Python script.",
+                    "from_upstream": "never",
+                    "title": "Script",
+                    "type": "string",
+                    "widget": "codeeditor-python"
+                },
+                "output_args": {
+                    "default": [
+                        {
+                            "description": "An example string output",
+                            "name": "output_1",
+                            "type": "string"
+                        },
+                        {
+                            "description": "An example integer output",
+                            "name": "output_2",
+                            "type": "integer"
+                        }
+                    ],
+                    "description": "Output arguments.",
+                    "from_upstream": "never",
+                    "items": {
+                        "$ref": "#/$defs/OutputModifierModel"
+                    },
+                    "title": "Output Args",
+                    "type": "array"
+                }
+            },
+            "title": "InputModel",
+            "type": "object"
+        },
+        "output_schema": {
+            "additionalProperties": true,
+            "description": "CustomPythonPiece Output Model",
+            "properties": {},
+            "title": "OutputModel",
+            "type": "object"
+        },
+        "secrets_schema": null,
+        "source_url": "https://github.com/vanclei/domino_pieces/tree/main/pieces/CustomPythonPiece"
+    },
+    "ResolutionEstimationPiece": {
+        "name": "ResolutionEstimationPiece",
+        "dependency": {
+            "dockerfile": null,
+            "requirements_file": "requirements_0.txt"
+        },
+        "tags": [
+            "TAMU"
+        ],
+        "style": {
+            "node_label": "Resolution Estimation (Local and Global)",
+            "node_type": "default",
+            "node_style": {
+                "backgroundColor": "#ebebeb"
+            },
+            "useIcon": true,
+            "icon_class_name": "fa-solid:database",
+            "iconStyle": {
+                "cursor": "pointer"
+            }
+        },
+        "description": "Resolution Estimation (Local and Global)",
+        "container_resources": {
+            "requests": {
+                "cpu": 100,
+                "memory": 128
+            },
+            "limits": {
+                "cpu": 500,
+                "memory": 512
+            }
+        },
+        "input_schema": {
+            "$defs": {
+                "OutputTypeType": {
+                    "description": "Output type for the result text",
+                    "enum": [
+                        "file",
+                        "base64_string",
+                        "both"
+                    ],
+                    "title": "OutputTypeType",
+                    "type": "string"
+                }
+            },
+            "description": "Sleep Piece Input Model",
+            "properties": {
+                "input_image": {
+                    "description": "Input image. It should be either a path to a file, or a base64 encoded string.",
+                    "from_upstream": "always",
+                    "title": "Input Image",
+                    "type": "string"
+                },
+                "output_type": {
+                    "allOf": [
+                        {
+                            "$ref": "#/$defs/OutputTypeType"
+                        }
+                    ],
+                    "default": "both",
+                    "description": "Format of the output image. Options are: `file`, `base64_string`, `both`."
+                }
+            },
+            "required": [
+                "input_image"
+            ],
+            "title": "InputModel",
+            "type": "object"
+        },
+        "output_schema": {
+            "properties": {
+                "image_base64_string": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": "",
+                    "description": "Base64 encoded string of the output image.",
+                    "title": "Image Base64 String"
+                },
+                "image_file_path": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": "",
+                    "description": "Path to the output image file.",
+                    "title": "Image File Path"
+                }
+            },
+            "title": "OutputModel",
+            "type": "object"
+        },
+        "secrets_schema": null,
+        "source_url": "https://github.com/vanclei/domino_pieces/tree/main/pieces/ResolutionEstimationPiece"
+    },
+    "TwoDClassAveragingPiece": {
+        "name": "TwoDClassAveragingPiece",
+        "dependency": {
+            "dockerfile": null,
+            "requirements_file": "requirements_0.txt"
+        },
+        "tags": [
+            "TAMU"
+        ],
+        "style": {
+            "node_label": "2D Class Averaging",
+            "node_type": "default",
+            "node_style": {
+                "backgroundColor": "#ebebeb"
+            },
+            "useIcon": true,
+            "icon_class_name": "fa-solid:database",
+            "iconStyle": {
+                "cursor": "pointer"
+            }
+        },
+        "description": "2D Class Averaging Description",
+        "container_resources": {
+            "requests": {
+                "cpu": 100,
+                "memory": 128
+            },
+            "limits": {
+                "cpu": 500,
+                "memory": 512
+            }
+        },
+        "input_schema": {
+            "$defs": {
+                "OutputTypeType": {
+                    "description": "Output type for the result text",
+                    "enum": [
+                        "file",
+                        "base64_string",
+                        "both"
+                    ],
+                    "title": "OutputTypeType",
+                    "type": "string"
+                }
+            },
+            "description": "Sleep Piece Input Model",
+            "properties": {
+                "input_image": {
+                    "description": "Input image. It should be either a path to a file, or a base64 encoded string.",
+                    "from_upstream": "always",
+                    "title": "Input Image",
+                    "type": "string"
+                },
+                "output_type": {
+                    "allOf": [
+                        {
+                            "$ref": "#/$defs/OutputTypeType"
+                        }
+                    ],
+                    "default": "both",
+                    "description": "Format of the output image. Options are: `file`, `base64_string`, `both`."
+                }
+            },
+            "required": [
+                "input_image"
+            ],
+            "title": "InputModel",
+            "type": "object"
+        },
+        "output_schema": {
+            "properties": {
+                "image_base64_string": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": "",
+                    "description": "Base64 encoded string of the output image.",
+                    "title": "Image Base64 String"
+                },
+                "image_file_path": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": "",
+                    "description": "Path to the output image file.",
+                    "title": "Image File Path"
+                }
+            },
+            "title": "OutputModel",
+            "type": "object"
+        },
+        "secrets_schema": null,
+        "source_url": "https://github.com/vanclei/domino_pieces/tree/main/pieces/TwoDClassAveragingPiece"
+    },
+    "PatchMotionPiece": {
+        "name": "PatchMotionPiece",
+        "dependency": {
+            "dockerfile": null,
+            "requirements_file": "requirements_0.txt"
+        },
+        "tags": [
+            "TAMU"
+        ],
+        "style": {
+            "node_label": "Patch Motion",
+            "node_type": "default",
+            "node_style": {
+                "backgroundColor": "#ebebeb"
+            },
+            "useIcon": true,
+            "icon_class_name": "fa-solid:database",
+            "iconStyle": {
+                "cursor": "pointer"
+            }
+        },
+        "description": "Patch Motion Description",
+        "container_resources": {
+            "requests": {
+                "cpu": 100,
+                "memory": 128
+            },
+            "limits": {
+                "cpu": 500,
+                "memory": 512
+            }
+        },
+        "input_schema": {
+            "$defs": {
+                "OutputTypeType": {
+                    "description": "Output type for the result text",
+                    "enum": [
+                        "file",
+                        "base64_string",
+                        "both"
+                    ],
+                    "title": "OutputTypeType",
+                    "type": "string"
+                }
+            },
+            "description": "Sleep Piece Input Model",
+            "properties": {
+                "input_image": {
+                    "description": "Input image from previous task",
+                    "from_upstream": "always",
+                    "title": "Input Image",
+                    "type": "string"
+                },
+                "make_motion_diagnostics_plots": {
+                    "default": false,
+                    "description": "Make motion diagnostic plots",
+                    "title": "Make Motion Diagnostics Plots",
+                    "type": "boolean"
+                },
+                "number_of_movies_to_plot": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": false,
+                    "description": "Number of movies do plot",
+                    "title": "Number Of Movies To Plot"
+                },
+                "only_process_this_many_movies": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": false,
+                    "description": "Only process this many movies",
+                    "title": "Only Process This Many Movies"
+                },
+                "reduce_gpu_memory_usage": {
+                    "default": false,
+                    "description": "Reduce GPU memory usage",
+                    "title": "Reduce Gpu Memory Usage",
+                    "type": "boolean"
+                },
+                "low_memory_mode": {
+                    "default": false,
+                    "description": "Low-memory mode",
+                    "title": "Low Memory Mode",
+                    "type": "boolean"
+                },
+                "maximum_alignment_resolution": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": false,
+                    "description": "Maximum alignment resolution (A)",
+                    "title": "Maximum Alignment Resolution"
+                },
+                "b_factor_during_alignment": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": false,
+                    "description": "B-factor during alignment",
+                    "title": "B Factor During Alignment"
+                },
+                "start_frame": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": false,
+                    "description": "Start frame (included, 0-based)",
+                    "title": "Start Frame"
+                },
+                "end_frame": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": false,
+                    "description": "End frame (excluded, 0-based)",
+                    "title": "End Frame"
+                },
+                "output_f_crop_factor": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": false,
+                    "description": "Output F-crop factor",
+                    "title": "Output F Crop Factor"
+                },
+                "override_e_a": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": false,
+                    "description": "Override e/A^2",
+                    "title": "Override E A"
+                },
+                "output_type": {
+                    "allOf": [
+                        {
+                            "$ref": "#/$defs/OutputTypeType"
+                        }
+                    ],
+                    "default": "both",
+                    "description": "Format of the output image. Options are: `file`, `base64_string`, `both`."
+                }
+            },
+            "required": [
+                "input_image"
+            ],
+            "title": "InputModel",
+            "type": "object"
+        },
+        "output_schema": {
+            "properties": {
+                "image_base64_string": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": "",
+                    "description": "Base64 encoded string of the output image.",
+                    "title": "Image Base64 String"
+                },
+                "image_file_path": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": "",
+                    "description": "Path to the output image file.",
+                    "title": "Image File Path"
+                }
+            },
+            "title": "OutputModel",
+            "type": "object"
+        },
+        "secrets_schema": null,
+        "source_url": "https://github.com/vanclei/domino_pieces/tree/main/pieces/PatchMotionPiece"
+    },
+    "ImportMoviesPiece": {
+        "name": "ImportMoviesPiece",
+        "dependency": {
+            "dockerfile": null,
+            "requirements_file": "requirements_0.txt"
+        },
+        "tags": [
+            "TAMU"
+        ],
+        "style": {
+            "node_label": "Import Movies",
+            "node_type": "default",
+            "node_style": {
+                "backgroundColor": "#ebebeb"
+            },
+            "useIcon": true,
+            "icon_class_name": "fa-solid:database",
+            "iconStyle": {
+                "cursor": "pointer"
+            }
+        },
+        "description": "This is an example of a simple Domino Piece that sleep for N seconds",
+        "container_resources": {
+            "requests": {
+                "cpu": 100,
+                "memory": 128
+            },
+            "limits": {
+                "cpu": 500,
+                "memory": 512
+            }
+        },
+        "input_schema": {
+            "description": "Import Movies Piece Input Model",
+            "properties": {
+                "movies_data_path": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Path to Movie Data Path",
+                    "title": "Movies Data Path"
+                },
+                "gain_reference_path": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Gain Reference path",
+                    "title": "Gain Reference Path"
+                },
+                "defect_file_path": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Defect file path",
+                    "title": "Defect File Path"
+                },
+                "flip_gain_ref_and_defect_file_in_X": {
+                    "default": false,
+                    "description": "Flip gain ref & defect file in X?",
+                    "title": "Flip Gain Ref And Defect File In X",
+                    "type": "boolean"
+                },
+                "flip_gain_ref_and_defect_file_in_Y": {
+                    "default": false,
+                    "description": "Flip gain ref & defect file in Y?",
+                    "title": "Flip Gain Ref And Defect File In Y",
+                    "type": "boolean"
+                },
+                "rotate_gain_ref": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": false,
+                    "description": "Rotate gain ref?",
+                    "title": "Rotate Gain Ref"
+                },
+                "raw_pixel_size_A": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": false,
+                    "description": "Raw pixel size (A)",
+                    "title": "Raw Pixel Size A"
+                },
+                "accelerating_voltage_kV": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": false,
+                    "description": "Accelerating Voltage (kV)",
+                    "title": "Accelerating Voltage Kv"
+                },
+                "spherical_aberration_mm": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": false,
+                    "description": "Spherical Abberation (mm)",
+                    "title": "Spherical Aberration Mm"
+                },
+                "total_exposure_dose": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": false,
+                    "description": "Total exposure dose (e/A^2)",
+                    "title": "Total Exposure Dose"
+                },
+                "negative_stain_data": {
+                    "default": false,
+                    "description": "Negative Stain Data",
+                    "title": "Negative Stain Data",
+                    "type": "boolean"
+                },
+                "phase_plate_data": {
+                    "default": false,
+                    "description": "Phase Plate Data",
+                    "title": "Phase Plate Data",
+                    "type": "boolean"
+                },
+                "override_exposure_group_id": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": false,
+                    "description": "Override Exposure Group ID",
+                    "title": "Override Exposure Group Id"
+                },
+                "skip_header_check": {
+                    "default": false,
+                    "description": "Skip Header Check",
+                    "title": "Skip Header Check",
+                    "type": "boolean"
+                },
+                "eer_number_of_fractions": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": false,
+                    "description": "EER Number of Fractions",
+                    "title": "Eer Number Of Fractions"
+                },
+                "eer_upsampling_factor": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": false,
+                    "description": "EER Upsampling Factor",
+                    "title": "Eer Upsampling Factor"
+                }
+            },
+            "required": [
+                "movies_data_path",
+                "gain_reference_path",
+                "defect_file_path"
+            ],
+            "title": "InputModel",
+            "type": "object"
+        },
+        "output_schema": {
+            "properties": {
+                "image_base64_string": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": "",
+                    "description": "Base64 encoded string of the output image.",
+                    "title": "Image Base64 String"
+                },
+                "image_file_path": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": "",
+                    "description": "Path to the output image file.",
+                    "title": "Image File Path"
+                }
+            },
+            "title": "OutputModel",
+            "type": "object"
+        },
+        "secrets_schema": null,
+        "source_url": "https://github.com/vanclei/domino_pieces/tree/main/pieces/ImportMoviesPiece"
+    },
+    "SelectionOfBestTwoDClassAveragePiece": {
+        "name": "SelectionOfBestTwoDClassAveragePiece",
+        "dependency": {
+            "dockerfile": null,
+            "requirements_file": "requirements_0.txt"
+        },
+        "tags": [
+            "TAMU"
+        ],
+        "style": {
+            "node_label": "Selection of Best 2D Class Average",
+            "node_type": "default",
+            "node_style": {
+                "backgroundColor": "#ebebeb"
+            },
+            "useIcon": true,
+            "icon_class_name": "fa-solid:database",
+            "iconStyle": {
+                "cursor": "pointer"
+            }
+        },
+        "description": "Selection of Best 2D Class Average",
+        "container_resources": {
+            "requests": {
+                "cpu": 100,
+                "memory": 128
+            },
+            "limits": {
+                "cpu": 500,
+                "memory": 512
+            }
+        },
+        "input_schema": {
+            "$defs": {
+                "OutputTypeType": {
+                    "description": "Output type for the result text",
+                    "enum": [
+                        "file",
+                        "base64_string",
+                        "both"
+                    ],
+                    "title": "OutputTypeType",
+                    "type": "string"
+                }
+            },
+            "description": "Sleep Piece Input Model",
+            "properties": {
+                "input_image": {
+                    "description": "Input image. It should be either a path to a file, or a base64 encoded string.",
+                    "from_upstream": "always",
+                    "title": "Input Image",
+                    "type": "string"
+                },
+                "output_type": {
+                    "allOf": [
+                        {
+                            "$ref": "#/$defs/OutputTypeType"
+                        }
+                    ],
+                    "default": "both",
+                    "description": "Format of the output image. Options are: `file`, `base64_string`, `both`."
+                }
+            },
+            "required": [
+                "input_image"
+            ],
+            "title": "InputModel",
+            "type": "object"
+        },
+        "output_schema": {
+            "properties": {
+                "image_base64_string": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": "",
+                    "description": "Base64 encoded string of the output image.",
+                    "title": "Image Base64 String"
+                },
+                "image_file_path": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": "",
+                    "description": "Path to the output image file.",
+                    "title": "Image File Path"
+                }
+            },
+            "title": "OutputModel",
+            "type": "object"
+        },
+        "secrets_schema": null,
+        "source_url": "https://github.com/vanclei/domino_pieces/tree/main/pieces/SelectionOfBestTwoDClassAveragePiece"
+    },
+    "AdditionalRefinementPiece": {
+        "name": "AdditionalRefinementPiece",
+        "dependency": {
+            "dockerfile": null,
+            "requirements_file": "requirements_0.txt"
+        },
+        "tags": [
+            "TAMU"
+        ],
+        "style": {
+            "node_label": "Aditional Refinement",
+            "node_type": "default",
+            "node_style": {
+                "backgroundColor": "#ebebeb"
+            },
+            "useIcon": true,
+            "icon_class_name": "fa-solid:database",
+            "iconStyle": {
+                "cursor": "pointer"
+            }
+        },
+        "description": "Aditional Refinement Description",
+        "container_resources": {
+            "requests": {
+                "cpu": 100,
+                "memory": 128
+            },
+            "limits": {
+                "cpu": 500,
+                "memory": 512
+            }
+        },
+        "input_schema": {
+            "$defs": {
+                "OutputTypeType": {
+                    "description": "Output type for the result text",
+                    "enum": [
+                        "file",
+                        "base64_string",
+                        "both"
+                    ],
+                    "title": "OutputTypeType",
+                    "type": "string"
+                }
+            },
+            "description": "Sleep Piece Input Model",
+            "properties": {
+                "input_image": {
+                    "description": "Input image. It should be either a path to a file, or a base64 encoded string.",
+                    "from_upstream": "always",
+                    "title": "Input Image",
+                    "type": "string"
+                },
+                "output_type": {
+                    "allOf": [
+                        {
+                            "$ref": "#/$defs/OutputTypeType"
+                        }
+                    ],
+                    "default": "both",
+                    "description": "Format of the output image. Options are: `file`, `base64_string`, `both`."
+                }
+            },
+            "required": [
+                "input_image"
+            ],
+            "title": "InputModel",
+            "type": "object"
+        },
+        "output_schema": {
+            "properties": {
+                "image_base64_string": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": "",
+                    "description": "Base64 encoded string of the output image.",
+                    "title": "Image Base64 String"
+                },
+                "image_file_path": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": "",
+                    "description": "Path to the output image file.",
+                    "title": "Image File Path"
+                }
+            },
+            "title": "OutputModel",
+            "type": "object"
+        },
+        "secrets_schema": null,
+        "source_url": "https://github.com/vanclei/domino_pieces/tree/main/pieces/AdditionalRefinementPiece"
+    },
+    "PatchCtfPiece": {
+        "name": "PatchCtfPiece",
+        "dependency": {
+            "dockerfile": null,
+            "requirements_file": "requirements_0.txt"
+        },
+        "tags": [
+            "TAMU"
+        ],
+        "style": {
+            "node_label": "Patch CFT (M)",
+            "node_type": "default",
+            "node_style": {
+                "backgroundColor": "#ebebeb"
+            },
+            "useIcon": true,
+            "icon_class_name": "fa-solid:database",
+            "iconStyle": {
+                "cursor": "pointer"
+            }
+        },
+        "description": "Patch CFT (M)",
+        "container_resources": {
+            "requests": {
+                "cpu": 100,
+                "memory": 128
+            },
+            "limits": {
+                "cpu": 500,
+                "memory": 512
+            }
+        },
+        "input_schema": {
+            "$defs": {
+                "OutputTypeType": {
+                    "description": "Output type for the result text",
+                    "enum": [
+                        "file",
+                        "base64_string",
+                        "both"
+                    ],
+                    "title": "OutputTypeType",
+                    "type": "string"
+                }
+            },
+            "description": "Sleep Piece Input Model",
+            "properties": {
+                "input_image": {
+                    "description": "Input image from previous task",
+                    "from_upstream": "always",
+                    "title": "Input Image",
+                    "type": "string"
+                },
+                "run_extraction_without_ctf_values": {
+                    "default": false,
+                    "description": "Run extraction without CTF Values?",
+                    "title": "Run Extraction Without Ctf Values",
+                    "type": "boolean"
+                },
+                "output_type": {
+                    "allOf": [
+                        {
+                            "$ref": "#/$defs/OutputTypeType"
+                        }
+                    ],
+                    "default": "both",
+                    "description": "Format of the output image. Options are: `file`, `base64_string`, `both`."
+                }
+            },
+            "required": [
+                "input_image"
+            ],
+            "title": "InputModel",
+            "type": "object"
+        },
+        "output_schema": {
+            "properties": {
+                "image_base64_string": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": "",
+                    "description": "Base64 encoded string of the output image.",
+                    "title": "Image Base64 String"
+                },
+                "image_file_path": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": "",
+                    "description": "Path to the output image file.",
+                    "title": "Image File Path"
+                }
+            },
+            "title": "OutputModel",
+            "type": "object"
+        },
+        "secrets_schema": null,
+        "source_url": "https://github.com/vanclei/domino_pieces/tree/main/pieces/PatchCtfPiece"
+    },
+    "TwoDClassAveragingOfBoxedOutParticlePiece": {
+        "name": "TwoDClassAveragingOfBoxedOutParticlePiece",
+        "dependency": {
+            "dockerfile": null,
+            "requirements_file": "requirements_0.txt"
+        },
+        "tags": [
+            "TAMU"
+        ],
+        "style": {
+            "node_label": "2D Class Averaging of Boxed Out Particle",
+            "node_type": "default",
+            "node_style": {
+                "backgroundColor": "#ebebeb"
+            },
+            "useIcon": true,
+            "icon_class_name": "fa-solid:database",
+            "iconStyle": {
+                "cursor": "pointer"
+            }
+        },
+        "description": "2D Class Averaging of Boxed Out Particle Description",
+        "container_resources": {
+            "requests": {
+                "cpu": 100,
+                "memory": 128
+            },
+            "limits": {
+                "cpu": 500,
+                "memory": 512
+            }
+        },
+        "input_schema": {
+            "$defs": {
+                "OutputTypeType": {
+                    "description": "Output type for the result text",
+                    "enum": [
+                        "file",
+                        "base64_string",
+                        "both"
+                    ],
+                    "title": "OutputTypeType",
+                    "type": "string"
+                }
+            },
+            "description": "Sleep Piece Input Model",
+            "properties": {
+                "input_image": {
+                    "description": "Input image. It should be either a path to a file, or a base64 encoded string.",
+                    "from_upstream": "always",
+                    "title": "Input Image",
+                    "type": "string"
+                },
+                "inputs": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": false,
+                    "description": "Inputs",
+                    "title": "Inputs"
+                },
+                "window_dataset_real_space": {
+                    "default": false,
+                    "description": "Window dataset (real-space)",
+                    "title": "Window Dataset Real Space",
+                    "type": "boolean"
+                },
+                "window_inner_radius": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": false,
+                    "description": "Window inner radius",
+                    "title": "Window Inner Radius"
+                },
+                "window_outer_radius": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": false,
+                    "description": "Window outer radius",
+                    "title": "Window Outer Radius"
+                },
+                "number_of_2d_classes": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": false,
+                    "description": "Number of 2D classes",
+                    "title": "Number Of 2D Classes"
+                },
+                "maximum_resolution": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": false,
+                    "description": "Maximum resolution (\u00c5)",
+                    "title": "Maximum Resolution"
+                },
+                "maximum_alignment_res": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": false,
+                    "description": "Maximum alignment res (\u00c5)",
+                    "title": "Maximum Alignment Res"
+                },
+                "initial_classification_uncertainty_factor": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": false,
+                    "description": "Initial classification uncertainty factor",
+                    "title": "Initial Classification Uncertainty Factor"
+                },
+                "use_circular_mask_on_2D_classes": {
+                    "default": false,
+                    "description": "Use circular mask on 2D classes",
+                    "title": "Use Circular Mask On 2D Classes",
+                    "type": "boolean"
+                },
+                "circular_mask_diameter": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": false,
+                    "description": "Circular mask diameter (\u00c5)",
+                    "title": "Circular Mask Diameter"
+                },
+                "circular_mask_diameter_outer": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": false,
+                    "description": "Circular mask diameter outer (\u00c5)",
+                    "title": "Circular Mask Diameter Outer"
+                },
+                "re_center_2D_classes": {
+                    "default": false,
+                    "description": "Re-center 2D classes",
+                    "title": "Re Center 2D Classes",
+                    "type": "boolean"
+                },
+                "re_center_mask_threshold": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": false,
+                    "description": "Re-center mask threshold",
+                    "title": "Re Center Mask Threshold"
+                },
+                "re_center_mask_binary": {
+                    "default": false,
+                    "description": "Re-center mask binary",
+                    "title": "Re Center Mask Binary",
+                    "type": "boolean"
+                },
+                "align_filament_classes_vertically": {
+                    "default": false,
+                    "description": "Align filament classes vertically (BETA)",
+                    "title": "Align Filament Classes Vertically",
+                    "type": "boolean"
+                },
+                "output_filament_in_plane_rotations": {
+                    "default": false,
+                    "description": "Output filament in-plane rotations",
+                    "title": "Output Filament In Plane Rotations",
+                    "type": "boolean"
+                },
+                "force_max_over_poses_shifts": {
+                    "default": false,
+                    "description": "Force Max over poses/shifts",
+                    "title": "Force Max Over Poses Shifts",
+                    "type": "boolean"
+                },
+                "cft_flip_phases_only": {
+                    "default": false,
+                    "description": "CTF flip phases only",
+                    "title": "Cft Flip Phases Only",
+                    "type": "boolean"
+                },
+                "randomly_perturb_poses_radians": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": false,
+                    "description": "Randomly perturb poses radians",
+                    "title": "Randomly Perturb Poses Radians"
+                },
+                "number_of_final_full_iterations": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": false,
+                    "description": "Number of final full iterations",
+                    "title": "Number Of Final Full Iterations"
+                },
+                "number_of_online_EM_iterations": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": false,
+                    "description": "Number of online-EM iterations",
+                    "title": "Number Of Online Em Iterations"
+                },
+                "batchsize_per_class": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": false,
+                    "description": "Batchsize per class",
+                    "title": "Batchsize Per Class"
+                },
+                "two_D_initial_scale": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": false,
+                    "description": "2D initial scales",
+                    "title": "Two D Initial Scale"
+                },
+                "two_D_zeropad_factor": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": false,
+                    "description": "2D zeropad factor",
+                    "title": "Two D Zeropad Factor"
+                },
+                "ignore_DC_from_image_data": {
+                    "default": false,
+                    "description": "Ignore DC from image data",
+                    "title": "Ignore Dc From Image Data",
+                    "type": "boolean"
+                },
+                "min_over_scale_after_first_iteration": {
+                    "default": false,
+                    "description": "Min over scale after first iteration",
+                    "title": "Min Over Scale After First Iteration",
+                    "type": "boolean"
+                },
+                "enforce_non_negativity": {
+                    "default": false,
+                    "description": "Enforce non-negativity",
+                    "title": "Enforce Non Negativity",
+                    "type": "boolean"
+                },
+                "use_clamp_solvent_to_solve_2D_classes": {
+                    "default": false,
+                    "description": "Use clamp-solvent to solve 2D classes",
+                    "title": "Use Clamp Solvent To Solve 2D Classes",
+                    "type": "boolean"
+                },
+                "use_FRC_based_regularizer": {
+                    "default": false,
+                    "description": "Use FRC based regularizer",
+                    "title": "Use Frc Based Regularizer",
+                    "type": "boolean"
+                },
+                "use_full_FRC": {
+                    "default": false,
+                    "description": "Use full FRC",
+                    "title": "Use Full Frc",
+                    "type": "boolean"
+                },
+                "iteration_to_start_annealing_sigma": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": false,
+                    "description": "Iteration to start annealing sigma",
+                    "title": "Iteration To Start Annealing Sigma"
+                },
+                "number_of_iteration_to_anneal_sigma": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": false,
+                    "description": "Number of iteration to anneal sigma",
+                    "title": "Number Of Iteration To Anneal Sigma"
+                },
+                "use_white_noise_model": {
+                    "default": false,
+                    "description": "Use white noise model",
+                    "title": "Use White Noise Model",
+                    "type": "boolean"
+                },
+                "show_plots_from_intermediate_steps": {
+                    "default": false,
+                    "description": "Show plots from intermediate steps",
+                    "title": "Show Plots From Intermediate Steps",
+                    "type": "boolean"
+                },
+                "random_seed": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": false,
+                    "description": "Random seed",
+                    "title": "Random Seed"
+                },
+                "output_type": {
+                    "allOf": [
+                        {
+                            "$ref": "#/$defs/OutputTypeType"
+                        }
+                    ],
+                    "default": "both",
+                    "description": "Format of the output image. Options are: `file`, `base64_string`, `both`."
+                }
+            },
+            "required": [
+                "input_image"
+            ],
+            "title": "InputModel",
+            "type": "object"
+        },
+        "output_schema": {
+            "properties": {
+                "image_base64_string": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": "",
+                    "description": "Base64 encoded string of the output image.",
+                    "title": "Image Base64 String"
+                },
+                "image_file_path": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": "",
+                    "description": "Path to the output image file.",
+                    "title": "Image File Path"
+                }
+            },
+            "title": "OutputModel",
+            "type": "object"
+        },
+        "secrets_schema": null,
+        "source_url": "https://github.com/vanclei/domino_pieces/tree/main/pieces/TwoDClassAveragingOfBoxedOutParticlePiece"
+    },
+    "AutomatedParticleBoxingUsingTemplatePiece": {
+        "name": "AutomatedParticleBoxingUsingTemplatePiece",
+        "dependency": {
+            "dockerfile": null,
+            "requirements_file": "requirements_0.txt"
+        },
+        "tags": [
+            "TAMU"
+        ],
+        "style": {
+            "node_label": "Automated Particle Boxing Using Template",
+            "node_type": "default",
+            "node_style": {
+                "backgroundColor": "#ebebeb"
+            },
+            "useIcon": true,
+            "icon_class_name": "fa-solid:database",
+            "iconStyle": {
+                "cursor": "pointer"
+            }
+        },
+        "description": "Automated Particle Boxing Using Template",
+        "container_resources": {
+            "requests": {
+                "cpu": 100,
+                "memory": 128
+            },
+            "limits": {
+                "cpu": 500,
+                "memory": 512
+            }
+        },
+        "input_schema": {
+            "$defs": {
+                "OutputTypeType": {
+                    "description": "Output type for the result text",
+                    "enum": [
+                        "file",
+                        "base64_string",
+                        "both"
+                    ],
+                    "title": "OutputTypeType",
+                    "type": "string"
+                }
+            },
+            "description": "Sleep Piece Input Model",
+            "properties": {
+                "input_image": {
+                    "description": "Input image. It should be either a path to a file, or a base64 encoded string.",
+                    "from_upstream": "always",
+                    "title": "Input Image",
+                    "type": "string"
+                },
+                "output_type": {
+                    "allOf": [
+                        {
+                            "$ref": "#/$defs/OutputTypeType"
+                        }
+                    ],
+                    "default": "both",
+                    "description": "Format of the output image. Options are: `file`, `base64_string`, `both`."
+                }
+            },
+            "required": [
+                "input_image"
+            ],
+            "title": "InputModel",
+            "type": "object"
+        },
+        "output_schema": {
+            "properties": {
+                "image_base64_string": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": "",
+                    "description": "Base64 encoded string of the output image.",
+                    "title": "Image Base64 String"
+                },
+                "image_file_path": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": "",
+                    "description": "Path to the output image file.",
+                    "title": "Image File Path"
+                }
+            },
+            "title": "OutputModel",
+            "type": "object"
+        },
+        "secrets_schema": null,
+        "source_url": "https://github.com/vanclei/domino_pieces/tree/main/pieces/AutomatedParticleBoxingUsingTemplatePiece"
     }
 }
