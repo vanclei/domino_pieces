@@ -1,12 +1,11 @@
 from domino.testing import piece_dry_run
-
-def test_example_simple_piece():
+    
+def test_PatchCtfPiece_piece():
     input_data = dict(
-        sleep_time=5
+        input_image='test.png'
     )
     output_data = piece_dry_run(
         "PatchCtfPiece",
         input_data,
     )
-
-    assert output_data["message"] is not None
+    assert output_data["image_base64_string"] is not None              

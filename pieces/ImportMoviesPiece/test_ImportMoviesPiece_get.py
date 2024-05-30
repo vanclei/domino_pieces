@@ -1,6 +1,6 @@
 from domino.testing import piece_dry_run
 
-def test_import_movies_get():
+def test_ImportMoviesPiece_get():
     input_data = {
         'movies_data_path': 'https://images.pexels.com/photos/4055758/pexels-photo-4055758.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
         'gain_reference_path': 'https://images.pexels.com/photos/4055758/pexels-photo-4055758.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
