@@ -11,6 +11,8 @@
             "ImportMoviesPiece",
             "AdditionalRefinementPiece",
             "ExportMetadataToTextFileAndSubmitToEmdbPiece",
+            "CustomPythonPiece",
+            "HttpRequestPiece",
             "ManualSelectionOfClassesAndGenerateTemplatePiece",
             "SelectionOfBestTwoDClassAveragePiece",
             "PatchCtfPiece",
@@ -23,6 +25,6 @@
             "FinalVolumePiece"
         ],
         "secrets": [],
-        "source_image": "ghcr.io/vanclei/tamu_pieces:0.1.0-group0"
+        "source_image": "ghcr.io/vanclei/cryo_pieces:0.1.6-group0"
     }
 }

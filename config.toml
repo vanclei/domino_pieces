@@ -4,9 +4,9 @@
 REGISTRY_NAME = "vanclei"
 
 # The name of this Pieces repository
-REPOSITORY_NAME = "tamu_pieces"
-REPOSITORY_LABEL = "TAMU"
+REPOSITORY_NAME = "cryo_pieces"
+REPOSITORY_LABEL = "CryoSPARC"
 
 # The version of this Pieces release
 # Attention: changing this will create a new release
-VERSION = "0.1.5"
+VERSION = "0.1.6"
