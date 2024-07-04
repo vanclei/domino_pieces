@@ -826,30 +826,16 @@
                     "title": "Defect file path"
                 },
                 "gainref_flip_x": {
-                    "anyOf": [
-                        {
-                            "type": "boolean"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
                     "default": false,
                     "description": "Flip gain ref and defect file left-to-right (in X axis)",
-                    "title": "Flip gain ref & defect file in X?"
+                    "title": "Flip gain ref & defect file in X?",
+                    "type": "boolean"
                 },
                 "gainref_flip_y": {
-                    "anyOf": [
-                        {
-                            "type": "boolean"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
                     "default": false,
                     "description": "Flip gain ref and defect file top-to-bottom (in Y axis)",
-                    "title": "Flip gain ref & defect file in Y?"
+                    "title": "Flip gain ref & defect file in Y?",
+                    "type": "boolean"
                 },
                 "gainref_rotate_num": {
                     "anyOf": [
@@ -917,30 +903,16 @@
                     "title": "Total exposure dose (e/A^2)"
                 },
                 "negative_stain_data": {
-                    "anyOf": [
-                        {
-                            "type": "boolean"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
                     "default": false,
                     "description": "If Negative Stain Data is on, this indicates that there are light particles on dark background. If it's off, this indicates the movies have dark particles on light background (cryo-em data).",
-                    "title": "Negative Stain Data"
+                    "title": "Negative Stain Data",
+                    "type": "boolean"
                 },
                 "phase_plate_data": {
-                    "anyOf": [
-                        {
-                            "type": "boolean"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
                     "default": false,
                     "description": "",
-                    "title": "Phase Plate Data"
+                    "title": "Phase Plate Data",
+                    "type": "boolean"
                 },
                 "override_exp_group_id": {
                     "anyOf": [
@@ -956,17 +928,10 @@
                     "title": "Override Exposure Group ID"
                 },
                 "skip_header_check": {
-                    "anyOf": [
-                        {
-                            "type": "boolean"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
                     "default": false,
                     "description": "Skip reading of every header file to increase import speed. WARNING: this assumes exposure shapes and extensions are consistent across the entire dataset.",
-                    "title": "Skip Header Check"
+                    "title": "Skip Header Check",
+                    "type": "boolean"
                 },
                 "eer_num_fractions": {
                     "anyOf": [

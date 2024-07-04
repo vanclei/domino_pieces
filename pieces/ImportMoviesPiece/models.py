@@ -31,13 +31,13 @@ class InputModel(BaseModel):
         description="Absolute path to a defect file for all the raw data. This should be a .txt file. Leave blank if not applicable."
     )
 
-    gainref_flip_x: Optional[bool] = Field(
+    gainref_flip_x: bool = Field(
         default=False,
         title="Flip gain ref & defect file in X?",
         description="Flip gain ref and defect file left-to-right (in X axis)"
     )
 
-    gainref_flip_y: Optional[bool] = Field(
+    gainref_flip_y: bool = Field(
         default=False,
         title="Flip gain ref & defect file in Y?",
         description="Flip gain ref and defect file top-to-bottom (in Y axis)"
@@ -73,13 +73,13 @@ class InputModel(BaseModel):
         description=""
     )
 
-    negative_stain_data: Optional[bool] = Field(
+    negative_stain_data: bool = Field(
         default=False,
         title="Negative Stain Data",
         description="If Negative Stain Data is on, this indicates that there are light particles on dark background. If it's off, this indicates the movies have dark particles on light background (cryo-em data)."
     )
 
-    phase_plate_data: Optional[bool] = Field(
+    phase_plate_data: bool = Field(
         default=False,
         title="Phase Plate Data",
         description=""
@@ -91,7 +91,7 @@ class InputModel(BaseModel):
         description=""
     )
 
-    skip_header_check: Optional[bool] = Field(
+    skip_header_check: bool = Field(
         default=False,
         title="Skip Header Check",
         description="Skip reading of every header file to increase import speed. WARNING: this assumes exposure shapes and extensions are consistent across the entire dataset."
