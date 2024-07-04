@@ -54,18 +54,12 @@ class InputModel(BaseModel):
     
     project_id: str = Field(
         title="Project ID",
-        description='Project ID',
-        json_schema_extra={
-            "from_upstream": "always"
-        }
+        description='Project ID'
     )
 
     workspace_id: str = Field(
         title="Workspace ID",
-        description='Workspace ID',
-        json_schema_extra={
-            "from_upstream": "always"
-        }
+        description='Workspace ID'
     )     
 
 class OutputModel(BaseModel):
