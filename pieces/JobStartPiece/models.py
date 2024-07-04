@@ -50,7 +50,23 @@ class InputModel(BaseModel):
     project_assignment: UserType = Field(
         default=UserType.sen_a,
         description='Projct Assignment',
-    )       
+    )      
+    
+    project_id: str = Field(
+        title="Project ID",
+        description='Project ID',
+        json_schema_extra={
+            "from_upstream": "always"
+        }
+    )
+
+    workspace_id: str = Field(
+        title="Workspace ID",
+        description='Workspace ID',
+        json_schema_extra={
+            "from_upstream": "always"
+        }
+    )     
 
 class OutputModel(BaseModel):
     """
