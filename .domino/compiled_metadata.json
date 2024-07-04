@@ -535,7 +535,7 @@
             "type": "object"
         },
         "secrets_schema": null,
-        "source_url": "https://github.com/vanclei/domino_pieces/tree/main/pieces/AbInitioVolumeReconstructionPiece"
+        "source_url": "https://github.com/vanclei/domino_pieces.git/tree/main/pieces/AbInitioVolumeReconstructionPiece"
     },
     "ManualPickerPiece": {
         "name": "ManualPickerPiece",
@@ -639,7 +639,7 @@
             "type": "object"
         },
         "secrets_schema": null,
-        "source_url": "https://github.com/vanclei/domino_pieces/tree/main/pieces/ManualPickerPiece"
+        "source_url": "https://github.com/vanclei/domino_pieces.git/tree/main/pieces/ManualPickerPiece"
     },
     "ResolutionEstimationPiece": {
         "name": "ResolutionEstimationPiece",
@@ -743,7 +743,7 @@
             "type": "object"
         },
         "secrets_schema": null,
-        "source_url": "https://github.com/vanclei/domino_pieces/tree/main/pieces/ResolutionEstimationPiece"
+        "source_url": "https://github.com/vanclei/domino_pieces.git/tree/main/pieces/ResolutionEstimationPiece"
     },
     "ImportMoviesPiece": {
         "name": "ImportMoviesPiece",
@@ -1036,7 +1036,7 @@
             "type": "object"
         },
         "secrets_schema": null,
-        "source_url": "https://github.com/vanclei/domino_pieces/tree/main/pieces/ImportMoviesPiece"
+        "source_url": "https://github.com/vanclei/domino_pieces.git/tree/main/pieces/ImportMoviesPiece"
     },
     "AdditionalRefinementPiece": {
         "name": "AdditionalRefinementPiece",
@@ -1140,7 +1140,7 @@
             "type": "object"
         },
         "secrets_schema": null,
-        "source_url": "https://github.com/vanclei/domino_pieces/tree/main/pieces/AdditionalRefinementPiece"
+        "source_url": "https://github.com/vanclei/domino_pieces.git/tree/main/pieces/AdditionalRefinementPiece"
     },
     "ExportMetadataToTextFileAndSubmitToEmdbPiece": {
         "name": "ExportMetadataToTextFileAndSubmitToEmdbPiece",
@@ -1244,7 +1244,7 @@
             "type": "object"
         },
         "secrets_schema": null,
-        "source_url": "https://github.com/vanclei/domino_pieces/tree/main/pieces/ExportMetadataToTextFileAndSubmitToEmdbPiece"
+        "source_url": "https://github.com/vanclei/domino_pieces.git/tree/main/pieces/ExportMetadataToTextFileAndSubmitToEmdbPiece"
     },
     "CustomPythonPiece": {
         "name": "CustomPythonPiece",
@@ -1430,7 +1430,7 @@
             "type": "object"
         },
         "secrets_schema": null,
-        "source_url": "https://github.com/vanclei/domino_pieces/tree/main/pieces/CustomPythonPiece"
+        "source_url": "https://github.com/vanclei/domino_pieces.git/tree/main/pieces/CustomPythonPiece"
     },
     "HttpRequestPiece": {
         "name": "HttpRequestPiece",
@@ -1519,7 +1519,7 @@
             "type": "object"
         },
         "secrets_schema": null,
-        "source_url": "https://github.com/vanclei/domino_pieces/tree/main/pieces/HttpRequestPiece"
+        "source_url": "https://github.com/vanclei/domino_pieces.git/tree/main/pieces/HttpRequestPiece"
     },
     "ManualSelectionOfClassesAndGenerateTemplatePiece": {
         "name": "ManualSelectionOfClassesAndGenerateTemplatePiece",
@@ -1623,7 +1623,7 @@
             "type": "object"
         },
         "secrets_schema": null,
-        "source_url": "https://github.com/vanclei/domino_pieces/tree/main/pieces/ManualSelectionOfClassesAndGenerateTemplatePiece"
+        "source_url": "https://github.com/vanclei/domino_pieces.git/tree/main/pieces/ManualSelectionOfClassesAndGenerateTemplatePiece"
     },
     "SelectionOfBestTwoDClassAveragePiece": {
         "name": "SelectionOfBestTwoDClassAveragePiece",
@@ -1727,7 +1727,7 @@
             "type": "object"
         },
         "secrets_schema": null,
-        "source_url": "https://github.com/vanclei/domino_pieces/tree/main/pieces/SelectionOfBestTwoDClassAveragePiece"
+        "source_url": "https://github.com/vanclei/domino_pieces.git/tree/main/pieces/SelectionOfBestTwoDClassAveragePiece"
     },
     "PatchCtfPiece": {
         "name": "PatchCtfPiece",
@@ -1837,7 +1837,7 @@
             "type": "object"
         },
         "secrets_schema": null,
-        "source_url": "https://github.com/vanclei/domino_pieces/tree/main/pieces/PatchCtfPiece"
+        "source_url": "https://github.com/vanclei/domino_pieces.git/tree/main/pieces/PatchCtfPiece"
     },
     "PatchMotionPiece": {
         "name": "PatchMotionPiece",
@@ -2063,7 +2063,7 @@
             "type": "object"
         },
         "secrets_schema": null,
-        "source_url": "https://github.com/vanclei/domino_pieces/tree/main/pieces/PatchMotionPiece"
+        "source_url": "https://github.com/vanclei/domino_pieces.git/tree/main/pieces/PatchMotionPiece"
     },
     "RefineVolumePiece": {
         "name": "RefineVolumePiece",
@@ -2167,7 +2167,7 @@
             "type": "object"
         },
         "secrets_schema": null,
-        "source_url": "https://github.com/vanclei/domino_pieces/tree/main/pieces/RefineVolumePiece"
+        "source_url": "https://github.com/vanclei/domino_pieces.git/tree/main/pieces/RefineVolumePiece"
     },
     "JobStartPiece": {
         "name": "JobStartPiece",
@@ -2299,13 +2299,11 @@
                 },
                 "project_id": {
                     "description": "Project ID",
-                    "from_upstream": "always",
                     "title": "Project ID",
                     "type": "string"
                 },
                 "workspace_id": {
                     "description": "Workspace ID",
-                    "from_upstream": "always",
                     "title": "Workspace ID",
                     "type": "string"
                 }
@@ -2342,7 +2340,7 @@
             "type": "object"
         },
         "secrets_schema": null,
-        "source_url": "https://github.com/vanclei/domino_pieces/tree/main/pieces/JobStartPiece"
+        "source_url": "https://github.com/vanclei/domino_pieces.git/tree/main/pieces/JobStartPiece"
     },
     "TwoDClassAveragingPiece": {
         "name": "TwoDClassAveragingPiece",
@@ -2446,7 +2444,7 @@
             "type": "object"
         },
         "secrets_schema": null,
-        "source_url": "https://github.com/vanclei/domino_pieces/tree/main/pieces/TwoDClassAveragingPiece"
+        "source_url": "https://github.com/vanclei/domino_pieces.git/tree/main/pieces/TwoDClassAveragingPiece"
     },
     "TwoDClassAveragingOfBoxedOutParticlePiece": {
         "name": "TwoDClassAveragingOfBoxedOutParticlePiece",
@@ -2893,7 +2891,7 @@
             "type": "object"
         },
         "secrets_schema": null,
-        "source_url": "https://github.com/vanclei/domino_pieces/tree/main/pieces/TwoDClassAveragingOfBoxedOutParticlePiece"
+        "source_url": "https://github.com/vanclei/domino_pieces.git/tree/main/pieces/TwoDClassAveragingOfBoxedOutParticlePiece"
     },
     "AutomatedParticleBoxingUsingTemplatePiece": {
         "name": "AutomatedParticleBoxingUsingTemplatePiece",
@@ -2997,7 +2995,7 @@
             "type": "object"
         },
         "secrets_schema": null,
-        "source_url": "https://github.com/vanclei/domino_pieces/tree/main/pieces/AutomatedParticleBoxingUsingTemplatePiece"
+        "source_url": "https://github.com/vanclei/domino_pieces.git/tree/main/pieces/AutomatedParticleBoxingUsingTemplatePiece"
     },
     "FinalVolumePiece": {
         "name": "FinalVolumePiece",
@@ -3674,6 +3672,6 @@
             "type": "object"
         },
         "secrets_schema": null,
-        "source_url": "https://github.com/vanclei/domino_pieces/tree/main/pieces/FinalVolumePiece"
+        "source_url": "https://github.com/vanclei/domino_pieces.git/tree/main/pieces/FinalVolumePiece"
     }
 }
