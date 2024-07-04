@@ -7,6 +7,7 @@ from pathlib import Path
 from PIL import Image
 from io import BytesIO
 import numpy as np
+import json
 
 
 class ImportMoviesPiece(BasePiece):
@@ -15,6 +16,9 @@ class ImportMoviesPiece(BasePiece):
         
         message = input_data.model_dump(mode='json')
         self.logger.info(message)
+        
+        message_json = json.loads(input_data.job_start)
+        self.logger.info(message_json)
 
         imported_movies = "IMPORTED MOVIE"
         failed_movies = "FAILED MOVIES"
