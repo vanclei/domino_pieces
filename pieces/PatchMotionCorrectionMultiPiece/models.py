@@ -26,7 +26,7 @@ class InputModel(BaseModel):
         }
     )
     
-    do_plots: Optional[bool] = Field(
+    do_plots: bool = Field(
         default=True,
         title="Make motion diagnostic plots",
         description="Whether or not to make plots of motion trajectories. Motion trajectories can also be inspected using the 'Curate Exposures' job type after this job completes."
@@ -44,7 +44,7 @@ class InputModel(BaseModel):
         description="Randomly select this many movies to process. Helpful for tweaking params."
     )
 
-    memoryfix2: Optional[bool] = Field(
+    memoryfix2: bool = Field(
         default=False,
         title="Low-memory mode",
         description="If running out of GPU memory, this option can be used to prioritize memory use at the expense of speed (BETA). The results are unchanged."
@@ -86,7 +86,7 @@ class InputModel(BaseModel):
         description="Override the dose (in total e/A^2 over the exposure) that was given at import time but can be overridden here."
     )
 
-    variable_dose: Optional[bool] = Field(
+    variable_dose: bool = Field(
         default=False,
         title="Allow Variable Dose",
         description="Enable correct processing when frames have variable dose fractionation"
