@@ -1252,12 +1252,9 @@
                     "title": "End frame (excluded, 0-based) "
                 },
                 "output_fcrop_factor": {
-                    "anyOf": [
+                    "allOf": [
                         {
                             "$ref": "#/$defs/FCropFactorTypeType"
-                        },
-                        {
-                            "type": "null"
                         }
                     ],
                     "default": "1",

@@ -74,7 +74,7 @@ class InputModel(BaseModel):
         description="Which frame number, starting at zero, to not include in motion correction, also excluding all frames after this one. Generally this does not improve results, as later frames are downweighted during dose weighting in local motion correction."
     )
 
-    output_fcrop_factor: Optional[FCropFactorTypeType] = Field(
+    output_fcrop_factor: FCropFactorTypeType = Field(
         default=FCropFactorTypeType.type_1,
         title="Output F-crop factor",
         description="Output Fourier cropping factor. 1.0 means no cropping, 1/2 means crop to 1/2 the resolution, etc."
