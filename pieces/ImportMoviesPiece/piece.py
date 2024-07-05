@@ -1,30 +1,20 @@
 from domino.base_piece import BasePiece
 from .models import InputModel, OutputModel
-from time import sleep
-import requests
-import base64
-from pathlib import Path
-from PIL import Image
-from io import BytesIO
-import numpy as np
 import json
+from util import generate_return
 
 
 class ImportMoviesPiece(BasePiece):
 
     def piece_function(self, input_data: InputModel):
-        
-        message = input_data.model_dump(mode='json')
-        self.logger.info(message)
-        
-        message_json = json.loads(input_data.job_start)
-        self.logger.info(message_json)
 
-        imported_movies = "IMPORTED MOVIE"
-        failed_movies = "FAILED MOVIES"
+        result = generate_return(logger=self.logger, workflow_type='cryosparc', task_name="import_movies", input_data=input_data.model_dump(mode='json'))
+        
+        imported_movies = {"output": "imported_movies", "result": result}
+        failed_movies = {"output": "failed_movies", "result": result}
 
         # Return output
         return OutputModel(
-            imported_movies=imported_movies,
-            failed_movies=failed_movies,
+            imported_movies=json.dumps(imported_movies),
+            failed_movies=json.dumps(failed_movies)
         )        

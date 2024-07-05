@@ -15,6 +15,16 @@ class InputModel(BaseModel):
     Sleep Piece Input Model
     """
 
+
+
+
+    input_image: str = Field(
+        description='Input image. It should be either a path to a file, or a base64 encoded string.',
+        json_schema_extra={
+            "from_upstream": "always"
+        }
+    )
+
     input_image: str = Field(
         description='Input image. It should be either a path to a file, or a base64 encoded string.',
         json_schema_extra={
