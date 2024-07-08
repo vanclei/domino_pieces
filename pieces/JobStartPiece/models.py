@@ -66,6 +66,6 @@ class OutputModel(BaseModel):
     """
     Sleep Piece Output Model
     """
-    message: Optional[str] = Field(
+    job_start: Optional[str] = Field(
         description="Job Start Created"
     )

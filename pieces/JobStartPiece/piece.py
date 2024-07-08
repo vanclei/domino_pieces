@@ -3,6 +3,7 @@ from .models import InputModel, OutputModel
 import json
 import requests
 import os
+from util import generate_return
 
 class JobStartPiece(BasePiece):
 
@@ -12,7 +13,9 @@ class JobStartPiece(BasePiece):
         message = input_data.model_dump(mode='json')
         self.logger.info(message)
 
+        result = generate_return(logger=self.logger, workflow_type='cryosparc', job_type="job_start", input_data=input_data)
+
         # Return output
         return OutputModel(
-            message=json.dumps(message)
+            job_start=json.dumps(result)
         )

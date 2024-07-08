@@ -8,13 +8,10 @@ class ImportMoviesPiece(BasePiece):
 
     def piece_function(self, input_data: InputModel):
 
-        result = generate_return(logger=self.logger, workflow_type='cryosparc', task_name="import_movies", input_data=input_data.model_dump(mode='json'))
-        
-        imported_movies = {"output": "imported_movies", "result": result}
-        failed_movies = {"output": "failed_movies", "result": result}
+        result = generate_return(logger=self.logger, workflow_type='cryosparc', job_type="import_movies", input_data=input_data)
 
         # Return output
         return OutputModel(
-            imported_movies=json.dumps(imported_movies),
-            failed_movies=json.dumps(failed_movies)
+            imported_movies=json.dumps(result),
+            failed_movies=json.dumps(result)
         )        

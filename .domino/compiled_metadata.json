@@ -2567,7 +2567,7 @@
         "output_schema": {
             "description": "Sleep Piece Output Model",
             "properties": {
-                "message": {
+                "job_start": {
                     "anyOf": [
                         {
                             "type": "string"
@@ -2577,11 +2577,11 @@
                         }
                     ],
                     "description": "Job Start Created",
-                    "title": "Message"
+                    "title": "Job Start"
                 }
             },
             "required": [
-                "message"
+                "job_start"
             ],
             "title": "OutputModel",
             "type": "object"

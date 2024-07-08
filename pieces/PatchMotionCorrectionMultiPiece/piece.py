@@ -7,13 +7,10 @@ class PatchMotionCorrectionMultiPiece(BasePiece):
     
     def piece_function(self, input_data: InputModel):
 
-        result = generate_return(logger=self.logger, workflow_type='cryosparc', task_name="patch_motion_correction_multi", input_data=input_data.model_dump(mode='json'))
-        
-        micrographs = {"output": "micrographs", "result": result}
-        micrographs_incomplete = {"output": "micrographs_incomplete", "result": result}
+        result = generate_return(logger=self.logger, workflow_type='cryosparc', job_type="patch_motion_correction_multi", input_data=input_data)
 
         # Return output
         return OutputModel(
-            micrographs=json.dumps(micrographs),
-            micrographs_incomplete=json.dumps(micrographs_incomplete)
+            micrographs=json.dumps(result),
+            micrographs_incomplete=json.dumps(result)
         )      
